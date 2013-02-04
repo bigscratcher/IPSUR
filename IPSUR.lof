@@ -1,0 +1,5 @@
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Graph of the \(\mathsf {binom}(\mathtt {size}=3,\tmspace +\thinmuskip {.1667em}\mathtt {prob}=1/2)\) CDF}}{xxv}{figure.caption.20}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The \textsf {binom}(\texttt {size} = 3, \texttt {prob} = 0.5) distribution from the \texttt {distr} package}}{xxvi}{figure.caption.21}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces The empirical CDF}}{xxxii}{figure.caption.26}
