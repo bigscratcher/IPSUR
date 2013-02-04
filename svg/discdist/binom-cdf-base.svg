@@ -139,7 +139,11 @@
   <path d="M 372 85 L 474.757812 85 L 474.757812 86 L 372 86 Z "/>
 </clipPath>
 </defs>
+<<<<<<< HEAD
 <g id="surface56">
+=======
+<g id="surface741">
+>>>>>>> 6817ffb8149e174d492dd7b156fa345e66b61c84
 <rect x="0" y="0" width="504" height="504" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
 <path style="fill:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 88.621094 430.558594 L 444.179688 430.558594 "/>
 <path style="fill:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 88.621094 430.558594 L 88.621094 437.761719 "/>
