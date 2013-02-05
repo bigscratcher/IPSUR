@@ -1296,7 +1296,6 @@ print(bwplot(~weight | feed, data = chickwts))
 \end{figure}
 #+end_latex
 
-
 **** Histograms
 
 #+begin_src R :exports code :eval never
@@ -1398,8 +1397,6 @@ m <- ggplot(as.data.frame(precip), aes(x = precip))
 m + geom_histogram()
 m + geom_histogram(aes(y = ..density..)) + geom_density()
 #+end_src
-
-
 ** Exercises
 #+latex: \setcounter{thm}{0}
 

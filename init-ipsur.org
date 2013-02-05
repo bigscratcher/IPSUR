@@ -4,13 +4,14 @@
 #+header: :noweb yes
 #+header: :results silent
 #+begin_src emacs-lisp
-  (require 'org-e-latex)
-  (setq org-export-in-background t)
-  (setq org-export-async-debug t)
-  (setq org-export-async-init-file (expand-file-name "init-ipsur.el"))
-  (setq org-entities-user nil)
-  (add-to-list 'org-entities-user '("space" "\\ " nil " " " " " " "–"))
-  (define-key org-mode-map (kbd "C-c e") 'org-export-dispatch)
+(require 'org-e-latex)
+(setq org-export-in-background t)
+(setq org-export-async-debug t)
+(setq org-export-async-init-file (expand-file-name "init-ipsur.el"))
+(setq org-entities-user nil)
+(add-to-list 'org-entities-user '("space" "\\ " nil " " " " " " "–"))
+(add-to-list 'org-entities-user '("given" "|" t " " " " " " "–"))
+(define-key org-mode-map (kbd "C-c e") 'org-export-dispatch)
 #+end_src
 
 ** Export setup for IPSUR
