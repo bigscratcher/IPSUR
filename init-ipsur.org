@@ -22,7 +22,7 @@
 #+begin_src emacs-lisp
 (setq load-path (cons "~/git/org-mode/lisp" load-path))
 (setq load-path (cons "~/git/org-mode/contrib/lisp" load-path))
-(setq load-path (cons "~/.emacs.d/elpa/ess-20130119.1705/lisp" load-path))
+(setq load-path (cons "~/.emacs.d/elpa/ess-20130206.1436/lisp" load-path))
 (require 'ess-site)
 (setq ess-ask-for-ess-directory nil)
 (require 'ox-latex)
