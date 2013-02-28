@@ -2577,7 +2577,7 @@ which means that given the information that a Head has occurred, we no longer ne
 Toss a six-sided die twice. The sample space consists of all ordered pairs \((i,j)\) of the numbers \(1,2,\ldots,6\), that is, \( S = \{ (1,1),\ (1,2),\ldots,(6,6) \} \). We know from Section [[sec-Methods-of-Counting][Counting Methods]] that \( \# (S) = 6^{2} = 36 \). Let \( A = \{ \mbox{outcomes match} \} \) and \( B = \{ \mbox{sum of outcomes at least 8} \} \). The sample space may be represented by a matrix:
 
 #+NAME: twodiceAB
-#+BEGIN_SRC R :exports none :results graphics :file ps/prob/twodiceAB.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/prob/twodiceAB.ps
 A <- rolldie(2)
 B <- subset(A, X1==X2)
 C <- subset(A, X1+X2 > 7)
@@ -3839,7 +3839,7 @@ ecdf(x)
 The above shows that the returned value of =ecdf(x)= is not a /number/ but rather a /function/. The ECDF is not usually used by itself in this form. More commonly it is used as an intermediate step in a more complicated calculation, for instance, in hypothesis testing (see Chapter [[cha-Hypothesis-Testing][Hypothesis Testing]]) or resampling (see Chapter [[cha-resampling-methods][Resampling Methods]]). It is nevertheless instructive to see what the =ecdf= looks like, and there is a special plot method for =ecdf= objects.
 
 #+NAME: empirical-CDF
-#+BEGIN_SRC R :exports none :results graphics :file ps/discdist/empirical-CDF.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/discdist/empirical-CDF.ps
 plot(ecdf(x))
 #+END_SRC
 
@@ -5029,7 +5029,7 @@ is said to have a /chi-square distribution/ with \(p\) /degrees of freedom/. We 
 The code to produce Figure [[fig-chisq-dist-vary-df][chisq-dist-vary-df]] is
 
 #+NAME: chisq-dist-vary-df
-#+BEGIN_SRC R :exports none :results graphics :file ps/contdist/chisq-dist-vary-df.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/contdist/chisq-dist-vary-df.ps
 curve(dchisq(x, df = 3), from = 0, to = 20, ylab = "y")
 ind <- c(4, 5, 10, 15)
 for (i in ind) curve(dchisq(x, df = i), 0, 20, add = TRUE)
@@ -5162,7 +5162,7 @@ mgamma(1:4, shape = 13, rate = 1)
 For the plot we can use the function in the following form:
 
 #+NAME: gamma-mgf
-#+BEGIN_SRC R :exports none :results graphics :file ps/contdist/gamma-mgf.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/contdist/gamma-mgf.ps
 plot(function(x){mgfgamma(x, shape = 13, rate = 1)}, from=-0.1, to=0.1, ylab = "gamma mgf")
 #+END_SRC
 
@@ -6229,9 +6229,13 @@ Another way to do the plot is with the =scatterplot3d= function in the =scatterp
 : scatterplot3d(A, type = "h", lwd = 3, box = FALSE)
 The =scatterplot3d= graph looks better in this example, but the code is more difficult to understand. And with =cloud= one can easily do conditional plots of the form =cloud(z ~ x + y | f)=, where =f= is a factor.
 
+#+BEGIN_SRC R :exports code :eval never 
+cloud(probs ~ X1 + X2, data = S, type = c("p","h"), lwd = 2, 
+            pch = 16, cex = 1.5), screen = list(z = 15, x = -70)
+#+END_SRC
 
 #+NAME: multinom-pmf2
-#+BEGIN_SRC R :exports both :results graphics :file ps/multdist/multinom-pmf2.ps
+#+BEGIN_SRC R :exports none :results graphics :file ps/multdist/multinom-pmf2.ps
 print(cloud(probs ~ X1 + X2, data = S, type = c("p","h"), lwd = 2, 
             pch = 16, cex = 1.5), screen = list(z = 15, x = -70))
 #+END_SRC
@@ -6429,7 +6433,7 @@ Any random variable \(X\) with the preceding PDF is said to have Student's \(t\)
 The code to produce Figure [[fig-Students-t-dist-vary-df][Student's-t-dist-vary-df]] is
 
 #+NAME: Students-t-dist-vary-df
-#+BEGIN_SRC R :exports none :results graphics :file ps/sampdist/Students-t-dist-vary-df.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/sampdist/Students-t-dist-vary-df.ps
 curve(dt(x, df = 30), from = -3, to = 3, lwd = 3, ylab = "y")
 ind <- c(1, 2, 3, 5, 10)
 for (i in ind) curve(dt(x, df = i), -3, 3, add = TRUE)
@@ -6626,7 +6630,7 @@ sd(iqrs)
 Now let's take a look at a plot of the simulated values
 
 #+NAME: simulated-IQR
-#+BEGIN_SRC R :exports none :results graphics :file ps/sampdist/simulated-IQR.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/sampdist/simulated-IQR.ps
 hist(iqrs, breaks = 20)
 #+END_SRC
 
@@ -6658,7 +6662,7 @@ sd(mads)
 Now let's take a look at a plot of the simulated values
 
 #+NAME: simulated-MAD
-#+BEGIN_SRC R :exports both :results graphics :file ps/sampdist/simulated-MAD.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/sampdist/simulated-MAD.ps
 hist(mads, breaks = 20)
 #+END_SRC
 
@@ -7075,25 +7079,15 @@ In the demonstration, the parameter corresponds to the chalk, the sheet of paper
 See Figure [[fig-ci-examp][ci-examp]], which is a graphical display of these ideas.
 
 #+NAME: ci-examp
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/hypoth/ci-examp.ps
 ci.examp()
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/estimate/ci-examp.ps
-  <<ci-examp>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/estimate/ci-examp.svg
-  <<ci-examp>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/estimate/ci-examp.ps}
-  \caption[Simulated confidence intervals]{\small The graph was generated by the \texttt{ci.examp} function from the \texttt{TeachingDemos} package. Fifty (50) samples of size twenty five (25) were generated from a \( \mathsf{norm}(\mathtt{mean}=100,\,\mathtt{sd}=10) \) distribution, and each sample was used to find a 95\% confidence interval for the population mean using Equation \ref{eq-z-interval}. The 50 confidence intervals are represented above by horizontal lines, and the respective sample means are denoted by vertical slashes. Confidence intervals that ``cover'' the true mean value of 100 are plotted in black; those that fail to cover are plotted in a lighter color. In the plot we see that only one (1) of the simulated intervals out of the 50 failed to cover \(\mu=100\), which is a success rate of 98\%. If the number of generated samples were to increase from 50 to 500 to 50000, ..., then we would expect our success rate to approach the exact value of 95\%.}
-  \label{fig-ci-examp}
-\end{figure}
-#+end_latex
+#+NAME: fig-ci-examp
+#+CAPTION[Simulated confidence intervals]: \small The graph was generated by the =ci.examp= function from the =TeachingDemos= package. Fifty (50) samples of size twenty five (25) were generated from a \( \mathsf{norm}(\mathtt{mean}=100,\,\mathtt{sd}=10) \) distribution, and each sample was used to find a 95% confidence interval for the population mean using Equation \ref{eq-z-interval}. The 50 confidence intervals are represented above by horizontal lines, and the respective sample means are denoted by vertical slashes. Confidence intervals that ``cover'' the true mean value of 100 are plotted in black; those that fail to cover are plotted in a lighter color. In the plot we see that only one (1) of the simulated intervals out of the 50 failed to cover \(\mu=100\), which is a success rate of 98%. If the number of generated samples were to increase from 50 to 500 to 50000, ..., then we would expect our success rate to approach the exact value of 95%.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: ci-examp
+[[file:ps/hypoth/ci-examp.ps]]
 
 Under the above framework, we can reason that an ``interval'' with a /larger/ confidence coefficient corresponds to a /wider/ sheet of paper. Furthermore, the width of the confidence interval (sheet of paper) should be /somehow/ related to the amount of information contained in the random sample, \(X_{1}\), \(X_{2}\), ...,
 \(X_{n}\). The following remarks makes these notions precise. 
@@ -7903,8 +7897,8 @@ anova(temp)
 
 Plot for the intuition of between versus within group variation.
 
-#+NAME: Between-versus-within
-#+BEGIN_SRC R :exports none :results silent
+#+NAME: between-versus-within
+#+BEGIN_SRC R :exports code :results graphics :file ps/hypoth/between-versus-within.ps
 y1 <- rnorm(300, mean = c(2,8,22))
 plot(y1, xlim = c(-1,25), ylim = c(0,0.45) , type = "n")
 f <- function(x){dnorm(x, mean = 2)}
@@ -7916,24 +7910,15 @@ curve(f, from = 19, to = 25, add = TRUE, lwd = 2)
 rug(y1)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/hypoth/Between-versus-within.ps
-  <<Between-versus-within>>
-#+END_SRC
+#+NAME: fig-between-versus-within
+#+CAPTION[Between group versus within group variation]: \small A plot of between group versus within group variation.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: between-versus-within
+[[file:ps/hypoth/between-versus-within.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/hypoth/Between-versus-within.svg
-  <<Between-versus-within>>
-#+END_SRC
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/hypoth/Between-versus-within.ps}
-  \caption[Between group versus within group variation]{A plot of between group versus within group variation.}
-  \label{fig-Between-versus-within}
-\end{figure}
-#+end_latex
-
-#+NAME: Some-F-plots-HH
-#+BEGIN_SRC R :exports code :results silent
+#+NAME: some-F-plots-HH
+#+BEGIN_SRC R :exports code :results graphics :file ps/hypoth/some-F-plots-HH.ps
 old.omd <- par(omd = c(.05,.88, .05,1))
 F.setup(df1 = 5, df2 = 30)
 F.curve(df1 = 5, df2 = 30, col='blue')
@@ -7941,21 +7926,12 @@ F.observed(3, df1 = 5, df2 = 30)
 par(old.omd)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/hypoth/Some-F-plots-HH.ps
-  <<Some-F-plots-HH>>
-#+END_SRC
+#+NAME: fig-some-F-plots-HH
+#+CAPTION[Some \(F\) plots from the \texttt{HH} package]: \small Some \(F\) plots from the \texttt{HH} package.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: some-F-plots-HH
+[[file:ps/hypoth/some-F-plots-HH.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/hypoth/Some-F-plots-HH.svg
-  <<Some-F-plots-HH>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/hypoth/Some-F-plots-HH.ps}
-  \caption[Some \(F\) plots from the \texttt{HH} package]{\small Some \(F\) plots from the \texttt{HH} package.}
-  \label{fig-Some-F-plots-HH}
-\end{figure}
-#+end_latex
 
 ** Sample Size and Power
 :PROPERTIES:
@@ -7975,7 +7951,7 @@ Here are some properties of power functions:
 I am thinking about =replicate=\index{replicate@\texttt{replicate}} here, and also =power.examp=\index{power.examp@\texttt{power.examp}} from the =TeachingDemos= package \cite{TeachingDemos}. There is an even better plot in upcoming work from the =HH= package \cite{HH}.
 
 #+NAME: power-examp
-#+BEGIN_SRC R :exports both :results graphics :file ps/hypoth/power-examp.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/hypoth/power-examp.ps
 power.examp()
 #+END_SRC
 
@@ -8068,7 +8044,7 @@ See Figure [[fig-philosophy][philosophy]]. Shown in the figure is a solid line, 
 #+LaTeX: \footnote{In practical terms, this constant variance assumption is often violated, in that we often observe scatterplots that fan out from the line as \(x\) gets large or small. We say under those circumstances that the data show \emph{heteroscedasticity}. There are methods to address it, but they fall outside the realm of SLR.}.
 
 #+NAME: philosophy
-#+BEGIN_SRC R :exports both :results graphics :file ps/slr/philosophy.ps
+#+BEGIN_SRC R :exports none :results graphics :file ps/slr/philosophy.ps
 plot(c(0,5), c(0,6.5), type = "n", xlab="x", ylab="y")
 abline(h = 0, v = 0, col = "gray60")
 abline(a = 2.5, b = 0.5, lwd = 2)
@@ -8101,7 +8077,7 @@ head(cars)
 The =speed= represents how fast the car was going (\(x\)) in miles per hour and =dist= (\(Y\)) measures how far it took the car to stop, in feet. We can make a simple scatterplot of the data with the =qplot= command in the =ggplot2= package \cite{ggplot2}. 
 
 #+NAME: carscatter
-#+BEGIN_SRC R :exports both :results graphics :file ps/slr/carscatter.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/slr/carscatter.ps
 plot(dist ~ speed, data = cars)
 #+END_SRC
 
@@ -8222,7 +8198,7 @@ The parameter estimates \( b_{0} \) and \( b_{1} \) for the intercept and slope,
 It is good practice to visually inspect the data with the regression line added to the plot. To do this we first scatterplot the original data and then follow with a call to the =abline= function. The inputs to =abline= are the coefficients of =cars.lm=; see Figure [[fig-Scatter-cars-regline][Scatter-cars-regline]].
 
 #+NAME: carline
-#+BEGIN_SRC R :exports both :results graphics :file ps/slr/carline.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/slr/carline.ps
 ggplot(cars, aes(x = speed, y = dist)) + geom_point(shape = 19) + geom_smooth(method = lm, se = FALSE)
 #+END_SRC
 
@@ -8494,15 +8470,7 @@ Using the =cars= data,
 
 We earlier guessed that a bound on the value of a single new observation would be inherently less certain than a bound for an average (mean) value; therefore, we expect the CIs for the mean to be tighter than the PIs for a new observation. A close look at the standard deviations in Equations [[eq-SLR-conf-int-formula]] and [[eq-SLR-pred-int-formula]] confirms our guess, but we would like to see a picture to drive the point home.
 
-We may plot the confidence and prediction intervals with one fell swoop using the =ci.plot= function from the =HH= package \cite{HH}. The graph is displayed in Figure [[fig-Scatter-cars-CIPI][Scatter-cars-CIPI]].
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/carscipi.ps}
-  \caption[Scatterplot with confidence/prediction bands for the \texttt{cars} data]{\small A scatterplot with confidence/prediction bands for the \texttt{cars} data.}
-  \label{fig-Scatter-cars-CIPI}
-\end{figure}
-#+end_latex
+We may plot the confidence and prediction intervals with one fell swoop using the =ci.plot= function from the =HH= package \cite{HH}. The graph is displayed in Figure [[fig-carscipi][Scatter-cars-CIPI]].
 
 #+BEGIN_SRC R :exports code :eval never
 library(HH)
@@ -8512,17 +8480,15 @@ ci.plot(cars.lm)
 Notice that the bands curve outward from the regression line as the \(x\) values move away from the center. This is expected once we notice the \((x_{0}-\overline{x})^{2}\) term in the standard deviation formulas in Equations [[eq-SLR-conf-int-formula]] and [[eq-SLR-pred-int-formula]].
 
 #+NAME: carscipi
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/slr/carscipi.ps
 print(ci.plot(cars.lm))
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/carscipi.ps
-  <<carscipi>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/carscipi.svg
-  <<carscipi>>
-#+END_SRC
+#+NAME: fig-carscipi
+#+CAPTION[Scatterplot with confidence/prediction bands for the =cars= data]: \small A scatterplot with confidence/prediction bands for the =cars= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: carscipi
+[[file:ps/slr/carscipi.ps]]
 
 ** Model Utility and Inference
 :PROPERTIES:
@@ -8676,30 +8642,18 @@ In every case, we will begin by looking at residual plots -- that is, scatterplo
 :CUSTOM_ID: sub-Normality-Assumption
 :END:
 
-We can assess the normality of the residuals with graphical methods and hypothesis tests. To check graphically whether the residuals are normally distributed we may look at histograms or /q-q/ plots. We first examine a histogram in Figure [[fig-Normal-q-q-plot-cars][Normal-q-q-plot-cars]]. There we see that the distribution of the residuals appears to be mound shaped, for the most part. We can plot the order statistics of the sample versus quantiles from a \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) distribution with the command =plot(cars.lm, which = 2)=, and the results are in Figure [[fig-Normal-q-q-plot-cars][Normal-q-q-plot-cars]]. If the assumption of normality were true, then we would expect points randomly scattered about the dotted straight line displayed in the figure. In this case, we see a slight departure from normality in that the dots show systematic clustering on one side or the other of the line. The points on the upper end of the plot also appear begin to stray from the line. We would say there is some evidence that the residuals are not perfectly normal. 
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/Normal-q-q-plot-cars.ps}
-  \caption[Normal q-q plot of the residuals for the \texttt{cars} data]{\small Used for checking the normality assumption. Look out for
-any curvature or substantial departures from the straight line; hopefully
-the dots hug the line closely.}
-  \label{fig-Normal-q-q-plot-cars}
-\end{figure}
-#+end_latex
+We can assess the normality of the residuals with graphical methods and hypothesis tests. To check graphically whether the residuals are normally distributed we may look at histograms or /q-q/ plots. We first examine a histogram in Figure [[fig-Normal-q-q-plot-cars][Normal-q-q-plot-cars]]. There we see that the distribution of the residuals appears to be mound shaped, for the most part. We can plot the order statistics of the sample versus quantiles from a \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) distribution with the command =plot(cars.lm, which = 2)=, and the results are in Figure [[fig-Normal-q-q-plot-cars][Normal-q-q-plot-cars]]. If the assumption of normality were true, then we would expect points randomly scattered about the dotted straight line displayed in the figure. In this case, we see a slight departure from normality in that the dots show systematic clustering on one side or the other of the line. The points on the upper end of the plot also appear begin to stray from the line. We would say there is some evidence that the residuals are not perfectly normal.
 
 #+NAME: Normal-q-q-plot-cars
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/slr/Normal-q-q-plot-cars.ps
 plot(cars.lm, which = 2)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/Normal-q-q-plot-cars.ps
-  <<Normal-q-q-plot-cars>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/Normal-q-q-plot-cars.svg
-  <<Normal-q-q-plot-cars>>
-#+END_SRC
+#+NAME: fig-Normal-q-q-plot-cars
+#+CAPTION[Normal q-q plot of the residuals for the =cars= data]: \small Used for checking the normality assumption. Look out for any curvature or substantial departures from the straight line; hopefully the dots hug the line closely.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: Normal-q-q-plot-cars
+[[file:ps/slr/Normal-q-q-plot-cars.ps]]
 
 **** Testing the Normality Assumption
 
@@ -8743,26 +8697,16 @@ For the constant variance assumption we do not need the sign of the residual so 
 
 In this case, we plot the standardized residuals versus the fitted values. The graph may be seen in Figure [[fig-std-resids-fitted-cars][std-resids-fitted-cars]]. For these data there does appear to be somewhat of a slight fanning-out of the residuals.
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/std-resids-fitted-cars.ps}
-  \caption[Plot of standardized residuals against the fitted values for the \texttt{cars} data]{\small Used for checking the constant variance assumption. Watch out for any fanning out (or in) of the dots; hopefully they fall in a constant band.}
-  \label{fig-std-resids-fitted-cars}
-\end{figure}
-#+end_latex
-
 #+NAME: std-resids-fitted-cars
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/slr/std-resids-fitted-cars.ps
 plot(cars.lm, which = 3)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/std-resids-fitted-cars.ps
-  <<std-resids-fitted-cars>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/std-resids-fitted-cars.svg
-  <<std-resids-fitted-cars>>
-#+END_SRC
+#+NAME: fig-std-resids-fitted-cars
+#+CAPTION[Plot of standardized residuals against the fitted values for the =cars= data]: \small Used for checking the constant variance assumption. Watch out for any fanning out (or in) of the dots; hopefully they fall in a constant band.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: std-resids-fitted-cars
+[[file:ps/slr/std-resids-fitted-cars.ps]]
 
 **** Testing the Constant Variance Assumption
 
@@ -8794,27 +8738,16 @@ Positive correlation is displayed by positive residuals followed by positive res
 
 On the other hand, negative correlation implies positive residuals followed by negative residuals, which are then followed by positive residuals, /etc/. Consequently, negatively correlated residuals are often associated with an alternating pattern in the residual plots. We examine the residual plot in Figure [[fig-resids-fitted-cars][resids-fitted-cars]]. There is no obvious cyclical wave pattern or structure to the residual plot. 
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/resids-fitted-cars.ps}
-  \caption[Plot of the residuals versus the fitted values for the \texttt{cars}
-data]{\small Used for checking the independence assumption. Watch out for any patterns or structure; hopefully the points are randomly scattered on the plot.}
-  \label{fig-resids-fitted-cars}
-\end{figure}
-#+end_latex
-
 #+NAME: resids-fitted-cars
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/slr/resids-fitted-cars.ps
 plot(cars.lm, which = 1)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/resids-fitted-cars.ps
-  <<resids-fitted-cars>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/resids-fitted-cars.svg
-  <<resids-fitted-cars>>
-#+END_SRC
+#+NAME: fig-resids-fitted-cars
+#+CAPTION[Plot of the residuals versus the fitted values for the =cars= data]: \small Used for checking the independence assumption. Watch out for any patterns or structure; hopefully the points are randomly scattered on the plot.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: resids-fitted-cars
+[[file:ps/slr/resids-fitted-cars.ps]]
 
 **** Testing the Independence Assumption
 
@@ -9012,26 +8945,16 @@ cooksD[1:4]
 
 We can look at a plot of the Cook's distances with the command =plot(cars.lm, which = 4)=.
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/Cooks-distance-cars.ps}
-  \caption[Cook's distances for the \texttt{cars} data]{\small Used for checking for influential and/our outlying observations. Values with large Cook's distance merit further investigation.}
-  \label{fig-Cooks-distance-cars}
-\end{figure}
-#+end_latex
-
 #+NAME: Cooks-distance-cars
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/slr/Cooks-distance-cars.ps
 plot(cars.lm, which = 4)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/Cooks-distance-cars.ps
-  <<Cooks-distance-cars>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/Cooks-distance-cars.svg
-  <<Cooks-distance-cars>>
-#+END_SRC
+#+NAME: fig-Cooks-distance-cars
+#+CAPTION[Cook's distances for the =cars= data]: \small Used for checking for influential and/our outlying observations. Values with large Cook's distance merit further investigation.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: Cooks-distance-cars
+[[file:ps/slr/Cooks-distance-cars.ps]]
 
 Observations with the largest Cook's D values are labeled, hence we see that observations 23, 39, and 49 are suspicious. However, we need to compare to the quantiles of an \( \mathsf{f}(\mathtt{df1} = 2, \, \mathtt{df2} = 48) \) distribution:
 
@@ -9055,35 +8978,23 @@ The output is a huge matrix display, which we have omitted in the interest of br
 We can also look at all diagnostic plots at once with the commands
 
 #+BEGIN_SRC R :exports code :eval never
-par(mfrow = c(2,2))
 plot(cars.lm)
-par(mfrow = c(1,1))
 #+END_SRC
 
 The =par= command is used so that \(2\times 2 = 4\) plots will be shown on the same display. The diagnostic plots for the =cars= data are shown in Figure [[fig-Diagnostic-plots-cars][Diagnostic-plots-cars]]:
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/Diagnostic-plots-cars.ps}
-  \caption[Diagnostic plots for the \texttt{cars} data]{\small Diagnostic plots for the \texttt{cars} data.}
-  \label{fig-Diagnostic-plots-cars}
-\end{figure}
-#+end_latex
-
 #+NAME: Diagnostic-plots-cars
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/slr/Diagnostic-plots-cars.ps
 par(mfrow = c(2,2))
 plot(cars.lm)
 par(mfrow = c(1,1))
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/Diagnostic-plots-cars.ps
-  <<Diagnostic-plots-cars>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/Diagnostic-plots-cars.svg
-  <<Diagnostic-plots-cars>>
-#+END_SRC
+#+NAME: fig-Diagnostic-plots-cars
+#+CAPTION[Diagnostic plots for the =cars= data]: \small Diagnostic plots for the =cars= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: Diagnostic-plots-cars
+[[file:ps/slr/Diagnostic-plots-cars.ps]]
 
 We have discussed all of the plots except the last, which is possibly the most interesting. It shows Residuals vs. Leverage, which will identify outlying \(y\) values versus outlying \(x\) values. Here we see that observation 23 has a high residual, but low leverage, and it turns out that observations 1 and 2 have relatively high leverage but low/moderate leverage (they are on the right side of the plot, just above the horizontal line). Observation 49 has a large residual with a comparatively large leverage. 
 
@@ -9212,25 +9123,15 @@ head(trees)
 Let us take a look at a visual display of the data. For multiple variables, instead of a simple scatterplot we use a scatterplot matrix which is made with the =splom= function in the =lattice= package \cite{lattice} as shown below. The plot is shown in Figure [[fig-splom-trees][splom-trees]].
 
 #+NAME: splom-trees
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/mlr/splom-trees.ps
 splom(trees)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/mlr/splom-trees.ps
-  <<splom-trees>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/mlr/splom-trees.svg
-  <<splom-trees>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/mlr/splom-trees.ps}
-  \caption[Scatterplot matrix of \texttt{trees} data]{\small A scatterplot matrix of \texttt{trees} data.}
-  \label{fig-splom-trees}
-\end{figure}
-#+end_latex
+#+NAME: fig-splom-trees
+#+CAPTION[Scatterplot matrix of =trees= data]: \small A scatterplot matrix of the =trees= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: splom-trees
+[[file:ps/mlr/splom-trees.ps]]
 
 The dependent (response) variable =Volume= is listed in the first row of the scatterplot matrix. Moving from left to right, we see an approximately linear relationship between =Volume= and the independent (explanatory) variables =Height= and =Girth=. A first guess at a model for these data might be
 \begin{equation}
@@ -9252,26 +9153,16 @@ One way to do this is with the \(\mathsf{R}\) Commander in the =Rcmdr= package \
 Another way to do it is with the =scatterplot3d= function in the =scatterplot3d= package \cite{scatterplot3d}. The code follows, and the result is shown in Figure [[fig-3D-scatterplot-trees][3D-scatterplot-trees]].
 
 #+NAME: 3D-scatterplot-trees
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/mlr/3D-scatterplot-trees.ps
 s3d <- with(trees, scatterplot3d(Girth, Height, Volume, pch = 16, highlight.3d = TRUE, angle = 60))
 fit <- lm(Volume ~ Girth + Height, data = trees)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/mlr/3D-scatterplot-trees.ps
-  <<3D-scatterplot-trees>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/mlr/3D-scatterplot-trees.svg
-  <<3D-scatterplot-trees>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/mlr/3D-scatterplot-trees.ps}
-  \caption[3D scatterplot with regression plane for the \texttt{trees} data]{\small A 3D scatterplot with regression plane for the \texttt{trees} data.}
-  \label{fig-3D-scatterplot-trees}
-\end{figure}
-#+end_latex
+#+NAME: fig-3D-scatterplot-trees
+#+CAPTION[3D scatterplot with regression plane for the =trees= data]: \small A 3D scatterplot with regression plane for the =trees= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: 3D-scatterplot-trees
+[[file:ps/mlr/3D-scatterplot-trees.ps]]
 
 Looking at the graph we see that the data points fall close to a plane in three dimensional space. (The plot looks remarkably good. In the author's experience it is rare to see points fit so well to the plane without some additional work.)
 
@@ -9719,25 +9610,15 @@ We see from the /p-values/ that there is a significant linear relationship betwe
 In each of the previous sections we assumed that \(\mu\) was a linear function of the explanatory variables. For example, in SLR we assumed that \(\mu(x)=\beta_{0}+\beta_{1}x\), and in our previous MLR examples we assumed \(\mu(x_{1},x_{2})=\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{2}\). In every case the scatterplots indicated that our assumption was reasonable. Sometimes, however, plots of the data suggest that the linear model is incomplete and should be modified.
 
 #+NAME: Scatterplot-Volume-Girth-trees
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/mlr/Scatterplot-Volume-Girth-trees.ps
 qplot(Girth, Volume, data = trees)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/mlr/Scatterplot-Volume-Girth-trees.ps
-  <<Scatterplot-Volume-Girth-trees>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/mlr/Scatterplot-Volume-Girth-trees.svg
-  <<Scatterplot-Volume-Girth-trees>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/mlr/Scatterplot-Volume-Girth-trees.ps}
-  \caption[Scatterplot of \texttt{Volume} versus \texttt{Girth} for the \texttt{trees} data]{\small A scatterplot of \texttt{Volume} versus \texttt{Girth} for the \texttt{trees} data.}
-  \label{fig-Scatterplot-Volume-Girth-trees}
-\end{figure}
-#+end_latex
+#+NAME: fig-Scatterplot-Volume-Girth-trees
+#+CAPTION[Scatterplot of =Volume= versus =Girth= for the =trees= data]: \small Scatterplot of =Volume= versus =Girth= for the =trees= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: Scatterplot-Volume-Girth-trees
+[[file:ps/mlr/Scatterplot-Volume-Girth-trees.ps]]
 
 For example, let us examine a scatterplot of =Volume= versus =Girth= a little more closely. See Figure [[fig-Scatterplot-Volume-Girth-trees][Scatterplot-Volume-Girth-trees]]. There might be a slight curvature to the data; the volume curves ever so slightly upward as the girth increases. After looking at the plot we might try to capture the curvature with a mean response such as 
 \begin{equation}
@@ -9775,26 +9656,16 @@ summary(treesquad.lm)
 We see that the \(F\) statistic indicates the overall model including =Girth= and =Girth^2= is significant. Further, there is strong evidence that both =Girth= and =Girth^2= are significantly related to =Volume=. We may examine a scatterplot together with the fitted quadratic function using the =lines= function, which adds a line to the plot tracing the estimated mean response.
 
 #+NAME: Fitting-the-Quadratic
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/mlr/Fitting-the-Quadratic.ps
 a <- ggplot(trees, aes(scale(Girth), Volume))
 a + stat_smooth(method = lm, formula = y ~ poly(x, 2)) + geom_point()
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/mlr/Fitting-the-Quadratic.ps
-  <<Fitting-the-Quadratic>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/mlr/Fitting-the-Quadratic.svg
-  <<Fitting-the-Quadratic>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/mlr/Fitting-the-Quadratic.ps}
-  \caption[Quadratic model for the \texttt{trees} data]{\small A quadratic model for the \texttt{trees} data.}
-  \label{fig-Fitting-the-Quadratic}
-\end{figure}
-#+end_latex
+#+NAME: fig-Fitting-the-Quadratic
+#+CAPTION[Quadratic model for the =trees= data]: \small A quadratic model for the =trees= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: Fitting-the-Quadratic
+[[file:ps/mlr/Fitting-the-Quadratic.ps]]
 
 The plot is shown in Figure [[fig-Fitting-the-Quadratic][Fitting-the-Quadratic]]. Pay attention to the scale on the \(x\)-axis: it is on the scale of the transformed =Girth= data and not on the original scale.
 
@@ -9991,7 +9862,7 @@ The level =bar1= is represented by \(\mathtt{foobar2}=\cdots=\mathtt{foobarn}=0\
 We can see a plot of the two regression lines with the following mouthful of code.
 
 #+NAME: dummy-variable-trees
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/mlr/dummy-variable-trees.ps
 treesTall <- split(trees, trees$Tall)
 treesTall[["yes"]]$Fit <- predict(treesdummy.lm, treesTall[["yes"]])
 treesTall[["no"]]$Fit <- predict(treesdummy.lm, treesTall[["no"]])
@@ -10002,21 +9873,11 @@ lines(Fit ~ Girth, data = treesTall[["yes"]])
 lines(Fit ~ Girth, data = treesTall[["no"]])
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/mlr/dummy-variable-trees.ps
-  <<dummy-variable-trees>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/mlr/dummy-variable-trees.svg
-  <<dummy-variable-trees>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/mlr/dummy-variable-trees.ps}
-  \caption[A dummy variable model for the \texttt{trees} data]{\small A dummy variable model for the \texttt{trees} data.}
-  \label{fig-dummy-variable-trees}
-\end{figure}
-#+end_latex
+#+NAME: fig-dummy-variable-trees
+#+CAPTION[A dummy variable model for the =trees= data]: \small A dummy variable model for the =trees= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: dummy-variable-trees
+[[file:ps/mlr/dummy-variable-trees.ps]]
 
 It may look intimidating but there is reason to the madness. First we =split= the =trees= data into two pieces, with groups determined by the =Tall= variable. Next we add the fitted values to each piece via =predict=. Then we set up a =plot= for the variables =Volume= versus =Girth=, but we do not plot anything yet (=type = n=) because we want to use different symbols for the two groups. Next we add =points= to the plot for the =Tall = yes= trees and use an open circle for a plot character (=pch = 1=), followed by =points= for the =Tall = no= trees with a triangle character (=pch = 2=). Finally, we add regression =lines= to the plot, one for each group.
 
@@ -10316,26 +10177,16 @@ xbarstar <- sapply(resamps, mean, simplify = TRUE)
 A histogram of the 1000 values of \(\overline{x}\) is shown in Figure [[fig-Bootstrap-se-mean][Bootstrap-se-mean]], and was produced by the following code.
 
 #+NAME: Bootstrap-se-mean
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports code :results graphics :file ps/resamp/Bootstrap-se-mean.ps
 hist(xbarstar, breaks = 40, prob = TRUE)
 curve(dnorm(x, 3, 0.2), add = TRUE) # overlay true normal density
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/resamp/Bootstrap-se-mean.ps
-  <<Bootstrap-se-mean>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/resamp/Bootstrap-se-mean.svg
-  <<Bootstrap-se-mean>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/resamp/Bootstrap-se-mean.ps}
-  \caption[Bootstrapping the standard error of the mean, simulated data]{\small The original data were 25 observations generated from a \(\mathsf{norm}(\mathtt{mean}=3,\,\mathtt{sd}=1)\) distribution. We next resampled to get 1000 resamples, each of size 25, and calculated the sample mean for each resample. A histogram of the 1000 values of \(\overline{x}\) is shown above. Also shown (with a solid line) is the true sampling distribution of \(\overline{X}\), which is a \(\mathsf{norm}(\mathtt{mean}=3,\,\mathtt{sd}=0.2)\) distribution. Note that the histogram is centered at the sample mean of the original data, while the true sampling distribution is centered at the true value of \(\mu=3\). The shape and spread of the histogram is similar to the shape and spread of the true sampling distribution.}
-  \label{fig-Bootstrap-se-mean}
-\end{figure}
-#+end_latex
+#+NAME: fig-Bootstrap-se-mean
+#+CAPTION[Bootstrapping the standard error of the mean, simulated data]: \small The original data were 25 observations generated from a \(\mathsf{norm}(\mathtt{mean}=3,\,\mathtt{sd}=1)\) distribution. We next resampled to get 1000 resamples, each of size 25, and calculated the sample mean for each resample. A histogram of the 1000 values of \(\overline{x}\) is shown above. Also shown (with a solid line) is the true sampling distribution of \(\overline{X}\), which is a \(\mathsf{norm}(\mathtt{mean}=3,\,\mathtt{sd}=0.2)\) distribution. Note that the histogram is centered at the sample mean of the original data, while the true sampling distribution is centered at the true value of \(\mu=3\). The shape and spread of the histogram is similar to the shape and spread of the true sampling distribution.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: Bootstrap-se-mean
+[[file:ps/resamp/Bootstrap-se-mean.ps]]
 
 We have overlain what we know to be the true sampling distribution of \(\overline{X}\), namely, a \(\mathsf{norm}(\mathtt{mean}=3,\,\mathtt{sd}=1/\sqrt{25})\) distribution. The histogram matches the true sampling distribution pretty well with respect to shape and spread... but notice how the histogram is off-center a little bit. This is not a coincidence -- in fact, it can be shown that the mean of the bootstrap distribution is exactly the mean of the original sample, that is, the value of the statistic that we originally observed. Let us calculate the mean of the bootstrap distribution and compare it to the mean of the original sample:
 
@@ -10377,7 +10228,7 @@ sd(medstar)
 #+END_SRC
 
 #+NAME: Bootstrapping-se-median
-#+BEGIN_SRC R :exports both :results graphics :file ps/resamp/Bootstrapping-se-median.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/resamp/Bootstrapping-se-median.ps
 hist(medstar, breaks = 40, prob = TRUE)
 #+END_SRC
 
