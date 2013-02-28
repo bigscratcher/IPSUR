@@ -515,7 +515,7 @@ stripchart(discoveries, method="stack", xlab="number")
 The leftmost graph is a strip chart of the =precip= data. The graph shows tightly clustered values in the middle with some others falling balanced on either side, with perhaps slightly more falling to the left. Later we will call this a symmetric distribution, see Section [[sub-Shape][Shape]]. The middle graph is of the =rivers= data, a vector of length 141. There are several repeated values in the rivers data, and if we were to use the overplot method we would lose some of them in the display. This plot shows a what we will later call a right-skewed shape with perhaps some extreme values on the far right of the display. The third graph strip charts =discoveries= data which are literally a textbook example of a right skewed distribution.
 
 #+NAME: stripcharts
-#+BEGIN_SRC R :exports none :results graphics :noweb yes :file ps/datadesc/stripcharts.ps
+#+BEGIN_SRC R :exports none :results graphics :file ps/datadesc/stripcharts.ps
 par(mfrow = c(3,1)) # 3 plots: 3 rows, 1 column
 stripchart(precip, xlab="rainfall")
 stripchart(rivers, method="jitter", xlab="length")
@@ -789,7 +789,7 @@ These are a lot like a bar graph that has been turned on its side with the bars 
 # +BEGIN_exampletoo
 
 #+NAME: dot-charts
-#+BEGIN_SRC R :exports code :results graphics :noweb yes :file ps/datadesc/dot-charts.ps
+#+BEGIN_SRC R :exports code :results graphics :file ps/datadesc/dot-charts.ps
 x <- table(state.region)
 dotchart(as.vector(x), labels = names(x))
 #+END_SRC
@@ -1514,25 +1514,16 @@ histogram(~age | education, data = infert)
 #+END_SRC
 
 #+NAME: histograms-lattice
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/datadesc/histograms-lattice.ps
 print(histogram(~age | education, data = infert))
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/datadesc/histograms-lattice.ps
-  <<histograms-lattice>>
-#+END_SRC
+#+NAME: fig-histograms-lattice
+#+CAPTION[Histograms of =age= by =education= level]: \small Histograms of =age= by =education= level from the =infert= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: histograms-lattice
+[[file:ps/datadesc/histograms-lattice.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/datadesc/histograms-lattice.svg
-  <<histograms-lattice>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/datadesc/histograms-lattice.ps}
-  \caption[Histograms of \texttt{age} by \texttt{education} level]{Histograms of \texttt{age} by \texttt{education} level from the \texttt{infert} data}
-  \label{fig-histograms-lattice}
-\end{figure}
-#+end_latex
 
 **** Scatterplots
 
@@ -1541,25 +1532,15 @@ xyplot(Petal.Length ~ Petal.Width | Species, data = iris)
 #+END_SRC
 
 #+NAME: xyplot
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/datadesc/xyplot.ps
 print(xyplot(Petal.Length ~ Petal.Width | Species, data = iris))
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/datadesc/xyplot.ps
-  <<xyplot>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/datadesc/xyplot.svg
-  <<xyplot>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/datadesc/xyplot.ps}
-  \caption[An \texttt{xyplot} of \texttt{Petal.Length} versus \texttt{Petal.Width} by \texttt{Species}]{An \texttt{xyplot} of \texttt{Petal.Length} versus \texttt{Petal.Width} by \texttt{Species} in the \texttt{iris} data}
-  \label{fig-xyplot}
-\end{figure}
-#+end_latex
+#+NAME: fig-xyplot
+#+CAPTION[An =xyplot= of =Petal.Length= versus =Petal.Width= by =Species=]: \small An =xyplot= of =Petal.Length= versus =Petal.Width= by =Species= in the =iris= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: xyplot
+[[file:ps/datadesc/xyplot.ps]]
 
 **** Coplots
 
@@ -1568,31 +1549,22 @@ coplot(conc ~ uptake | Type * Treatment, data = CO2)
 #+END_SRC
 
 #+NAME: coplot
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/datadesc/coplot.ps
 print(coplot(conc ~ uptake | Type * Treatment, data = CO2))
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/datadesc/coplot.ps
-  <<coplot>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/datadesc/coplot.svg
-  <<coplot>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/datadesc/coplot.ps}
-  \caption[A \texttt{coplot} of \texttt{conc} versus \texttt{uptake} by \texttt{Type} and \texttt{Treatment}]{A \texttt{coplot} of \texttt{conc} versus \texttt{uptake} by \texttt{Type} and \texttt{Treatment} in the \texttt{CO2} data}
-  \label{fig-coplot}
-\end{figure}
-#+end_latex
+#+NAME: fig-coplot
+#+CAPTION: \small A =coplot= of =conc= versus =uptake= by =Type= and =Treatment=.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: coplot
+[[file:ps/datadesc/coplot.ps]]
 
 #+LaTeX: \newpage{}
 
 ** Some Remarks about Plotting
 
 Getting your labels to look right
+
 #+BEGIN_SRC R :eval never
 library(ggplot2)
 a <- qplot(state.division, geom = "bar")
@@ -1707,7 +1679,7 @@ In this book we distinguish between two types of experiments: /deterministic/ an
 - what we mean by 'random variables', and where they come from
 
 #+NAME: diagram
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/prob/diagram.ps
 require(diagram)
 par(mex = 0.2, cex = 0.5)
 openplotmat(frame.plot=TRUE)
@@ -1725,21 +1697,11 @@ textellipse(mid = c(0.29,0.25), box.col = grey(0.95),
   cex = 2 )
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/prob/diagram.ps
-  <<diagram>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/prob/diagram.svg
-  <<diagram>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/prob/diagram.ps}
-  \caption[Two types of experiments]{Two types of experiments}
-  \label{fig-diagram}
-\end{figure}
-#+end_latex
+#+NAME: fig-diagram
+#+CAPTION[Two types of experiments]: \small Two types of experiments
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: diagram
+[[file:ps/prob/diagram.ps]]
 
 ** Sample Spaces
 :PROPERTIES:
@@ -2546,34 +2508,19 @@ When I have asked this question to students, the usual response is ``somewhere a
 Students are usually surprised to hear that, using the formula above, one needs only \(n=23\) students to have a greater than 50% chance of at least one match. Figure [[fig-birthday][birthday]] shows a graph of the birthday probabilities:
 # +END_exampletoo
 
-
 #+NAME: birthday
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/prob/birthday.ps
 g <- Vectorize(pbirthday.ipsur)
-x <- 1:50; y <- g(1:50)
-qplot(x, y) + geom_hline(yintercept=0.5) +
-  geom_vline(xintercept = 23, linetype = 2) +
-  xlab("number of people in room") +
-  ylab("Prob(at least one match)")
-# plot(1:50, g(1:50), xlab = "Number of people in room", ylab = "Prob(at least one match)" )
+plot(1:50, g(1:50), xlab = "Number of people in room", ylab = "Prob(at least one match)")
 remove(g)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/prob/birthday.ps
-  <<birthday>>
-#+END_SRC
+#+NAME: fig-birthday
+#+CAPTION[The birthday problem]: \small The birthday problem. The horizontal line is at \(p=0.50\) and the vertical line is at \(n=23\).
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: birthday
+[[file:ps/prob/birthday.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/prob/birthday.svg
-  <<birthday>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/prob/birthday.ps}
-  \caption[The birthday problem]{\small The birthday problem. The horizontal line is at \(p=0.50\) and the vertical line is at \(n=23\).}
-  \label{fig-birthday}
-\end{figure}
-#+end_latex
 
 **** How to do it with \(\mathsf{R}\)
 
@@ -2629,9 +2576,8 @@ which means that given the information that a Head has occurred, we no longer ne
 # <<exa-Toss-a-six-sided-die-twice>>
 Toss a six-sided die twice. The sample space consists of all ordered pairs \((i,j)\) of the numbers \(1,2,\ldots,6\), that is, \( S = \{ (1,1),\ (1,2),\ldots,(6,6) \} \). We know from Section [[sec-Methods-of-Counting][Counting Methods]] that \( \# (S) = 6^{2} = 36 \). Let \( A = \{ \mbox{outcomes match} \} \) and \( B = \{ \mbox{sum of outcomes at least 8} \} \). The sample space may be represented by a matrix:
 
-
 #+NAME: twodiceAB
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/prob/twodiceAB.ps
 A <- rolldie(2)
 B <- subset(A, X1==X2)
 C <- subset(A, X1+X2 > 7)
@@ -2641,21 +2587,11 @@ p <- ggplot(rbind(B, C), aes(x=X1, y=X2, label=lab))
 p + geom_text(size = 15) + xlab("First roll") + ylab("Second roll")
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/prob/twodiceAB.ps
-  <<twodiceAB>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/prob/twodiceAB.svg
-  <<twodiceAB>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/prob/twodiceAB.ps}
-  \caption[Rolling two dice]{\small Rolling two dice. The outcomes in A are marked with X, the outcomes in B are marked with O.}
-  \label{fig-twodiceAB}
-\end{figure}
-#+end_latex
+#+NAME: fig-twodiceAB
+#+CAPTION[Rolling two dice]: \small Rolling two dice. The outcomes in A are marked with X, the outcomes in B are marked with O.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: twodiceAB
+[[file:ps/prob/twodiceAB.ps]]
 
 The outcomes lying in the event \(A\) are marked with the symbol ``X'', the outcomes falling in \(B\) are marked with ``O'', and the outcomes in \(A\cap B\) are those where the letters overlap. Now it is clear that \(\mathbb{P}(A)=6/36\), \(\mathbb{P}(B)=15/36\), and \(\mathbb{P}(A\cap B)=3/36\).  Finally, 
 \[
@@ -3603,9 +3539,8 @@ F_{X}(x)=\mathbb{P}(X\leq x)=
 In particular, the CDF of \(X\) is defined for the entire real line, \(\mathbb{R}\). The CDF is right continuous and nondecreasing. A graph of the \(\mathsf{binom}(\mathtt{size}=3,\,\mathtt{prob}=1/2)\) CDF is shown in Figure [[fig-binom-cdf-base][binom-cdf-base]].
 # +END_exampletoo
 
-
 #+NAME: binom-cdf-base
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/discdist/binom-cdf-base.ps
 plot(0, xlim = c(-1.2, 4.2), ylim = c(-0.04, 1.04), type = "n", xlab = "number of successes", ylab = "cumulative probability")
 abline(h = c(0,1), lty = 2, col = "grey")
 lines(stepfun(0:3, pbinom(-1:3, size = 3, prob = 0.5)), verticals = FALSE, do.p = FALSE)
@@ -3613,21 +3548,11 @@ points(0:3, pbinom(0:3, size = 3, prob = 0.5), pch = 16, cex = 1.2)
 points(0:3, pbinom(-1:2, size = 3, prob = 0.5), pch = 1, cex = 1.2)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/discdist/binom-cdf-base.ps
-  <<binom-cdf-base>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/discdist/binom-cdf-base.svg
-  <<binom-cdf-base>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/discdist/binom-cdf-base.ps}
-  \caption[Graph of the \(\mathsf{binom}(\mathtt{size}=3,\,\mathtt{prob}=1/2)\) CDF]{\small A graph of the \(\mathsf{binom}(\mathtt{size}=3,\,\mathtt{prob}=1/2)\) CDF.}
-  \label{fig-binom-cdf-base}
-\end{figure}
-#+end_latex
+#+NAME: fig-binom-cdf-base
+#+CAPTION[Graph of the \(\mathsf{binom}(\mathtt{size}=3,\,\mathtt{prob}=1/2)\) CDF]: \small A graph of the \(\mathsf{binom}(\mathtt{size}=3,\,\mathtt{prob}=1/2)\) CDF. 
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: binom-cdf-base
+[[file:ps/discdist/binom-cdf-base.ps]]
 
 # +BEGIN_exampletoo
 
@@ -3651,27 +3576,18 @@ p(X)(2)   # cdf of X evaluated at x = 2
 Random variables defined via the =distr= package \cite{distr} may be /plotted/, which will return graphs of the PMF, CDF, and quantile function (introduced in Section [[sub-Normal-Quantiles-QF][Normal Quantiles]]). See Figure [[fig-binom-plot-distr][binom-plot-distr]] for an example.
 
 #+NAME: binom-plot-distr
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/discdist/binom-plot-distr.ps
 plot(X, cex = 0.2)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/discdist/binom-plot-distr.ps
-  <<binom-plot-distr>>
-#+END_SRC
+#+NAME: fig-binom-plot-distr
+#+CAPTION[The \textsf{binom}(=size= = 3, =prob= = 0.5) distribution from the =distr= package]: \small The \textsf{binom}(=size= = 3, =prob= = 0.5) distribution from the =distr= package.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: binom-plot-distr
+[[file:ps/discdist/binom-plot-distr.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/discdist/binom-plot-distr.svg
-  <<binom-plot-distr>>
-#+END_SRC
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/discdist/binom-plot-distr.ps}
-  \caption[The \textsf{binom}(\texttt{size} = 3, \texttt{prob} = 0.5) distribution from the \texttt{distr} package]{\small The \textsf{binom}(\texttt{size} = 3, \texttt{prob} = 0.5) distribution from the \texttt{distr} package.}
-  \label{fig-binom-plot-distr}
-\end{figure}
-#+end_latex
-
-#+CAPTION: [Correspondence between \texttt{stats} and \texttt{distr}.]{Correspondence between =stats= and =distr=. We are given \(X\sim\mathsf{dbinom}(\mathtt{size}=n,\,\mathtt{prob}=p)\).  For the =distr= package we must first set \(\mathtt{X\ <-\ Binom(size=}n\mathtt{,\ prob=}p\mathtt{)}\).}
+#+CAPTION: [Correspondence between =stats= and =distr=.]{Correspondence between =stats= and =distr=. We are given \(X\sim\mathsf{dbinom}(\mathtt{size}=n,\,\mathtt{prob}=p)\).  For the =distr= package we must first set \(\mathtt{X\ <-\ Binom(size=}n\mathtt{,\ prob=}p\mathtt{)}\).}
 | How to do:              | with =stats= (default)               | with =distr=         |
 |-------------------------+--------------------------------------+----------------------|
 | PMF: \(\mathbb{P}(X=x)\)       | \(\mathtt{dbinom(x,size=n,prob=p)}\) | \(\mathtt{d(X)(x)}\) |
@@ -3923,25 +3839,15 @@ ecdf(x)
 The above shows that the returned value of =ecdf(x)= is not a /number/ but rather a /function/. The ECDF is not usually used by itself in this form. More commonly it is used as an intermediate step in a more complicated calculation, for instance, in hypothesis testing (see Chapter [[cha-Hypothesis-Testing][Hypothesis Testing]]) or resampling (see Chapter [[cha-resampling-methods][Resampling Methods]]). It is nevertheless instructive to see what the =ecdf= looks like, and there is a special plot method for =ecdf= objects.
 
 #+NAME: empirical-CDF
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/discdist/empirical-CDF.ps
 plot(ecdf(x))
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/discdist/empirical-CDF.ps
-  <<empirical-CDF>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/discdist/empirical-CDF.svg
-  <<empirical-CDF>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/discdist/empirical-CDF.ps}
-  \caption[The empirical CDF]{\small The empirical CDF.}
-  \label{fig-empirical-CDF}
-\end{figure}
-#+end_latex
+#+NAME: fig-empirical-CDF
+#+CAPTION[The empirical CDF]: \small The empirical CDF. 
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: empirical-CDF
+[[file:ps/discdist/stripcharts.ps]]
 
 See Figure [[fig-empirical-CDF][empirical-CDF]]. The graph is of a right-continuous function with jumps exactly at the locations stored in =x=. There are no repeated values in =x= so all of the jumps are equal to \(1/5=0.2\).
 
@@ -5123,27 +5029,17 @@ is said to have a /chi-square distribution/ with \(p\) /degrees of freedom/. We 
 The code to produce Figure [[fig-chisq-dist-vary-df][chisq-dist-vary-df]] is
 
 #+NAME: chisq-dist-vary-df
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/contdist/chisq-dist-vary-df.ps
 curve(dchisq(x, df = 3), from = 0, to = 20, ylab = "y")
 ind <- c(4, 5, 10, 15)
 for (i in ind) curve(dchisq(x, df = i), 0, 20, add = TRUE)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/contdist/chisq-dist-vary-df.ps
-  <<chisq-dist-vary-df>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/contdist/chisq-dist-vary-df.svg
-  <<chisq-dist-vary-df>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/contdist/chisq-dist-vary-df.ps}
-  \caption[Chi square distribution for various degrees of freedom]{\small The chi square distribution for various degrees of freedom.}
-  \label{fig-chisq-dist-vary-df}
-\end{figure}
-#+end_latex
+#+NAME: fig-chisq-dist-vary-df
+#+CAPTION[Chi square distribution for various degrees of freedom]: \small The chi square distribution for various degrees of freedom.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: chisq-dist-vary-df
+[[file:ps/contdist/chisq-dist-vary-df.ps]]
 
 #+BEGIN_rem
 Here are some useful things to know about the chi-square distribution.
@@ -5266,25 +5162,15 @@ mgamma(1:4, shape = 13, rate = 1)
 For the plot we can use the function in the following form:
 
 #+NAME: gamma-mgf
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/contdist/gamma-mgf.ps
 plot(function(x){mgfgamma(x, shape = 13, rate = 1)}, from=-0.1, to=0.1, ylab = "gamma mgf")
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/contdist/gamma-mgf.ps
-  <<gamma-mgf>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/contdist/gamma-mgf.svg
-  <<gamma-mgf>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/contdist/gamma-mgf.ps}
-  \caption[Plot of the \textsf{gamma}(\texttt{shape} = 13, \texttt{rate} = 1) MGF]{\small A plot of the \textsf{gamma}(\texttt{shape} = 13, \texttt{rate} = 1) MGF.}
-  \label{fig-gamma-mgf}
-\end{figure}
-#+end_latex
+#+NAME: fig-gamma-mgf
+#+CAPTION[Plot of the \textsf{gamma}(=shape= = 13, =rate= = 1) MGF]: \small A plot of the \textsf{gamma}(=shape= = 13, =rate= = 1) MGF.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: gamma-mgf
+[[file:ps/contdist/gamma-mgf.ps]]
 
 # +END_exampletoo
 
@@ -5440,9 +5326,8 @@ We may do a similar thing for \(V\); see the right half of Figure [[fig-max-and-
 f_{V}(v)=\frac{6-|v-7|}{36},\quad v=2,\,3,\ldots,12.
 \end{equation}
 
-
 #+NAME: max-and-sum-two-dice
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/multdist/max-and-sum-two-dice.ps
 A <- rolldie(2, makespace = TRUE)
 A <- addrv(A, max, name = "U")
 A <- addrv(A, sum, name = "V", invars = c("X1", "X2"))
@@ -5459,48 +5344,27 @@ print(p1, vp = vplayout(1, 1))
 print(p2, vp = vplayout(1, 2))
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/multdist/max-and-sum-two-dice.ps
-  <<max-and-sum-two-dice>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/multdist/max-and-sum-two-dice.svg
-  <<max-and-sum-two-dice>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/multdist/max-and-sum-two-dice.ps}
-  \caption[Max and Sum of two dice]{\small Rolling two dice. The value of U is the maximum of the two rolls, while the value of V is the sum of the two rolls.}
-  \label{fig-max-and-sum-two-dice}
-\end{figure}
-#+end_latex
+#+NAME: fig-max-and-sum-two-dice
+#+CAPTION[Max and Sum of two dice]: \small Rolling two dice. The value of U is the maximum of the two rolls, while the value of V is the sum of the two rolls.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: max-and-sum-two-dice
+[[file:ps/multdist/max-and-sum-two-dice.ps]]
 
 We may collapse the two matrices from Figure [[fig-max-and-sum-two-dice][max-and-sum-two-dice]] into one, big matrix of pairs of values \((u,v)\). The result is shown in Table [[fig-max-sum-two-dice-joint][max-sum-two-dice-joint]]. 
 
-
 #+NAME: max-sum-two-dice-joint
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/multdist/max-sum-two-dice-joint.ps
 labs <- with(A, paste("(", U, ",", V, ")", sep = ""))
 p3 <- ggplot(A, aes(x = X1, y = X2, label = labs))
 p3 + geom_text(size = 6) + xlab("First roll") + ylab("Second roll") + 
   opts(title = "Joint distribution of (U,V) pairs")
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/multdist/max-sum-two-dice-joint.ps
-  <<max-sum-two-dice-joint>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/multdist/max-sum-two-dice-joint.svg
-  <<max-sum-two-dice-joint>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/multdist/max-sum-two-dice-joint.ps}
-  \caption[Joint outcomes of Max and Sum]{\small Rolling two dice. Joint values of U and V are shown as pairs, for each outcome in the sample space.}
-  \label{fig-max-sum-two-dice-joint}
-\end{figure}
-#+end_latex
+#+NAME: fig-max-sum-two-dice-joint
+#+CAPTION[Joint outcomes of Max and Sum]: \small Rolling two dice. Joint values of U and V are shown as pairs, for each outcome in the sample space.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: max-sum-two-dice-joint
+[[file:ps/multdist/max-sum-two-dice-joint.ps]]
 
 Again, each of these pairs has probability \(1/36\) associated with it and we are looking at the joint PDF of \((U,V)\) albeit in an unusual form. Many of the pairs are repeated, but some of them are not: \((1,2)\) appears only once, but \((2,3)\) appears twice. We can make more sense out of this by writing a new table with \(U\) on one side and \(V\) along the top. We will accumulate the probability just like we did in Example [[exa-toss-two-dice-joint-pmf][Two dice joint]]. See Table [[tab-max-sum-joint-pmf][Max-sum joint]].
 
@@ -6076,28 +5940,19 @@ persp(x, y, z, theta = -30, phi = 30, ticktype = "detailed")
 We chose the standard bivariate normal, \(\mathsf{mvnorm}(\mathtt{mean}=\mathbf{0},\,\mathtt{sigma}=\mathbf{I})\), to display.
 
 #+NAME: mvnorm-pdf
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/multdist/mvnorm-pdf.ps
 x <- y <- seq(from = -3, to = 3, length.out = 30)
 f <- function(x,y) dmvnorm(cbind(x,y), mean = c(0,0), sigma = diag(2))
 z <- outer(x, y, FUN = f)
 persp(x, y, z, theta = -30, phi = 30, ticktype = "detailed")
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/multdist/mvnorm-pdf.ps
-  <<mvnorm-pdf>>
-#+END_SRC
+#+NAME: fig-mvnorm-pdf
+#+CAPTION[Graph of a bivariate normal PDF]: \small A graph of a bivariate normal PDF.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: mvnorm-pdf
+[[file:ps/multdist/mvnorm-pdf.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/multdist/mvnorm-pdf.svg
-  <<mvnorm-pdf>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/multdist/mvnorm-pdf.ps}
-  \caption[Graph of a bivariate normal PDF]{\small A graph of a bivariate normal PDF.}
-  \label{fig-mvnorm-pdf}
-\end{figure}
-#+end_latex
 
 ** Bivariate Transformations of Random Variables
 :PROPERTIES:
@@ -6374,27 +6229,18 @@ Another way to do the plot is with the =scatterplot3d= function in the =scatterp
 : scatterplot3d(A, type = "h", lwd = 3, box = FALSE)
 The =scatterplot3d= graph looks better in this example, but the code is more difficult to understand. And with =cloud= one can easily do conditional plots of the form =cloud(z ~ x + y | f)=, where =f= is a factor.
 
+
 #+NAME: multinom-pmf2
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports both :results graphics :file ps/multdist/multinom-pmf2.ps
 print(cloud(probs ~ X1 + X2, data = S, type = c("p","h"), lwd = 2, 
             pch = 16, cex = 1.5), screen = list(z = 15, x = -70))
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/multdist/multinom-pmf2.ps
-  <<multinom-pmf2>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/multdist/multinom-pmf2.svg
-  <<multinom-pmf2>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/multdist/multinom-pmf2.ps}
-  \caption[Plot of a multinomial PMF.]{\small A plot of a multinomial PMF.}
-    \label{fig-multinom-pmf2}
-\end{figure}
-#+end_latex
+#+NAME: fig-multinom-pmf2
+#+CAPTION[Plot of a multinomial PMF.]: \small A plot of a multinomial PMF.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: multinom-pmf2
+[[file:ps/multdist/multinom-pmf2.ps]]
 
 #+LaTeX: \newpage{}
 
@@ -6583,27 +6429,17 @@ Any random variable \(X\) with the preceding PDF is said to have Student's \(t\)
 The code to produce Figure [[fig-Students-t-dist-vary-df][Student's-t-dist-vary-df]] is
 
 #+NAME: Students-t-dist-vary-df
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/sampdist/Students-t-dist-vary-df.ps
 curve(dt(x, df = 30), from = -3, to = 3, lwd = 3, ylab = "y")
 ind <- c(1, 2, 3, 5, 10)
 for (i in ind) curve(dt(x, df = i), -3, 3, add = TRUE)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/sampdist/Students-t-dist-vary-df.ps
-  <<Students-t-dist-vary-df>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/sampdist/Students-t-dist-vary-df.svg
-  <<Students-t-dist-vary-df>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/sampdist/Student's-t-dist-vary-df.ps}
-  \caption[Student's \(t\) distribution for various degrees of freedom]{\small A plot of Student's \(t\) distribution for various degrees of freedom.}
-  \label{fig-Students-t-dist-vary-df}
-\end{figure}
-#+end_latex
+#+NAME: fig-Students-t-dist-vary-df
+#+CAPTION[Student's \(t\) distribution for various degrees of freedom]: \small A plot of Student's \(t\) distribution for various degrees of freedom.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: Students-t-dist-vary-df
+[[file:ps/sampdist/Students-t-dist-vary-df.ps]]
 
 Similar to that done for the normal we may define \(\mathsf{t}_{\alpha}(\mathtt{df}=n-1)\) as the number on the \(x\)-axis such that there is exactly \(\alpha\) area under the \(\mathsf{t}(\mathtt{df}=n-1)\) curve to its right.
 
@@ -6790,25 +6626,16 @@ sd(iqrs)
 Now let's take a look at a plot of the simulated values
 
 #+NAME: simulated-IQR
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/sampdist/simulated-IQR.ps
 hist(iqrs, breaks = 20)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/sampdist/simulated-IQR.ps
-  <<simulated-IQR>>
-#+END_SRC
+#+NAME: fig-simulated-IQR
+#+CAPTION[Plot of simulated IQRs]: \small A plot of simulated IQRs.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: simulated-IQR
+[[file:ps/sampdist/simulated-IQR.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/sampdist/simulated-IQR.svg
-  <<simulated-IQR>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/sampdist/simulated-IQR.ps}
-  \caption[Plot of simulated IQRs]{\small A plot of simulated IQRs.}
-  \label{fig-simulated-IQR}
-\end{figure}
-#+end_latex
 
 *** The Median Absolute Deviation
 
@@ -6831,25 +6658,15 @@ sd(mads)
 Now let's take a look at a plot of the simulated values
 
 #+NAME: simulated-MAD
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports both :results graphics :file ps/sampdist/simulated-MAD.ps
 hist(mads, breaks = 20)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/sampdist/simulated-MAD.ps
-  <<simulated-MAD>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/sampdist/simulated-MAD.svg
-  <<simulated-MAD>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/sampdist/simulated-MAD.ps}
-  \caption[Plot of simulated MADs]{\small A plot of simulated MADs.}
-  \label{fig-simulated-MAD}
-\end{figure}
-#+end_latex
+#+NAME: fig-simulated-MAD
+#+CAPTION[Plot of simulated MADs]: \small A plot of simulated MADs.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: simulated-MAD
+[[file:ps/sampdist/simulated-MAD.ps]]
 
 #+LaTeX: \newpage{}
 
@@ -6945,9 +6762,8 @@ Similarly, if \(F=9\) then the probability of observing \(X=3\) tagged fish woul
 We can see already that the observed data \(X=3\) is more likely when \(F=9\) than it is when \(F=8\). And here lies the genius of Sir Ronald Aylmer Fisher: he asks, ``What is the value of \(F\) which has the highest likelihood?'' In other words, for all of the different possible values of \(F\), which one makes the above probability the biggest? We can answer this question with a plot of \(\mathbb{P}(X=x)\) versus \(F\). See Figure [[fig-capture-recapture][capture-recapture]].
 # +END_exampletoo
 
-
 #+NAME: capture-recapture
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/estimate/capture-recapture.ps
 heights = rep(0, 16)
 for (j in 7:15) heights[j] <- dhyper(3, m = 7, n = j - 7, k = 4)
 plot(6:15, heights[6:15], pch = 16, cex = 1.5, xlab = "number of fish in pond", ylab = "Likelihood")
@@ -6958,21 +6774,12 @@ lines(9, heights[9], type = "h", lwd = 2)
 points(9, 0, pch = 4, lwd = 3, cex = 2)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/estimate/capture-recapture.ps
-  <<capture-recapture>>
-#+END_SRC
+#+NAME: fig-capture-recapture
+#+CAPTION[Capture-recapture experiment]: \small A plot of maximum likelihood for the capture-recapture experiment.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: capture-recapture
+[[file:ps/estimate/capture-recapture.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/estimate/capture-recapture.svg
-  <<capture-recapture>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/estimate/capture-recapture.ps}
-  \caption[Capture-recapture experiment]{\small A plot of maximum likelihood for the capture-recapture experiment.}
-  \label{fig-capture-recapture}
-\end{figure}
-#+end_latex
 
 # +BEGIN_exampletoo
 
@@ -7006,27 +6813,18 @@ L(p)=p^{\sum x_{i}}(1-p)^{n-\sum x_{i}}.
 A graph of \(L\) for values of \(\sum x_{i}=3,\ 4\), and 5 when \(n=7\) is shown in Figure [[fig-fishing-part-two][fishing-part-two]]. 
 
 #+NAME: fishing-part-two
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/estimate/fishing-part-two.ps
 curve(x^5*(1-x)^2, 0, 1, xlab = "p", ylab = "L(p)")
 curve(x^4*(1-x)^3, 0, 1, add = TRUE)
 curve(x^3*(1-x)^4, 0, 1, add = TRUE)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/estimate/fishing-part-two.ps
-  <<fishing-part-two>>
-#+END_SRC
+#+NAME: fig-fishing-part-two
+#+CAPTION[Assorted likelihood functions for fishing, part two]: \small Assorted likelihood functions for fishing, part two.   Three graphs are shown of \(L\) when \(\sum x_{i}\) equals 3, 4, and 5, respectively, from left to right. We pick an \(L\) that matches the observed data and then maximize \(L\) as a function of \(p\). If \(\sum x_{i}=4\), then the maximum appears to occur somewhere around \(p \approx 0.6\).
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: fishing-part-two
+[[file:ps/estimate/fishing-part-two.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/estimate/fishing-part-two.svg
-  <<fishing-part-two>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/estimate/fishing-part-two.ps}
-  \caption[Assorted likelihood functions for fishing, part two]{\small Assorted likelihood functions for fishing, part two.   Three graphs are shown of \(L\) when \(\sum x_{i}\) equals 3, 4, and 5, respectively, from left to right. We pick an \(L\) that matches the observed data and then maximize \(L\) as a function of \(p\). If \(\sum x_{i}=4\), then the maximum appears to occur somewhere around \(p \approx 0.6\).}
-  \label{fig-fishing-part-two}
-\end{figure}
-#+end_latex
 
 We want the value of \(p\) which has the highest likelihood, that is, we again wish to maximize the likelihood. We know from calculus (see Appendix [[sec-Differential-and-Integral][Differential and Integral Calculus]]) to differentiate \(L\) and set \(L'=0\) to find a maximum.
 \[
@@ -7053,9 +6851,8 @@ instead of a maximum! We should be thorough and check that \(L'>0\) when \(p<\ov
 The result is shown in Figure [[fig-species-mle][species-mle]].
 # +END_exampletoo
 
-
 #+NAME: species-mle
-#+BEGIN_SRC R :exports none :results silent
+#+BEGIN_SRC R :exports none :results graphics :file ps/estimate/species-mle.ps
 dat <- rbinom(27, size = 1, prob = 0.3)
 like <- function(x){
 r <- 1
@@ -7071,21 +6868,11 @@ points(mle, 0, pch = 4, lwd = 2, cex = 2, col = "red")
 text(mle, mleobj/6, substitute(hat(theta)==a, list(a=round(mle, 4))), cex = 2, pos = 4)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/estimate/species-mle.ps
-  <<species-mle>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/estimate/species-mle.svg
-  <<species-mle>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/estimate/species-mle.ps}
-  \caption[Species maximum likelihood]{\small Species maximum likelihood.}
-  \label{fig-species-mle}
-\end{figure}
-#+end_latex
+#+NAME: fig-species-mle
+#+CAPTION[Species maximum likelihood]: \small Species maximum likelihood.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: species-mle
+[[file:ps/estimate/species-mle.ps]]
 
 In general, we have a family of PDFs \(f(x|\theta)\) indexed by a parameter \(\theta\) in some parameter space \(\Theta\). We want to learn about \(\theta\). We take a \(SRS(n)\):
 \begin{equation}
@@ -8188,25 +7975,15 @@ Here are some properties of power functions:
 I am thinking about =replicate=\index{replicate@\texttt{replicate}} here, and also =power.examp=\index{power.examp@\texttt{power.examp}} from the =TeachingDemos= package \cite{TeachingDemos}. There is an even better plot in upcoming work from the =HH= package \cite{HH}.
 
 #+NAME: power-examp
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports both :results graphics :file ps/hypoth/power-examp.ps
 power.examp()
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/hypoth/power-examp.ps
-  <<power-examp>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/hypoth/power-examp.svg
-  <<power-examp>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/hypoth/power-examp.ps}
-  \caption[Plot of significance level and power]{\small This graph was generated by the \texttt{power.examp} function from the \texttt{TeachingDemos} package. The plot corresponds to the hypothesis test \(H_{0}:\,\mu=\mu_{0}\) versus \(H_{1}:\,\mu=\mu_{1}\) (where \(\mu_{0}=0\) and \(\mu_{1}=1\), by default) based on a single observation \(X\sim\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\). The top graph is of the \(H_{0}\) density while the bottom is of the \(H_{1}\) density. The significance level is set at \(\alpha=0.05\), the sample size is \(n=1\), and the standard deviation is \(\sigma=1\). The pink area is the significance level, and the critical value \(z_{0.05}\approx1.645\) is marked at the left boundary -- this defines the rejection region. When \(H_{0}\) is true, the probability of falling in the rejection region is exactly \(\alpha=0.05\). The same rejection region is marked on the bottom graph, and the probability of falling in it (when \(H_{1}\)  is true) is the blue area shown at the top of the display to be approximately \(0.26\). This probability represents the \emph{power} to detect a non-null mean value of \(\mu=1\). With the command the \texttt{run.power.examp()} at the command line the same plot opens, but in addition, there are sliders available that allow the user to interactively change the sample size \(n\), the standard deviation \(\sigma\), the true difference between the means \(\mu_{1}-\mu_{0}\), and the significance level \(\alpha\). By playing around the student can investigate the effect each of the aforementioned parameters has on the statistical power. Note that you need the \texttt{tkrplot} package \cite{tkrplot} for \texttt{run.power.examp}.}
-  \label{fig-power-examp}
-\end{figure}
-#+end_latex
+#+NAME: fig-power-examp
+#+CAPTION[Plot of significance level and power]: \small This graph was generated by the =power.examp= function from the =TeachingDemos= package. The plot corresponds to the hypothesis test \(H_{0}:\,\mu=\mu_{0}\) versus \(H_{1}:\,\mu=\mu_{1}\) (where \(\mu_{0}=0\) and \(\mu_{1}=1\), by default) based on a single observation \(X\sim\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\). The top graph is of the \(H_{0}\) density while the bottom is of the \(H_{1}\) density. The significance level is set at \(\alpha=0.05\), the sample size is \(n=1\), and the standard deviation is \(\sigma=1\). The pink area is the significance level, and the critical value \(z_{0.05}\approx1.645\) is marked at the left boundary -- this defines the rejection region. When \(H_{0}\) is true, the probability of falling in the rejection region is exactly \(\alpha=0.05\). The same rejection region is marked on the bottom graph, and the probability of falling in it (when \(H_{1}\)  is true) is the blue area shown at the top of the display to be approximately \(0.26\). This probability represents the /power/ to detect a non-null mean value of \(\mu=1\). With the command the =run.power.examp()= at the command line the same plot opens, but in addition, there are sliders available that allow the user to interactively change the sample size \(n\), the standard deviation \(\sigma\), the true difference between the means \(\mu_{1}-\mu_{0}\), and the significance level \(\alpha\). By playing around the student can investigate the effect each of the aforementioned parameters has on the statistical power. Note that you need the =tkrplot= package \cite{tkrplot} for =run.power.examp=.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: power-examp
+[[file:ps/hypoth/power-examp.ps]]
 
 #+LaTeX: \newpage{}
 
@@ -8290,17 +8067,8 @@ We assume both the normality of the errors \(\epsilon\) and the linearity of the
 See Figure [[fig-philosophy][philosophy]]. Shown in the figure is a solid line, the regression line\index{regression line} \(\mu\), which in this display has slope 0.5 and /y/-intercept 2.5, that is, \( \mu(x) = 2.5 + 0.5x \). The intuition is that for each given value of \(x\), we observe a random value of \(Y\) which is normally distributed with a mean equal to the height of the regression line at that \(x\) value. Normal densities are superimposed on the plot to drive this point home; in principle, the densities stand outside of the page, perpendicular to the plane of the paper. The figure shows three such values of \(x\), namely, \( x = 1 \), \( x = 2.5 \), and \( x = 4 \). Not only do we assume that the observations at the three locations are independent, but we also assume that their distributions have the same spread. In mathematical terms this means that the normal densities all along the line have identical standard deviations -- there is no ``fanning out'' or ``scrunching in'' of the normal densities as \(x\) increases
 #+LaTeX: \footnote{In practical terms, this constant variance assumption is often violated, in that we often observe scatterplots that fan out from the line as \(x\) gets large or small. We say under those circumstances that the data show \emph{heteroscedasticity}. There are methods to address it, but they fall outside the realm of SLR.}.
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/philosophy.ps}
-  \caption[Philosophical foundations of SLR]{\small Philosophical foundations of SLR.}
-  \label{fig-philosophy}
-\end{figure}
-#+end_latex
-
 #+NAME: philosophy
-#+BEGIN_SRC R :exports none :results silent
-# open window
+#+BEGIN_SRC R :exports both :results graphics :file ps/slr/philosophy.ps
 plot(c(0,5), c(0,6.5), type = "n", xlab="x", ylab="y")
 abline(h = 0, v = 0, col = "gray60")
 abline(a = 2.5, b = 0.5, lwd = 2)
@@ -8315,13 +8083,12 @@ segments(2.5, 3.75, 2.5 + dnorm(0,0,0.5), 3.75, lty = 2, col = "gray")
 segments(4,4.5, 4 + dnorm(0,0,0.5),4.5, lty = 2, col = "gray")
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/philosophy.ps
-  <<philosophy>>
-#+END_SRC
+#+NAME: fig-philosophy
+#+CAPTION[Philosophical foundations of SLR]: \small Philosophical foundations of SLR.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: philosophy
+[[file:ps/slr/philosophy.ps]]
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/philosophy.svg
-  <<philosophy>>
-#+END_SRC
 
 # +BEGIN_exampletoo
 
@@ -8333,32 +8100,21 @@ head(cars)
 
 The =speed= represents how fast the car was going (\(x\)) in miles per hour and =dist= (\(Y\)) measures how far it took the car to stop, in feet. We can make a simple scatterplot of the data with the =qplot= command in the =ggplot2= package \cite{ggplot2}. 
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/carscatter.ps}
-  \caption[Scatterplot of \texttt{dist} versus \texttt{speed} for the \texttt{cars} data]{\small A scatterplot of \texttt{dist} versus \texttt{speed} for the \texttt{cars} data.  There is clearly an upward trend to the plot which is approximately linear.}
-  \label{fig-Scatter-cars}
-\end{figure}
-#+end_latex
-
 #+NAME: carscatter
-#+BEGIN_SRC R :exports code :results silent
-qplot(speed, dist, data = cars)
+#+BEGIN_SRC R :exports both :results graphics :file ps/slr/carscatter.ps
+plot(dist ~ speed, data = cars)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/carscatter.ps
-  <<carscatter>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/carscatter.svg
-  <<carscatter>>
-#+END_SRC
+#+NAME: fig-carscatter
+#+CAPTION[Scatterplot of =dist= versus =speed= for the =cars= data]: \small A scatterplot of =dist= versus =speed= for the =cars= data.  There is clearly an upward trend to the plot which is approximately linear. 
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: carscatter
+[[file:ps/slr/carscatter.ps]]
 
 You can see the output in Figure [[fig-Scatter-cars][carscatter]], which was produced by the following code.
 
 #+BEGIN_SRC R :exports code :eval never :results silent
 qplot(speed, dist, data = cars)
-plot(dist ~ speed, data = cars)
 #+END_SRC
 
 There is a pronounced upward trend to the data points, and the pattern looks approximately linear. There does not appear to be substantial fanning out of the points or extreme values. 
@@ -8465,26 +8221,16 @@ The parameter estimates \( b_{0} \) and \( b_{1} \) for the intercept and slope,
 
 It is good practice to visually inspect the data with the regression line added to the plot. To do this we first scatterplot the original data and then follow with a call to the =abline= function. The inputs to =abline= are the coefficients of =cars.lm=; see Figure [[fig-Scatter-cars-regline][Scatter-cars-regline]].
 
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/slr/carline.ps}
-  \caption[Scatterplot with added regression line for the \texttt{cars} data]{\small A scatterplot with an added regression line for the \texttt{cars} data.}
-  \label{fig-Scatter-cars-regline}
-\end{figure}
-#+end_latex
-
 #+NAME: carline
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports both :results graphics :file ps/slr/carline.ps
 ggplot(cars, aes(x = speed, y = dist)) + geom_point(shape = 19) + geom_smooth(method = lm, se = FALSE)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/slr/carline.ps
-  <<carline>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/slr/carline.svg
-  <<carline>>
-#+END_SRC
+#+NAME: fig-carline
+#+CAPTION[Scatterplot with added regression line for the =cars= data]: \small A scatterplot with an added regression line for the =cars= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: carline
+[[file:ps/slr/carline.ps]]
 
 To calculate points on the regression line we may simply plug the desired \(x\) value(s) into \( \hat{\mu} \), either by hand, or with the =predict= function. The inputs to =predict= are the fitted linear model object, =cars.lm=, and the desired \(x\) value(s) represented by a data frame. See the example below.
 
@@ -10631,25 +10377,15 @@ sd(medstar)
 #+END_SRC
 
 #+NAME: Bootstrapping-se-median
-#+BEGIN_SRC R :exports code :results silent
+#+BEGIN_SRC R :exports both :results graphics :file ps/resamp/Bootstrapping-se-median.ps
 hist(medstar, breaks = 40, prob = TRUE)
 #+END_SRC
 
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file ps/resamp/Bootstrapping-se-median.ps
-  <<Bootstrapping-se-median>>
-#+END_SRC
-
-#+BEGIN_SRC R :exports none :results graphics silent :noweb yes :file svg/resamp/Bootstrapping-se-median.svg
-  <<Bootstrapping-se-median>>
-#+END_SRC
-
-#+begin_latex
-\begin{figure}[th]
-  \includegraphics[angle=270, totalheight=4in]{ps/resamp/Bootstrapping-se-median.ps}
-  \caption[Bootstrapping the standard error of the median for the \texttt{rivers} data]{\small Bootstrapping the standard error of the median for the \texttt{rivers} data.}
-  \label{fig-Bootstrapping-se-median}
-\end{figure}
-#+end_latex
+#+NAME: fig-Bootstrapping-se-median
+#+CAPTION[Bootstrapping the standard error of the median for the =rivers= data]: \small Bootstrapping the standard error of the median for the =rivers= data.
+#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+RESULTS: Bootstrapping-se-median
+[[file:ps/resamp/Bootstrapping-se-median.ps]]
 
 The graph is shown in Figure [[fig-Bootstrapping-se-median][Bootstrapping-se-median]], and was produced by the following code.
 
