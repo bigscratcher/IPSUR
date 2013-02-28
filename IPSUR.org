@@ -1507,7 +1507,6 @@ print(bwplot(~weight | feed, data = chickwts))
 #+RESULTS: bwplot
 [[file:ps/datadesc/bwplot.ps]]
 
-
 **** Histograms
 
 #+BEGIN_SRC R :exports code :eval never
