@@ -1728,8 +1728,10 @@ The sample space =S= contains the column =lands= which stores the outcomes =down
 # +END_exampletoo
 
 
-Some sample spaces are so common that convenience wrappers were written to set them up with minimal effort. The underlying machinery that does the work includes the =expand.grid= function in the =base= package \cite{base}, =combn= in the =combinat= package \cite{combinat}, and =permsn= in the =prob= package \cite{prob}
-#+LaTeX: \footnote{The seasoned \(\mathsf{R}\) user can get the job done without the convenience wrappers. I encourage the beginner to use them to get started, but I also recommend that introductory students wean themselves as soon as possible. The wrappers were designed for ease and intuitive use, not for speed or efficiency.}.
+Some sample spaces are so common that convenience wrappers were written to set them up with minimal effort. The underlying machinery that does the work includes the =expand.grid= function in the =base= package \cite{base}, =combn= in the =combinat= package \cite{combinat}, and =permsn= in the =prob= package \cite{prob}[fn:fn-seasoned].
+
+[fn:fn-seasoned] The seasoned \(\mathsf{R}\) user can get the job done without the convenience wrappers. I encourage the beginner to use them to get started, but I also recommend that introductory students wean themselves as soon as possible. The wrappers were designed for ease and intuitive use, not for speed or efficiency.
+
 Consider the random experiment of tossing a coin. The outcomes are \(H\) and \(T\). We can set up the sample space quickly with the =tosscoin= function:
 
 #+BEGIN_SRC R :exports both :results output pp  
@@ -1832,9 +1834,9 @@ In this way, when the =x= argument of =urnsamples= has repeated elements, the re
 :CUSTOM_ID: sec-Events
 :END:
 
-An /event/\index{event} \(A\) is merely a collection of outcomes, or in other words, a subset of the sample space
-#+LaTeX: \footnote{This naive definition works for finite or countably infinite sample spaces, but is inadequate for sample spaces in general. In this book, we will not address the subtleties that arise, but will refer the interested reader to any text on advanced probability or measure theory.}.
-After the performance of a random experiment \(E\) we say that the event \(A\) /occurred/ if the experiment's outcome belongs to \(A\). We say that a bunch of events \(A_{1}\), \(A_{2}\), \(A_{3}\), ... are /mutually exclusive/\index{mutually exclusive} or /disjoint/ if \(A_{i}\cap A_{j}=\emptyset\) for any distinct pair \(A_{i}\neq A_{j}\). For instance, in the coin-toss experiment the events \( A = \{ \mbox{Heads} \}\) and \( B = \{ \mbox{Tails} \} \) would be mutually exclusive. Now would be a good time to review the algebra of sets in Appendix [[sec-The-Algebra-of][Algebra of Sets]].
+An /event/\index{event} \(A\) is merely a collection of outcomes, or in other words, a subset of the sample space[fn:fn-event]. After the performance of a random experiment \(E\) we say that the event \(A\) /occurred/ if the experiment's outcome belongs to \(A\). We say that a bunch of events \(A_{1}\), \(A_{2}\), \(A_{3}\), ... are /mutually exclusive/\index{mutually exclusive} or /disjoint/ if \(A_{i}\cap A_{j}=\emptyset\) for any distinct pair \(A_{i}\neq A_{j}\). For instance, in the coin-toss experiment the events \( A = \{ \mbox{Heads} \}\) and \( B = \{ \mbox{Tails} \} \) would be mutually exclusive. Now would be a good time to review the algebra of sets in Appendix [[sec-The-Algebra-of][Algebra of Sets]].
+
+[fn:fn-event] This naive definition works for finite or countably infinite sample spaces, but is inadequate for sample spaces in general. In this book, we will not address the subtleties that arise, but will refer the interested reader to any text on advanced probability or measure theory.
 
 *** How to do it with \(\mathsf{R}\)
 
@@ -2553,8 +2555,8 @@ The conditional probability of \(B\) given \(A\), denoted \(\mathbb{P}(B|A)\), i
 \begin{equation}
 \mathbb{P}(B|A)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)},\quad \mbox{if }\mathbb{P}(A)>0.
 \end{equation}
-We will not be discussing a conditional probability of \(B\) given \(A\) when \(\mathbb{P}(A)=0\), even though this theory exists, is well developed, and forms the foundation for the study of stochastic processes
-#+LaTeX: \footnote{Conditional probability in this case is defined by means of \emph{conditional expectation}, a topic that is well beyond the scope of this text. The interested reader should consult an advanced text on probability theory, such as Billingsley, Resnick, or Ash Dooleans-Dade.}.
+We will not be discussing a conditional probability of \(B\) given \(A\) when \(\mathbb{P}(A)=0\), even though this theory exists, is well developed, and forms the foundation for the study of stochastic processes[fn-condprob].
+[fn:fn-condprob] Conditional probability in this case is defined by means of \emph{conditional expectation}, a topic that is well beyond the scope of this text. The interested reader should consult an advanced text on probability theory, such as Billingsley, Resnick, or Ash Dooleans-Dade.
 #+end_defn
 
 # +BEGIN_exampletoo
@@ -3131,9 +3133,9 @@ Let \(E\) be the experiment of tossing a coin in the air, and define the random 
 
 There are important differences between the supports of \(X\), \(Y\), and \(Z\). The support of \(X\) is a finite collection of elements that can be inspected all at once. And while the support of \(Y\) cannot be exhaustively written down, its elements can nevertheless be listed in a naturally ordered sequence. Random variables with supports similar to those of \(X\) and \(Y\) are called /discrete random variables/. We study these in Chapter [[cha-Discrete-Distributions][Discrete Distributions]].
 
-In contrast, the support of \(Z\) is a continuous interval, containing all rational and irrational positive real numbers. For this reason
-#+LaTeX: \footnote{This isn't really the reason, but it serves as an effective litmus test at the introductory level. See Billingsley or Resnick.},
-random variables with supports like \(Z\) are called /continuous random variables/, to be studied in Chapter [[cha-Continuous-Distributions][Continuous Distributions]].
+In contrast, the support of \(Z\) is a continuous interval, containing all rational and irrational positive real numbers. For this reason[fn:fn-reason], random variables with supports like \(Z\) are called /continuous random variables/, to be studied in Chapter [[cha-Continuous-Distributions][Continuous Distributions]].
+
+[fn:fn-reason] This isn't really the reason, but it serves as an effective litmus test at the introductory level. See Billingsley or Resnick.
 
 *** How to do it with \(\mathsf{R}\)
 
@@ -3605,13 +3607,13 @@ plot(X, cex = 0.2)
 :CUSTOM_ID: sub-expectation-operator
 :END:
 
-We next generalize some of the concepts from Section [[sub-mean-variance-sd][Mean-variance-sd]]. There we saw that every
-#+LaTeX: \footnote{Not every, only those PMFs for which the (potentially infinite) series converges.}
-PMF has two important numbers associated with it:
+We next generalize some of the concepts from Section [[sub-mean-variance-sd][Mean-variance-sd]]. There we saw that every[fn:fn-converge] PMF has two important numbers associated with it:
 \begin{equation}
 \mu=\sum_{x\in S}xf_{X}(x),\quad \sigma^{2}=\sum_{x\in S}(x-\mu)^{2}f_{X}(x).
 \end{equation}
 Intuitively, for repeated observations of \(X\) we would expect the sample mean to closely approximate \(\mu\) as the sample size increases without bound. For this reason we call \(\mu\) the /expected value/ of \(X\) and we write \(\mu=\mathbb{E} X\), where \(\mathbb{E}\) is an /expectation operator/.
+
+[fn:fn-converge] Not every, only those PMFs for which the (potentially infinite) series converges.
 
 #+begin_defn
 More generally, given a function \(g\) we define the /expected value of/ \(g(X)\) by
@@ -3729,9 +3731,7 @@ and so if we plug in zero for \(t\) we see
 \begin{equation}
 M'(0)=\sum_{x\in S}x\mathrm{e}^{0}f(x)=\sum_{x\in S}xf(x)=\mu=\mathbb{E} X.
 \end{equation}
-Similarly, \(M''(t)=\sum x^{2}\mathrm{e}^{tx}f(x)\) so that \(M''(0)=\mathbb{E} X^{2}\). And in general, we can see
-#+LaTeX: \footnote{We are glossing over some significant mathematical details in our derivation. Suffice it to say that when the MGF exists in a neighborhood of \(t=0\), the exchange of differentiation and summation is valid in that neighborhood, and our remarks hold true.}
-that
+Similarly, \(M''(t)=\sum x^{2}\mathrm{e}^{tx}f(x)\) so that \(M''(0)=\mathbb{E} X^{2}\). And in general, we can see[fn:fn-details] that
 \begin{equation}
 M_{X}^{(r)}(0)=\mathbb{E} X^{r}=\mbox{\(r^{\mathrm{th}}\) moment of \(X\) about the origin.}
 \end{equation}
@@ -3740,6 +3740,8 @@ These are also known as /raw moments/ and are sometimes denoted \(\mu_{r}'\). In
 \begin{equation}
 \mu_{r}=\mathbb{E}(X-\mu)^{r},\quad r=1,2,\ldots
 \end{equation}
+
+[fn:fn-details] We are glossing over some significant mathematical details in our derivation. Suffice it to say that when the MGF exists in a neighborhood of \(t=0\), the exchange of differentiation and summation is valid in that neighborhood, and our remarks hold true.
 
 # +BEGIN_exampletoo
 
@@ -4353,13 +4355,13 @@ or unions of intervals of the above form. Examples of random variables that are 
 - other physical measurements such as the length or size of an object, and
 - durations of time (usually).
 
-Every continuous random variable \(X\) has a /probability density function/ (PDF) denoted \(f_{X}\) associated with it
-#+LaTeX: \footnote{Not true. There are pathological random variables with no density function. (This is one of the crazy things that can happen in the world of measure theory). But in this book we will not get even close to these anomalous beasts, and regardless it can be proved that the CDF always exists.}
-that satisfies three basic properties:
+Every continuous random variable \(X\) has a /probability density function/ (PDF) denoted \(f_{X}\) associated with it[fn:fn-patho] that satisfies three basic properties:
 1. \(f_{X}(x)>0\) for \(x\in S_{X}\),
 2. \(\int_{x\in S_{X}}f_{X}(x)\,\mathrm{d} x=1\), and
 3. \(\mathbb{P}(X\in A)=\int_{x\in A}f_{X}(x)\:\mathrm{d} x\), for an event \(A\subset S_{X}\).
 # <<enu-contrvcond3>>
+
+[fn:fn-patho] Not true. There are pathological random variables with no density function. (This is one of the crazy things that can happen in the world of measure theory). But in this book we will not get even close to these anomalous beasts, and regardless it can be proved that the CDF always exists.
 
 #+BEGIN_rem
 We can say the following about continuous random variables:
@@ -4391,8 +4393,8 @@ There is a handy relationship between the CDF and PDF in the continuous case. Co
 \begin{equation}
 F'_{X}(t)=\frac{\mathrm{d}}{\mathrm{d} t}F_{X}(t)=\frac{\mathrm{d}}{\mathrm{d} t}\,\int_{-\infty}^{t}f_{X}(x)\,\mathrm{d} x=f_{X}(t),
 \end{equation}
-the last equality being true by the Fundamental Theorem of Calculus, part (2) (see Appendix [[sec-Differential-and-Integral][Differential-Integral Calculus]]). In short, \((F_{X})'=f_{X}\) in the continuous case
-#+LaTeX: \footnote{In the discrete case, \(f_{X}(x)=F_{X}(x)-\lim_{t\to x^{-}}F_{X}(t)\).}. 
+the last equality being true by the Fundamental Theorem of Calculus, part (2) (see Appendix [[sec-Differential-and-Integral][Differential-Integral Calculus]]). In short, \((F_{X})'=f_{X}\) in the continuous case[fn:fn-disc].
+[fn:fn-disc] In the discrete case, \(f_{X}(x)=F_{X}(x)-\lim_{t\to x^{-}}F_{X}(t)\).
 
 *** Expectation of Continuous Random Variables
 :PROPERTIES:
@@ -4692,13 +4694,13 @@ The answer is shown in =$root= which is approximately \( SRC_R{temp} \), that is
 The discussion in Example [[exa-iq-quantile-state-problem][IQ Quantile]] was centered on the search for a value \(x\) that solved an equation \(F(x)=p\), for some given probability \(p\), or in mathematical parlance, the search for \(F^{-1}\), the inverse of the CDF of \(X\), evaluated at \(p\). This is so important that it merits a definition all its own.
 
 #+begin_defn
-The /quantile function/
-#+LaTeX: \footnote{The precise definition of the quantile function is \(Q_{X}(p)=\inf \{ x:\ F_{X}(x)\geq p \}\), so at least it is well defined (though perhaps infinite) for the values \(p=0\) and \(p=1\).}
-of a random variable \(X\) is the inverse of its cumulative distribution function:
+The /quantile function/ [fn:fn-quantile] of a random variable \(X\) is the inverse of its cumulative distribution function:
 \begin{equation}
 Q_{X}(p)=\min\left\{ x:\ F_{X}(x)\geq p\right\} ,\quad 0 < p <1.
 \end{equation}
 #+end_defn
+
+[fn:fn-quantile] The precise definition of the quantile function is \(Q_{X}(p)=\inf \{ x:\ F_{X}(x)\geq p \}\), so at least it is well defined (though perhaps infinite) for the values \(p=0\) and \(p=1\).
 
 #+BEGIN_rem
 Here are some properties of quantile functions:
@@ -5276,8 +5278,9 @@ By interchanging the roles of \(X\) and \(Y\) it is clear that
 \label{eq-marginal-pmf}
 f_{Y}(y)=\sum_{x\in S_{Y}}f_{X,Y}(x,y).
 \end{equation}
-Given the joint PMF we may recover the marginal PMFs, but the converse is not true. Even if we have /both/ marginal distributions they are not sufficient to determine the joint PMF; more information is needed
-#+LaTeX: \footnote{We are not at a total loss, however. There are Frechet bounds which pose limits on how large (and small) the joint distribution must be at each point.}.
+Given the joint PMF we may recover the marginal PMFs, but the converse is not true. Even if we have /both/ marginal distributions they are not sufficient to determine the joint PMF; more information is needed[fn:fn-frechet]. 
+
+[fn:fn-frechet] We are not at a total loss, however. There are Frechet bounds which pose limits on how large (and small) the joint distribution must be at each point.
 
 Associated with the joint PMF is the /joint cumulative distribution function/ \(F_{X,Y}\) defined by
 \[
@@ -5386,9 +5389,7 @@ The joint support of \((U,V)\) is concentrated along the main diagonal;  note th
 # +END_exampletoo
 
 
-Continuing the reasoning for the discrete case, given two continuous random variables \(X\) and \(Y\) there similarly exists
-#+LaTeX: \footnote{Strictly speaking, the joint density function does not necessarily exist. But the joint CDF always exists.}
-a function \(f_{X,Y}(x,y)\) associated with \(X\) and \(Y\) called the /joint probability density function/ of \(X\) and \(Y\). Every joint PDF satisfies
+Continuing the reasoning for the discrete case, given two continuous random variables \(X\) and \(Y\) there similarly exists[fn:fn-jointnoexist] a function \(f_{X,Y}(x,y)\) associated with \(X\) and \(Y\) called the /joint probability density function/ of \(X\) and \(Y\). Every joint PDF satisfies
 \begin{equation}
 f_{X,Y}(x,y)\geq0\mbox{ for all }(x,y)\in S_{X,Y},
 \end{equation}
@@ -5409,6 +5410,7 @@ and the marginal PDF of \(Y\) may be found with
 f_{Y}(y)=\int_{S_{X}}f_{X,Y}(x,y)\,\mathrm{d} x, \quad y \in S_{Y}.
 \end{equation}
 
+[fn:fn-jointnoexist] Strictly speaking, the joint density function does not necessarily exist. But the joint CDF always exists.
 
 # +BEGIN_exampletoo
 
@@ -6567,10 +6569,12 @@ provided both \(n_{1}\) and \(n_{2}\) are sufficiently large.
 #+end_prop
 
 #+begin_proof
-We know that \(\hat{p}_{1}\) is approximately normal for \(n_{1}\) sufficiently large by the CLT, and we know that \(\hat{p}_{2}\) is approximately normal for \(n_{2}\) sufficiently large, also by the CLT. Further, \(\hat{p}_{1}\) and \(\hat{p}_{2}\) are independent since they are derived from independent samples. And a difference of independent (approximately) normal distributions is (approximately) normal, by Exercise [[xca-diff-indep-norm]].
-#+LaTeX: \footnote{This does not explicitly follow because of our cavalier use of ``approximately'' in too many places. To be more thorough, however, would require more concepts than we can afford at the moment. The interested reader may consult a more advanced text, specifically the topic of weak convergence, that is, convergence in distribution.}
+We know that \(\hat{p}_{1}\) is approximately normal for \(n_{1}\) sufficiently large by the CLT, and we know that \(\hat{p}_{2}\) is approximately normal for \(n_{2}\) sufficiently large, also by the CLT. Further, \(\hat{p}_{1}\) and \(\hat{p}_{2}\) are independent since they are derived from independent samples. And a difference of independent (approximately) normal distributions is (approximately) normal[fn:fn-nofollow], by Exercise [[xca-diff-indep-norm]].
+
 The expressions for the mean and standard deviation follow immediately from Proposition [[pro-mean-sd-lin-comb-two]] combined with the formulas for the \(\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=p)\) distribution from Chapter [[cha-Discrete-Distributions][Discrete Distributions]].
 #+end_proof
+
+[fn:fn-nofollow] This does not explicitly follow because of our cavalier use of "approximately" in too many places. To be more thorough, however, would require more concepts than we can afford at the moment. The interested reader may consult a more advanced text, specifically the topic of weak convergence, that is, convergence in distribution.
 
 *** Ratio of Independent Sample Variances
 
@@ -6744,9 +6748,9 @@ Suppose we have a small pond in our backyard, and in the pond there live some fi
 
 We will fish from the pond and suppose that we capture \(M=7\) fish. On each caught fish we attach an unobtrusive tag to the fish's tail, and release it back into the water.
 
-Next, we wait a few days for the fish to remix and become accustomed to their new tag. Then we go fishing again. On the second trip some of the fish we catch may be tagged; some may not be. Let \(X\) denote the number of caught fish which are tagged
-#+LaTeX: \footnote{It is theoretically possible that we could catch the same tagged fish more than once, which would inflate our count of tagged fish. To avoid this difficulty, suppose that on the second trip we use a tank on the boat to hold the caught fish until data collection is completed.},
-and suppose for the sake of argument that we catch \(K=4\) fish and we find that 3 of them are tagged.
+Next, we wait a few days for the fish to remix and become accustomed to their new tag. Then we go fishing again. On the second trip some of the fish we catch may be tagged; some may not be. Let \(X\) denote the number of caught fish which are tagged[fn:fn-samefish], and suppose for the sake of argument that we catch \(K=4\) fish and we find that 3 of them are tagged.
+
+[fn:fn-samefish] It is theoretically possible that we could catch the same tagged fish more than once, which would inflate our count of tagged fish. To avoid this difficulty, suppose that on the second trip we use a tank on the boat to hold the caught fish until data collection is completed.
 
 Now let \(F\) denote the (unknown) total number of fish in the pond. We know that \(F\geq7\), because we tagged that many on the first trip. In fact, if we let \(N\) denote the number of untagged fish in the pond, then \(F=M+N\). Using our earlier language, we have sampled \(K=4\) times, without replacement, from an urn (pond) which has \(M=7\) white balls (tagged fish) and \(N=F-M\) black balls (untagged fish), and we have observed \(x=3\) of them to be white (tagged). What is the probability of this?
 
@@ -6847,13 +6851,13 @@ This ``best'' \(p\), the one which maximizes the likelihood, is called the maxim
 \end{equation}
 
 #+BEGIN_rem
-Strictly speaking we have only shown that the derivative equals zero at \(\hat{p}\), so it is theoretically possible that the critical value \(\hat{p}=\overline{x}\) is located at a minimum
-#+LaTeX: \footnote{We can tell from the graph that our value of \(\hat{p}\) is a maximum instead of a minimum so we do not really need to worry for this example. Other examples are not so easy, however, and we should be careful to be cognizant of this extra step.}
-instead of a maximum! We should be thorough and check that \(L'>0\) when \(p<\overline{x}\) and \(L'<0\) when \(p>\overline{x}\). Then by the First Derivative Test (Theorem [[thm-First-Derivative-Test][FDT]]) we could be certain that \(\hat{p}=\overline{x}\) is indeed a maximum likelihood estimator, and not a minimum likelihood estimator.
+Strictly speaking we have only shown that the derivative equals zero at \(\hat{p}\), so it is theoretically possible that the critical value \(\hat{p}=\overline{x}\) is located at a minimum[fn:fn-sdt] instead of a maximum! We should be thorough and check that \(L'>0\) when \(p<\overline{x}\) and \(L'<0\) when \(p>\overline{x}\). Then by the First Derivative Test (Theorem [[thm-First-Derivative-Test][FDT]]) we could be certain that \(\hat{p}=\overline{x}\) is indeed a maximum likelihood estimator, and not a minimum likelihood estimator.
 #+END_rem
 
 The result is shown in Figure [[fig-species-mle][species-mle]].
 # +END_exampletoo
+
+[fn:fn-sdt] We can tell from the graph that our value of \(\hat{p}\) is a maximum instead of a minimum so we do not really need to worry for this example. Other examples are not so easy, however, and we should be careful to be cognizant of this extra step.
 
 #+NAME: species-mle
 #+BEGIN_SRC R :exports none :results graphics :file ps/estimate/species-mle.ps
@@ -7112,9 +7116,9 @@ The parameter of interest is \(\mu\), which represents the true mean weight of t
 with(PlantGrowth, stem.leaf(weight))
 #+END_SRC
 
-The data appear to be approximately normal with no extreme values. The data come from a designed experiment, so it is reasonable to suppose that the observations constitute a simple random sample of weights
-#+LaTeX: \footnote{Actually we will see later that there is reason to believe that the observations are simple random samples from three distinct populations. See Section \ref{sec-Analysis-of-Variance}.}. 
-We know the population standard deviation \(\sigma=0.70\) from prior research. We are going to use the one-sample \(z\)-interval.
+The data appear to be approximately normal with no extreme values. The data come from a designed experiment, so it is reasonable to suppose that the observations constitute a simple random sample of weights[fn:fn-srs]. We know the population standard deviation \(\sigma=0.70\) from prior research. We are going to use the one-sample \(z\)-interval.
+
+[fn:fn-srs] Actually we will see later that there is reason to believe that the observations are simple random samples from three distinct populations. See Section \ref{sec-Analysis-of-Variance}.
 
 #+BEGIN_SRC R :exports both :results output pp 
 dim(PlantGrowth)   # sample size is first entry
@@ -7497,9 +7501,9 @@ You are going to need the quadratic formula.
 I spent a week during the summer of 2005 at the University of Nebraska at Lincoln grading Advanced Placement Statistics exams, and while I was there I attended a presentation by Dr. Roxy Peck. At the end of her talk she described an activity she had used with students to introduce the basic concepts of hypothesis testing. I was impressed by the activity and have used it in my own classes several times since.
 
 #+begin_quote
-The instructor (with a box of cookies in hand) enters a class of fifteen or more students and produces a brand-new, sealed deck of ordinary playing cards. The instructor asks for a student volunteer to break the seal, and then the instructor prominently shuffles the deck
-#+LaTeX: \footnote{The jokers are removed before shuffling.}
-several times in front of the class, after which time the students are asked to line up in a row. They are going to play a game. Each student will draw a card from the top of the deck, in turn. If the card is black, then the lucky student will get a cookie. If the card is red, then the unlucky student will sit down empty-handed. Let the game begin.
+The instructor (with a box of cookies in hand) enters a class of fifteen or more students and produces a brand-new, sealed deck of ordinary playing cards. The instructor asks for a student volunteer to break the seal, and then the instructor prominently shuffles the deck[fn:fn-jokers] several times in front of the class, after which time the students are asked to line up in a row. They are going to play a game. Each student will draw a card from the top of the deck, in turn. If the card is black, then the lucky student will get a cookie. If the card is red, then the unlucky student will sit down empty-handed. Let the game begin.
+
+[fn:fn-jokers] The jokers are removed before shuffling.
 
 The first student draws a card: red. There are jeers and outbursts, and the student slinks off to his/her chair. (S)he is disappointed, of course, but not really. After all, (s)he had a 50-50 chance of getting black, and it did not happen. Oh well.
 
@@ -7574,15 +7578,15 @@ Every time we make a decision it is possible to be wrong, and there are two poss
 - Type II Error :: if we fail to reject \(H_{0}\) when in fact \(H_{1}\) is true. This is analogous to a guilty person escaping conviction.
 #+END_rem
 
-Type I Errors are usually considered worse
-#+LaTeX: \footnote{There is no mathematical difference between the errors, however. The bottom line is that we choose one type of error to control with an iron fist, and we try to minimize the probability of making the other type. That being said, null hypotheses are often by design to correspond to the ``simpler'' model, so it is often easier to analyze (and thereby control) the probabilities associated with Type I Errors.}, 
-and we design our statistical procedures to control the probability of making such a mistake. We define the
+Type I Errors are usually considered worse[fn:fn-typetwo], and we design our statistical procedures to control the probability of making such a mistake. We define the
 \begin{equation}
 \mbox{significance level of the test}=\mathbb{P}(\mbox{Type I Error})=\alpha.
 \end{equation}
 We want \(\alpha\) to be small which conventionally means, say, \(\alpha=0.05\), \(\alpha=0.01\), or \(\alpha=0.005\) (but could mean anything, in principle).
 - The /rejection region/ (also known as the /critical region/) for the test is the set of sample values which would result in the rejection of \(H_{0}\). For Example [[exa-widget-machine]], the rejection region would be all possible samples that result in a 95% confidence interval that does not cover \(p=0.10\).
 - The above example with \(H_{1}:p\neq0.10\) is called a /two-sided/ test. Many times we are interested in a /one-sided/ test, which would look like \(H_{1}:p<0.10\) or \(H_{1}:p>0.10\).
+
+[fn:fn-typetwo] There is no mathematical difference between the errors, however. The bottom line is that we choose one type of error to control with an iron fist, and we try to minimize the probability of making the other type. That being said, null hypotheses are often by design to correspond to the ``simpler'' model, so it is often easier to analyze (and thereby control) the probabilities associated with Type I Errors.
 
 We are ready for tests of hypotheses for one proportion.
 Table here.
@@ -7654,9 +7658,10 @@ Or do we?
 Clearly, for some significance levels we reject, and for some significance levels we do not. Where is the boundary? That is, what is the significance level for which we would /reject/ at any significance level /bigger/, and we would /fail to reject/ at any significance level /smaller/? This boundary value has a special name: it is called the /p-value/ of the test.
 
 #+begin_defn
-The /p-value/, or /observed significance level/, of a hypothesis test is the probability when the null hypothesis is true of obtaining the observed value of the test statistic (such as \(\hat{p}\)) or values more extreme -- meaning, in the direction of the alternative hypothesis
-#+LaTeX: \footnote{Bickel and Doksum \cite{Bickel2001} state the definition particularly well: the \(p\)-value is ``the smallest level of significance \(\alpha\) at which an experimenter using the test statistic \(T\) would reject \(H_{0}\) on the basis of the observed sample outcome \(x\)''.}. 
+The /p-value/, or /observed significance level/, of a hypothesis test is the probability when the null hypothesis is true of obtaining the observed value of the test statistic (such as \(\hat{p}\)) or values more extreme -- meaning, in the direction of the alternative hypothesis[fn:fn-pvalue].
 #+end_defn
+
+[fn:fn-pvalue] Bickel and Doksum \cite{Bickel2001} state the definition particularly well: the \(p\)-value is ``the smallest level of significance \(\alpha\) at which an experimenter using the test statistic \(T\) would reject \(H_{0}\) on the basis of the observed sample outcome \(x\)''.
 
 # +BEGIN_exampletoo
 
@@ -7997,12 +8002,12 @@ Here we have two variables \(X\) and \(Y\). For our purposes, \(X\) is not rando
 - \( x = \) height and \( Y = \) weight.
 - \( x = \) smoking frequency and \( Y = \) age of first heart attack.
 
-Given information about the relationship between \(x\) and \(Y\), we would like to /predict/ future values of \(Y\) for particular values of \(x\). This turns out to be a difficult problem \!\!
-#+LaTeX: \footnote{Yogi Berra once said, ``It is always difficult to make predictions, especially about the future.''}
-, so instead we first tackle an easier problem: we estimate \( \mathbb{E} Y \). How can we accomplish this? Well, we know that \(Y\) depends somehow on \(x\), so it stands to reason that
+Given information about the relationship between \(x\) and \(Y\), we would like to /predict/ future values of \(Y\) for particular values of \(x\). This turns out to be a difficult problem[fn:fn-yogi], so instead we first tackle an easier problem: we estimate \( \mathbb{E} Y \). How can we accomplish this? Well, we know that \(Y\) depends somehow on \(x\), so it stands to reason that
 \begin{equation}
 \mathbb{E} Y = \mu(x),\ \mbox{a function of }x.
 \end{equation}
+
+[fn:fn-yogi] Yogi Berra once said, "It is always difficult to make predictions, especially about the future."
 
 But we should be able to say more than that. To focus our efforts we impose some structure on the functional form of \(\mu\). For instance, 
 - if \(\mu(x)=\beta_{0}+\beta_{1}x\), we try to estimate \( \beta_{0} \) and \( \beta_{1} \).
@@ -8040,8 +8045,9 @@ We assume both the normality of the errors \(\epsilon\) and the linearity of the
 #+END_rem
 
 *** What does it all mean?
-See Figure [[fig-philosophy][philosophy]]. Shown in the figure is a solid line, the regression line\index{regression line} \(\mu\), which in this display has slope 0.5 and /y/-intercept 2.5, that is, \( \mu(x) = 2.5 + 0.5x \). The intuition is that for each given value of \(x\), we observe a random value of \(Y\) which is normally distributed with a mean equal to the height of the regression line at that \(x\) value. Normal densities are superimposed on the plot to drive this point home; in principle, the densities stand outside of the page, perpendicular to the plane of the paper. The figure shows three such values of \(x\), namely, \( x = 1 \), \( x = 2.5 \), and \( x = 4 \). Not only do we assume that the observations at the three locations are independent, but we also assume that their distributions have the same spread. In mathematical terms this means that the normal densities all along the line have identical standard deviations -- there is no ``fanning out'' or ``scrunching in'' of the normal densities as \(x\) increases
-#+LaTeX: \footnote{In practical terms, this constant variance assumption is often violated, in that we often observe scatterplots that fan out from the line as \(x\) gets large or small. We say under those circumstances that the data show \emph{heteroscedasticity}. There are methods to address it, but they fall outside the realm of SLR.}.
+See Figure [[fig-philosophy][philosophy]]. Shown in the figure is a solid line, the regression line\index{regression line} \(\mu\), which in this display has slope 0.5 and /y/-intercept 2.5, that is, \( \mu(x) = 2.5 + 0.5x \). The intuition is that for each given value of \(x\), we observe a random value of \(Y\) which is normally distributed with a mean equal to the height of the regression line at that \(x\) value. Normal densities are superimposed on the plot to drive this point home; in principle, the densities stand outside of the page, perpendicular to the plane of the paper. The figure shows three such values of \(x\), namely, \( x = 1 \), \( x = 2.5 \), and \( x = 4 \). Not only do we assume that the observations at the three locations are independent, but we also assume that their distributions have the same spread. In mathematical terms this means that the normal densities all along the line have identical standard deviations -- there is no ``fanning out'' or ``scrunching in'' of the normal densities as \(x\) increases[fn:fn-cvass].
+
+[fn:fn-cvass] In practical terms, this constant variance assumption is often violated, in that we often observe scatterplots that fan out from the line as \(x\) gets large or small. We say under those circumstances that the data show /heteroscedasticity/. There are methods to address it, but they fall outside the realm of SLR.
 
 #+NAME: philosophy
 #+BEGIN_SRC R :exports none :results graphics :file ps/slr/philosophy.ps
@@ -8288,9 +8294,9 @@ For a point estimate of \(\sigma^{2}\) we use the /mean square error/ \(S^{2}\) 
 \begin{equation}
 S^{2}=\frac{SSE}{n-2},
 \end{equation}
-and we estimate \(\sigma\) with the /standard error/
-#+LaTeX: \footnote{Be careful not to confuse the mean square error \(S^{2}\) with the sample variance \(S^{2}\) in Chapter \ref{cha-Describing-Data-Distributions}. Other notation the reader may encounter is the lowercase \(s^{2}\) or the bulky \(MSE\).}
-\(S=\sqrt{S^{2}}\).
+and we estimate \(\sigma\) with the /standard error/ \(S=\sqrt{S^{2}}\)[fn:fn-se].
+
+[fn:fn-se] Be careful not to confuse the mean square error \(S^{2}\) with the sample variance \(S^{2}\) in Chapter \ref{cha-Describing-Data-Distributions}. Other notation the reader may encounter is the lowercase \(s^{2}\) or the bulky \(MSE\).
 
 **** How to do it with \(\mathsf{R}\)
 
@@ -8923,9 +8929,7 @@ A rule of thumb is to flag observations whose \(DFFIT\) exceeds one in absolute 
 
 **** Cook's Distance
 
-The \(DFFITS\) are good for measuring the influence on a single fitted value, but we may want to measure the influence an observation has on all of the fitted values simultaneously. The statistics used for measuring this are Cook's distances which may be calculated
-#+LaTeX: \footnote{Cook's distances are actually defined by a different formula than the one shown. The formula in Equation \ref{eq-slr-cooks-distance} is algebraically equivalent to the defining formula and is, in the author's opinion, more transparent.}
-by the formula
+The \(DFFITS\) are good for measuring the influence on a single fitted value, but we may want to measure the influence an observation has on all of the fitted values simultaneously. The statistics used for measuring this are Cook's distances which may be calculated[fn:fn-cook] by the formula
 \begin{equation}
 \label{eq-slr-cooks-distance}
 D_{i}=\frac{E_{i}^{2}}{(p+1)S^{2}}\cdot\frac{h_{ii}}{(1-h_{ii})^{2}},\quad i=1,2,\ldots,n.
@@ -8933,6 +8937,8 @@ D_{i}=\frac{E_{i}^{2}}{(p+1)S^{2}}\cdot\frac{h_{ii}}{(1-h_{ii})^{2}},\quad i=1,2
 It shows that Cook's distance depends both on the residual \(E_{i}\) and the leverage \(h_{ii}\) and in this way \(D_{i}\) contains information about outlying \(x\) and \(y\) values.
 
 To assess the significance of \(D\), we compare to quantiles of an \(\mathsf{f}(\mathtt{df1}=2,\,\mathtt{df2}=n-2)\) distribution. A rule of thumb is to classify observations falling higher than the \(50^{\mathrm{th}}\) percentile as being extreme. 
+
+[fn:fn-cook] Cook's distances are actually defined by a different formula than the one shown. The formula in Equation \ref{eq-slr-cooks-distance} is algebraically equivalent to the defining formula and is, in the author's opinion, more transparent.
 
 **** How to do it with \(\mathsf{R}\)
 
@@ -9198,13 +9204,13 @@ since \(\mathbf{X}^{\mathrm{T}}\mathbf{X}\) is symmetric. Setting the derivative
 \mathbf{X}^{\mathrm{T}}\mathbf{X}\upbeta=\mathbf{X}^{\mathrm{T}}\mathbf{Y}.
 \end{equation}
 
-In the case that \(\mathbf{X}^{\mathrm{T}}\mathbf{X}\) is invertible
-#+LaTeX: \footnote{We can find solutions of the normal equations even when \(\mathbf{X}^{\mathrm{T}}\mathbf{X}\) is not of full rank, but the topic falls outside the scope of this book. The interested reader can consult an advanced text such as Rao \cite{Rao1999}.},
-we may solve the equation for \(\upbeta\) to get the maximum likelihood estimator of \(\upbeta\) which we denote by \(\mathbf{b}\):
+In the case that \(\mathbf{X}^{\mathrm{T}}\mathbf{X}\) is invertible[fn:fn-invert], we may solve the equation for \(\upbeta\) to get the maximum likelihood estimator of \(\upbeta\) which we denote by \(\mathbf{b}\):
 \begin{equation}
 \label{eq-b-formula-matrix}
 \mathbf{b}=\left(\mathbf{X}^{\mathrm{T}}\mathbf{X}\right)^{-1}\mathbf{X}^{\mathrm{T}}\mathbf{Y}.
 \end{equation}
+
+[fn:fn-invert] We can find solutions of the normal equations even when \(\mathbf{X}^{\mathrm{T}}\mathbf{X}\) is not of full rank, but the topic falls outside the scope of this book. The interested reader can consult an advanced text such as Rao \cite{Rao1999}.
 
 #+BEGIN_rem
 The formula in Equation [[eq-b-formula-matrix]] is convenient for mathematical study but is inconvenient for numerical computation. Researchers have devised much more efficient algorithms for the actual calculation of the parameter estimates, and we do not explore them here.
@@ -9404,9 +9410,9 @@ There is a lot that we can glean from Equation [[eq-distn-b-mlr]]. First, it fol
 \begin{equation}
 b_{i}\pm\mathsf{t}_{\alpha/2}(\mathtt{df}=n-p-1)S_{b_{i}}.
 \end{equation}
-The degrees of freedom for the Student's \(t\) distribution
-#+LaTeX: \footnote{We are taking great leaps over the mathematical details. In particular, we have yet to show that \(s^{2}\) has a chi-square distribution and we have not even come close to showing that \(b_{i}\) and \(s_{b_{i}}\) are independent. But these are entirely outside the scope of the present book and the reader may rest assured that the proofs await in later classes. See C.R. Rao for more.}
-are the same as the denominator of \(S^{2}\). 
+The degrees of freedom for the Student's \(t\) distribution[fn:fn-tdf] are the same as the denominator of \(S^{2}\). 
+
+[fn:fn-tdf] We are taking great leaps over the mathematical details. In particular, we have yet to show that \(s^{2}\) has a chi-square distribution and we have not even come close to showing that \(b_{i}\) and \(s_{b_{i}}\) are independent. But these are entirely outside the scope of the present book and the reader may rest assured that the proofs await in later classes. See C.R. Rao for more.
 
 **** How to do it with \(\mathsf{R}\)
 
@@ -9581,8 +9587,9 @@ and we have seen how to test the hypothesis \(H_{0}:\beta_{1}=\beta_{2}=\cdots=\
 \begin{equation}
 H_{0}:\beta_{i}=0\mbox{ versus }H_{1}:\beta_{i}\neq0,
 \end{equation}
-where \(\beta_{i}\) is the coefficient for the \(i^{\textrm{th}}\) independent variable. We test the hypothesis by calculating a statistic, examining it's null distribution, and rejecting \(H_{0}\) if the /p-value/ is small. If \(H_{0}\) is rejected, then we conclude that there is a significant relationship between \(Y\) and \(x_{i}\) /in the regression model/ \(Y\sim(x_{1},\ldots,x_{p})\). This last part of the sentence is very important because the significance of the variable \(x_{i}\) sometimes depends on the presence of other independent variables in the model
-#+LaTeX: \footnote{In other words, a variable might be highly significant one moment but then fail to be significant when another variable is added to the model. When this happens it often indicates a problem with the explanatory variables, such as /multicollinearity/. See Section \ref{sub-Multicollinearity}.}.
+where \(\beta_{i}\) is the coefficient for the \(i^{\textrm{th}}\) independent variable. We test the hypothesis by calculating a statistic, examining it's null distribution, and rejecting \(H_{0}\) if the /p-value/ is small. If \(H_{0}\) is rejected, then we conclude that there is a significant relationship between \(Y\) and \(x_{i}\) /in the regression model/ \(Y\sim(x_{1},\ldots,x_{p})\). This last part of the sentence is very important because the significance of the variable \(x_{i}\) sometimes depends on the presence of other independent variables in the model[fn:fn-multic].
+
+[fn:fn-multic] In other words, a variable might be highly significant one moment but then fail to be significant when another variable is added to the model. When this happens it often indicates a problem with the explanatory variables, such as /multicollinearity/. See Section \ref{sub-Multicollinearity}.
 
 To test the hypothesis we go to find the sampling distribution of \( b_{i} \), the estimator of the corresponding parameter \( \beta_{i} \), when the null hypothesis is true. We saw in Section [[sub-mlr-interval-est-params][MLR Interval Estimate Parameters]] that 
 \begin{equation}
@@ -9630,8 +9637,9 @@ Y=\beta_{0}+\beta_{1}x_{1}+\beta_{2}x_{1}^{2}+\epsilon.
 \end{equation}
 The regression assumptions are the same. Almost everything indeed is the same. In fact, it is still called a ``linear regression model'', since the mean response \(\mu\) is linear /in the parameters/ \(\beta_{0}\), \(\beta_{1}\), and \(\beta_{2}\). 
 
-*However, there is one important difference.* When we introduce the squared variable in the model we inadvertently also introduce strong dependence between the terms which can cause significant numerical problems when it comes time to calculate the parameter estimates. Therefore, we should usually rescale the independent variable to have mean zero (and even variance one if we wish) *before* fitting the model. That is, we replace the \(x_{i}\)'s with \(x_{i}-\overline{x}\) (or \((x_{i}-\overline{x})/s\)) before fitting the model
-#+LaTeX: \footnote{Rescaling the data gets the job done but a better way to avoid the multicollinearity introduced by the higher order terms is with /orthogonal polynomials/, whose coefficients are chosen just right so that the polynomials are not correlated with each other. This is beginning to linger outside the scope of this book, however, so we will content ourselves with a brief mention and then stick with the rescaling approach in the discussion that follows. A nice example of orthogonal polynomials in action can be run with \texttt{example(cars)}.}.
+*However, there is one important difference.* When we introduce the squared variable in the model we inadvertently also introduce strong dependence between the terms which can cause significant numerical problems when it comes time to calculate the parameter estimates. Therefore, we should usually rescale the independent variable to have mean zero (and even variance one if we wish) *before* fitting the model. That is, we replace the \(x_{i}\)'s with \(x_{i}-\overline{x}\) (or \((x_{i}-\overline{x})/s\)) before fitting the model[fn:fn-ortho].
+
+[fn:fn-ortho] Rescaling the data gets the job done but a better way to avoid the multicollinearity introduced by the higher order terms is with /orthogonal polynomials/, whose coefficients are chosen just right so that the polynomials are not correlated with each other. This is beginning to linger outside the scope of this book, however, so we will content ourselves with a brief mention and then stick with the rescaling approach in the discussion that follows. A nice example of orthogonal polynomials in action can be run with =example(cars)=.
 
 **** How to do it with \(\mathsf{R}\)
 
@@ -9778,9 +9786,7 @@ These examples can be generalized to more than two independent variables, say th
 We have so far been concerned with numerical independent variables taking values in a subset of real numbers. In this section, we extend our treatment to include the case in which one of the explanatory variables is qualitative, that is, a /factor/. Qualitative variables take values in a set of /levels/, which may or may not be ordered. See Section [[sub-Qualitative-Data][Qualitative Data]].
 
 *Note:*
-The =trees= data do not have any qualitative explanatory variables, so we will construct one for illustrative purposes
-#+LaTeX: \footnote{This procedure of replacing a continuous variable by a discrete/qualitative one is called \emph{binning}, and is almost \emph{never} the right thing to do. We are in a bind at this point, however, because we have invested this chapter in the \texttt{trees} data and I do not want to switch mid-discussion. I am currently searching for a data set with pre-existing qualitative variables that also conveys the same points present in the trees data, and when I find it I will update this chapter accordingly.}.
-We will leave the =Girth= variable alone, but we will replace the variable =Height= by a new variable =Tall= which indicates whether or not the cherry tree is taller than a certain threshold (which for the sake of argument will be the sample median height of 76 ft). That is, =Tall= will be defined by
+The =trees= data do not have any qualitative explanatory variables, so we will construct one for illustrative purposes[fn:fn-binning].  We will leave the =Girth= variable alone, but we will replace the variable =Height= by a new variable =Tall= which indicates whether or not the cherry tree is taller than a certain threshold (which for the sake of argument will be the sample median height of 76 ft). That is, =Tall= will be defined by
 \begin{equation}
 \mathtt{Tall}=
 \begin{cases}
@@ -9799,6 +9805,7 @@ trees$Tall[1:5]
 
 Note that =Tall= is automatically generated to be a factor with the labels in the correct order. See =?cut= for more. 
 
+[fn:fn-binning] This procedure of replacing a continuous variable by a discrete/qualitative one is called /binning/, and is almost /never/ the right thing to do. We are in a bind at this point, however, because we have invested this chapter in the =trees= data and I do not want to switch mid-discussion. I am currently searching for a data set with pre-existing qualitative variables that also conveys the same points present in the trees data, and when I find it I will update this chapter accordingly.
 
 Once we have =Tall=, we include it in the regression model just like we would any other variable. It is handled internally in a special way. Define a ``dummy variable'' =Tallyes= that takes values
 \begin{equation}
@@ -9840,10 +9847,10 @@ summary(treesdummy.lm)
 From the output we see that all parameter estimates are statistically significant and we conclude that the mean response differs for trees with =Tall = yes= and trees with =Tall = no=.
 
 #+BEGIN_rem
-We were somewhat disingenuous when we defined the dummy variable =Tallyes= because, in truth, \(\mathsf{R}\) defines =Tallyes= automatically without input from the user
-#+LaTeX: \footnote{That is, \(\mathsf{R}\) by default handles contrasts according to its internal settings which may be customized by the user for fine control. Given that we will not investigate contrasts further in this book it does not serve the discussion to delve into those settings, either. The interested reader should check \texttt{?contrasts} for details.}. 
-Indeed, the author fit the model beforehand and wrote the discussion afterward with the knowledge of what \(\mathsf{R}\) would do so that the output the reader saw would match what (s)he had previously read. The way that \(\mathsf{R}\) handles factors internally is part of a much larger topic concerning /contrasts/, which falls outside the scope of this book. The interested reader should see Neter et al \cite{Neter1996} or Fox \cite{Fox1997} for more. 
+We were somewhat disingenuous when we defined the dummy variable =Tallyes= because, in truth, \(\mathsf{R}\) defines =Tallyes= automatically without input from the user[fn:fn-contrast]. Indeed, the author fit the model beforehand and wrote the discussion afterward with the knowledge of what \(\mathsf{R}\) would do so that the output the reader saw would match what (s)he had previously read. The way that \(\mathsf{R}\) handles factors internally is part of a much larger topic concerning /contrasts/, which falls outside the scope of this book. The interested reader should see Neter et al \cite{Neter1996} or Fox \cite{Fox1997} for more. 
 #+END_rem
+
+[fn:fn-contrast] That is, \(\mathsf{R}\) by default handles contrasts according to its internal settings which may be customized by the user for fine control. Given that we will not investigate contrasts further in this book it does not serve the discussion to delve into those settings, either. The interested reader should check =?contrasts= for details.
 
 #+BEGIN_rem
 In general, if an explanatory variable =foo= is qualitative with \(n\) levels =bar1=, =bar2=, ..., =barn= then \(\mathsf{R}\) will by default automatically define \(n-1\) indicator variables in the following way:
@@ -11424,9 +11431,9 @@ Let \(f\) be defined on a rectangle \(R=[a,b]\times[c,d]\), and for each \(m\) a
 provided this limit exists. Multiple integrals are defined in the same way just with more letters and sums.
 
 *** Bivariate and Multivariate Change of Variables
-Suppose we have a transformation
-#+LaTeX: \footnote{For our purposes \(T\) is in fact the /inverse/ of a one-to-one transformation that we are initially given. We usually start with functions that map \((x,y) \longmapsto (u,v)\), and one of our first tasks is to solve for the inverse transformation that maps \((u,v)\longmapsto(x,y)\). It is this inverse transformation which we are calling \(T\).}
-\(T\) that maps points \((u,v)\) in a set \(A\) to points \((x,y)\) in a set \(B\). We typically write \(x=x(u,v)\) and \(y=y(u,v)\), and we assume that \(x\) and \(y\) have continuous first-order partial derivatives. We say that \(T\) is /one-to-one/ if no two distinct \((u,v)\) pairs get mapped to the same \((x,y)\) pair; in this book, all of our multivariate transformations \(T\) are one-to-one.
+Suppose we have a transformation[fn:fn-trans] \(T\) that maps points \((u,v)\) in a set \(A\) to points \((x,y)\) in a set \(B\). We typically write \(x=x(u,v)\) and \(y=y(u,v)\), and we assume that \(x\) and \(y\) have continuous first-order partial derivatives. We say that \(T\) is /one-to-one/ if no two distinct \((u,v)\) pairs get mapped to the same \((x,y)\) pair; in this book, all of our multivariate transformations \(T\) are one-to-one.
+
+[fn:fn-trans] For our purposes \(T\) is in fact the /inverse/ of a one-to-one transformation that we are initially given. We usually start with functions that map \((x,y) \longmapsto (u,v)\), and one of our first tasks is to solve for the inverse transformation that maps \((u,v)\longmapsto(x,y)\). It is this inverse transformation which we are calling \(T\).
 
 The /Jacobian/ (pronounced ``yah-KOH-bee-uhn'') of \(T\) is denoted by \(\partial(x,y)/\partial(u,v)\) and is defined by the determinant of the following matrix of partial derivatives:
 \begin{equation}
@@ -11604,9 +11611,9 @@ The majority of the data and exercises have been designed to be randomly generat
 
 Then next semester, the teacher can generate a /new/ book and the problems will be more or less identical, except the numbers will be changed. This means that students from different sections of the same class will not be able to copy from one another quite so easily. The same will be true for similar classes at different institutions. Indeed, as long as the instructor protects his/her /key/ used to generate the book, it will be difficult for students to crack the code. And if they are industrious enough at this level to find a way to (a) download and decipher my version's source code, (b) hack the teacher's password somehow, and (c) generate the teacher's book with all of the answers, then they probably should be testing out of an ``Introduction to Probability and Statistics'' course, anyway. 
 
-The book that you are reading was created with a random seed which was set at the beginning. The original seed is 42. You can choose your own seed, and generate a new book with brand new data for the text and exercises, complete with updated manuals. A method I recommend for finding a seed is to look down at your watch at this very moment and record the 6 digit hour, minute, and second (say, 9:52:59am): choose that for a seed
-#+LaTeX: \footnote{In fact, this is essentially the method used by \(\mathsf{R}\) to select an initial random seed, see =?set.seed=. However, the instructor should set the seed manually so that the book can be regenerated at a later time, if necessary.}.
-This method already provides for over 43,000 books, without taking military time into account. An alternative would be to go to \(\mathsf{R}\) and type 
+The book that you are reading was created with a random seed which was set at the beginning. The original seed is 42. You can choose your own seed, and generate a new book with brand new data for the text and exercises, complete with updated manuals. A method I recommend for finding a seed is to look down at your watch at this very moment and record the 6 digit hour, minute, and second (say, 9:52:59am): choose that for a seed[fn:fn-seed]. This method already provides for over 43,000 books, without taking military time into account. An alternative would be to go to \(\mathsf{R}\) and type 
+
+[fn:fn-seed] In fact, this is essentially the method used by \(\mathsf{R}\) to select an initial random seed, see =?set.seed=. However, the instructor should set the seed manually so that the book can be regenerated at a later time, if necessary.
 
 #+BEGIN_SRC R
 options(digits = 16)
@@ -11803,7 +11810,6 @@ save.image(file = "../../data/IPSUR.RData")
 tools::resaveRdaFiles('../../data', compress = 'xz')
 Stangle(file="IPSUR.Rnw", output="../IPSUR.R", annotate=TRUE)
 #+END_SRC
-
 
 
 
