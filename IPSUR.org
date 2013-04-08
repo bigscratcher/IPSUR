@@ -1032,7 +1032,7 @@ par(mfrow = c(1,1)) # back to normal
 
 #+NAME: fig-stripcharts
 #+CAPTION[Strip charts of =precip=, =rivers=, and =discoveries=]: \small Three stripcharts of three data sets.  The first graph uses the =overplot= method, the second the =jitter= method, and the third the =stack= method.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: stripcharts
 [[file:ps/datadesc/stripcharts.ps]]
 
@@ -1087,7 +1087,7 @@ par(mfrow = c(1,1))
 
 #+NAME: fig-histograms
 #+CAPTION: \small (Relative) frequency histograms of the =precip= data
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: histograms
 [[file:ps/datadesc/histograms.ps]]
 
@@ -1119,7 +1119,7 @@ par(mfrow = c(1,1))
 
 #+NAME: fig-histograms-bins
 #+CAPTION: \small More histograms of the =precip= data
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: histograms-bins
 [[file:ps/datadesc/histograms-bins.ps]]
 
@@ -1217,7 +1217,7 @@ par(mfrow = c(1,1))
 
 #+NAME: fig-indpl-lakehuron
 #+CAPTION: \small Index plots of the =LakeHuron= data
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: indpl-lakehuron
 [[file:ps/datadesc/indpl-lakehuron.ps]]
 
@@ -1401,7 +1401,7 @@ par(mfrow = c(1,1)) # back to normal
 
 #+NAME: fig-bar-gr-stateregion
 #+CAPTION[Bar graphs of the =state.region= data]: \small The left graph is a frequency barplot made with =table= and the right is a relative frequency barplot made with =prop.table=.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: bar-gr-stateregion
 [[file:ps/datadesc/fig-bar-gr-stateregion.ps]]
 
@@ -1439,7 +1439,7 @@ pareto.chart(table(state.division), ylab="Frequency")
 
 #+NAME: fig-Pareto-chart
 #+CAPTION: \small Pareto chart of the =state.division= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Pareto-chart
 [[file:ps/datadesc/fig-bar-gr-stateregion.ps]]
 
@@ -1469,7 +1469,7 @@ dotchart(as.vector(x), labels = names(x))
 
 #+NAME: fig-dot-charts
 #+CAPTION: \small Dot chart of the \texttt{state.region} data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: dot-charts
 [[file:ps/datadesc/dot-charts.ps]]
 
@@ -2520,7 +2520,7 @@ print(xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species))
 
 #+NAME: fig-xyplot-group
 #+CAPTION[Scatterplot of Petal width versus length in the =iris= data.]: \small Scatterplot of Petal width versus length in the =iris= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: xyplot-group
 [[file:ps/datadesc/xyplot-group.ps]]
 
@@ -2597,7 +2597,7 @@ print(bwplot(~weight | feed, data = chickwts))
 
 #+NAME: fig-bwplot
 #+CAPTION: \small Boxplots of =weight= by =feed= type in the =chickwts= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: bwplot
 [[file:ps/datadesc/bwplot.ps]]
 
@@ -2614,7 +2614,7 @@ print(histogram(~age | education, data = infert))
 
 #+NAME: fig-histograms-lattice
 #+CAPTION[Histograms of =age= by =education= level]: \small Histograms of =age= by =education= level from the =infert= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: histograms-lattice
 [[file:ps/datadesc/histograms-lattice.ps]]
 
@@ -2632,7 +2632,7 @@ print(xyplot(Petal.Length ~ Petal.Width | Species, data = iris))
 
 #+NAME: fig-xyplot
 #+CAPTION[An =xyplot= of =Petal.Length= versus =Petal.Width= by =Species=]: \small An =xyplot= of =Petal.Length= versus =Petal.Width= by =Species= in the =iris= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: xyplot
 [[file:ps/datadesc/xyplot.ps]]
 
@@ -2649,7 +2649,7 @@ print(coplot(conc ~ uptake | Type * Treatment, data = CO2))
 
 #+NAME: fig-coplot
 #+CAPTION: \small A =coplot= of =conc= versus =uptake= by =Type= and =Treatment=.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: coplot
 [[file:ps/datadesc/coplot.ps]]
 
@@ -2848,7 +2848,7 @@ textellipse(mid = c(0.29,0.25), box.col = grey(0.95),
 
 #+NAME: fig-diagram
 #+CAPTION[Two types of experiments]: \small Two types of experiments
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: diagram
 [[file:ps/prob/diagram.ps]]
 
@@ -4214,7 +4214,7 @@ remove(g)
 
 #+NAME: fig-birthday
 #+CAPTION[The birthday problem]: \small The birthday problem. The horizontal line is at \(p=0.50\) and the vertical line is at \(n=23\).
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: birthday
 [[file:ps/prob/birthday.ps]]
 
@@ -4329,7 +4329,7 @@ p + geom_text(size = 15) + xlab("First roll") + ylab("Second roll")
 
 #+NAME: fig-twodiceAB
 #+CAPTION[Rolling two dice]: \small Rolling two dice. The outcomes in A are marked with X, the outcomes in B are marked with O.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: twodiceAB
 [[file:ps/prob/twodiceAB.ps]]
 
@@ -5794,7 +5794,7 @@ points(0:3, pbinom(-1:2, size = 3, prob = 0.5), pch = 1, cex = 1.2)
 
 #+NAME: fig-binom-cdf-base
 #+CAPTION[Graph of the \(\mathsf{binom}(\mathtt{size}=3,\,\mathtt{prob}=1/2)\) CDF]: \small A graph of the \(\mathsf{binom}(\mathtt{size}=3,\,\mathtt{prob}=1/2)\) CDF. 
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: binom-cdf-base
 [[file:ps/discdist/binom-cdf-base.ps]]
 
@@ -5834,7 +5834,7 @@ plot(X, cex = 0.2)
 
 #+NAME: fig-binom-plot-distr
 #+CAPTION[The \textsf{binom}(=size= = 3, =prob= = 0.5) distribution from the =distr= package]: \small The \textsf{binom}(=size= = 3, =prob= = 0.5) distribution from the =distr= package.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: binom-plot-distr
 [[file:ps/discdist/binom-plot-distr.ps]]
 
@@ -6159,7 +6159,7 @@ plot(ecdf(x))
 
 #+NAME: fig-empirical-CDF
 #+CAPTION[The empirical CDF]: \small The empirical CDF. 
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: empirical-CDF
 [[file:ps/discdist/stripcharts.ps]]
 
@@ -7874,7 +7874,7 @@ for (i in ind) curve(dchisq(x, df = i), 0, 20, add = TRUE)
 
 #+NAME: fig-chisq-dist-vary-df
 #+CAPTION[Chi square distribution for various degrees of freedom]: \small The chi square distribution for various degrees of freedom.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: chisq-dist-vary-df
 [[file:ps/contdist/chisq-dist-vary-df.ps]]
 
@@ -8071,7 +8071,7 @@ plot(function(x){mgfgamma(x, shape = 13, rate = 1)}, from=-0.1, to=0.1, ylab = "
 
 #+NAME: fig-gamma-mgf
 #+CAPTION[Plot of the \textsf{gamma}(=shape= = 13, =rate= = 1) MGF]: \small A plot of the \textsf{gamma}(=shape= = 13, =rate= = 1) MGF.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: gamma-mgf
 [[file:ps/contdist/gamma-mgf.ps]]
 
@@ -8260,7 +8260,7 @@ print(p2, vp = vplayout(1, 2))
 
 #+NAME: fig-max-and-sum-two-dice
 #+CAPTION[Max and Sum of two dice]: \small Rolling two dice. The value of U is the maximum of the two rolls, while the value of V is the sum of the two rolls.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: max-and-sum-two-dice
 [[file:ps/multdist/max-and-sum-two-dice.ps]]
 
@@ -8276,7 +8276,7 @@ p3 + geom_text(size = 6) + xlab("First roll") + ylab("Second roll") +
 
 #+NAME: fig-max-sum-two-dice-joint
 #+CAPTION[Joint outcomes of Max and Sum]: \small Rolling two dice. Joint values of U and V are shown as pairs, for each outcome in the sample space.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: max-sum-two-dice-joint
 [[file:ps/multdist/max-sum-two-dice-joint.ps]]
 
@@ -8862,7 +8862,7 @@ persp(x, y, z, theta = -30, phi = 30, ticktype = "detailed")
 
 #+NAME: fig-mvnorm-pdf
 #+CAPTION[Graph of a bivariate normal PDF]: \small A graph of a bivariate normal PDF.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: mvnorm-pdf
 [[file:ps/multdist/mvnorm-pdf.ps]]
 
@@ -9155,7 +9155,7 @@ print(cloud(probs ~ X1 + X2, data = S, type = c("p","h"), lwd = 2,
 
 #+NAME: fig-multinom-pmf2
 #+CAPTION[Plot of a multinomial PMF.]: \small A plot of a multinomial PMF.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: multinom-pmf2
 [[file:ps/multdist/multinom-pmf2.ps]]
 
@@ -9354,7 +9354,7 @@ for (i in ind) curve(dt(x, df = i), -3, 3, add = TRUE)
 
 #+NAME: fig-Students-t-dist-vary-df
 #+CAPTION[Student's \(t\) distribution for various degrees of freedom]: \small A plot of Student's \(t\) distribution for various degrees of freedom.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Students-t-dist-vary-df
 [[file:ps/sampdist/Students-t-dist-vary-df.ps]]
 
@@ -9551,7 +9551,7 @@ hist(iqrs, breaks = 20)
 
 #+NAME: fig-simulated-IQR
 #+CAPTION[Plot of simulated IQRs]: \small A plot of simulated IQRs.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: simulated-IQR
 [[file:ps/sampdist/simulated-IQR.ps]]
 
@@ -9583,7 +9583,7 @@ hist(mads, breaks = 20)
 
 #+NAME: fig-simulated-MAD
 #+CAPTION[Plot of simulated MADs]: \small A plot of simulated MADs.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: simulated-MAD
 [[file:ps/sampdist/simulated-MAD.ps]]
 
@@ -9695,7 +9695,7 @@ points(9, 0, pch = 4, lwd = 3, cex = 2)
 
 #+NAME: fig-capture-recapture
 #+CAPTION[Capture-recapture experiment]: \small A plot of maximum likelihood for the capture-recapture experiment.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: capture-recapture
 [[file:ps/estimate/capture-recapture.ps]]
 
@@ -9740,7 +9740,7 @@ curve(x^3*(1-x)^4, 0, 1, add = TRUE)
 
 #+NAME: fig-fishing-part-two
 #+CAPTION[Assorted likelihood functions for fishing, part two]: \small Assorted likelihood functions for fishing, part two.   Three graphs are shown of \(L\) when \(\sum x_{i}\) equals 3, 4, and 5, respectively, from left to right. We pick an \(L\) that matches the observed data and then maximize \(L\) as a function of \(p\). If \(\sum x_{i}=4\), then the maximum appears to occur somewhere around \(p \approx 0.6\).
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: fishing-part-two
 [[file:ps/estimate/fishing-part-two.ps]]
 
@@ -9789,7 +9789,7 @@ text(mle, mleobj/6, substitute(hat(theta)==a, list(a=round(mle, 4))), cex = 2, p
 
 #+NAME: fig-species-mle
 #+CAPTION[Species maximum likelihood]: \small Species maximum likelihood.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: species-mle
 [[file:ps/estimate/species-mle.ps]]
 
@@ -10000,7 +10000,7 @@ ci.examp()
 
 #+NAME: fig-ci-examp
 #+CAPTION[Simulated confidence intervals]: \small The graph was generated by the =ci.examp= function from the =TeachingDemos= package. Fifty (50) samples of size twenty five (25) were generated from a \( \mathsf{norm}(\mathtt{mean}=100,\,\mathtt{sd}=10) \) distribution, and each sample was used to find a 95% confidence interval for the population mean using Equation \ref{eq-z-interval}. The 50 confidence intervals are represented above by horizontal lines, and the respective sample means are denoted by vertical slashes. Confidence intervals that ``cover'' the true mean value of 100 are plotted in black; those that fail to cover are plotted in a lighter color. In the plot we see that only one (1) of the simulated intervals out of the 50 failed to cover \(\mu=100\), which is a success rate of 98%. If the number of generated samples were to increase from 50 to 500 to 50000, ..., then we would expect our success rate to approach the exact value of 95%.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: ci-examp
 [[file:ps/hypoth/ci-examp.ps]]
 
@@ -10828,7 +10828,7 @@ rug(y1)
 
 #+NAME: fig-between-versus-within
 #+CAPTION[Between group versus within group variation]: \small A plot of between group versus within group variation.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: between-versus-within
 [[file:ps/hypoth/between-versus-within.ps]]
 
@@ -10844,7 +10844,7 @@ par(old.omd)
 
 #+NAME: fig-some-F-plots-HH
 #+CAPTION[Some \(F\) plots from the \texttt{HH} package]: \small Some \(F\) plots from the \texttt{HH} package.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: some-F-plots-HH
 [[file:ps/hypoth/some-F-plots-HH.ps]]
 
@@ -10873,7 +10873,7 @@ power.examp()
 
 #+NAME: fig-power-examp
 #+CAPTION[Plot of significance level and power]: \small This graph was generated by the =power.examp= function from the =TeachingDemos= package. The plot corresponds to the hypothesis test \(H_{0}:\,\mu=\mu_{0}\) versus \(H_{1}:\,\mu=\mu_{1}\) (where \(\mu_{0}=0\) and \(\mu_{1}=1\), by default) based on a single observation \(X\sim\mathsf{norm}(\mathtt{mean}=\mu,\,\mathtt{sd}=\sigma)\). The top graph is of the \(H_{0}\) density while the bottom is of the \(H_{1}\) density. The significance level is set at \(\alpha=0.05\), the sample size is \(n=1\), and the standard deviation is \(\sigma=1\). The pink area is the significance level, and the critical value \(z_{0.05}\approx1.645\) is marked at the left boundary -- this defines the rejection region. When \(H_{0}\) is true, the probability of falling in the rejection region is exactly \(\alpha=0.05\). The same rejection region is marked on the bottom graph, and the probability of falling in it (when \(H_{1}\)  is true) is the blue area shown at the top of the display to be approximately \(0.26\). This probability represents the /power/ to detect a non-null mean value of \(\mu=1\). With the command the =run.power.examp()= at the command line the same plot opens, but in addition, there are sliders available that allow the user to interactively change the sample size \(n\), the standard deviation \(\sigma\), the true difference between the means \(\mu_{1}-\mu_{0}\), and the significance level \(\alpha\). By playing around the student can investigate the effect each of the aforementioned parameters has on the statistical power. Note that you need the =tkrplot= package \cite{tkrplot} for =run.power.examp=.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: power-examp
 [[file:ps/hypoth/power-examp.ps]]
 
@@ -10978,7 +10978,7 @@ segments(4,4.5, 4 + dnorm(0,0,0.5),4.5, lty = 2, col = "gray")
 
 #+NAME: fig-philosophy
 #+CAPTION[Philosophical foundations of SLR]: \small Philosophical foundations of SLR.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: philosophy
 [[file:ps/slr/philosophy.ps]]
 
@@ -11000,7 +11000,7 @@ plot(dist ~ speed, data = cars)
 
 #+NAME: fig-carscatter
 #+CAPTION[Scatterplot of =dist= versus =speed= for the =cars= data]: \small A scatterplot of =dist= versus =speed= for the =cars= data.  There is clearly an upward trend to the plot which is approximately linear. 
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: carscatter
 [[file:ps/slr/carscatter.ps]]
 
@@ -11121,7 +11121,7 @@ ggplot(cars, aes(x = speed, y = dist)) + geom_point(shape = 19) + geom_smooth(me
 
 #+NAME: fig-carline
 #+CAPTION[Scatterplot with added regression line for the =cars= data]: \small A scatterplot with an added regression line for the =cars= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: carline
 [[file:ps/slr/carline.ps]]
 
@@ -11403,7 +11403,7 @@ print(ci.plot(cars.lm))
 
 #+NAME: fig-carscipi
 #+CAPTION[Scatterplot with confidence/prediction bands for the =cars= data]: \small A scatterplot with confidence/prediction bands for the =cars= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: carscipi
 [[file:ps/slr/carscipi.ps]]
 
@@ -11568,7 +11568,7 @@ plot(cars.lm, which = 2)
 
 #+NAME: fig-Normal-q-q-plot-cars
 #+CAPTION[Normal q-q plot of the residuals for the =cars= data]: \small Used for checking the normality assumption. Look out for any curvature or substantial departures from the straight line; hopefully the dots hug the line closely.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Normal-q-q-plot-cars
 [[file:ps/slr/Normal-q-q-plot-cars.ps]]
 
@@ -11621,7 +11621,7 @@ plot(cars.lm, which = 3)
 
 #+NAME: fig-std-resids-fitted-cars
 #+CAPTION[Plot of standardized residuals against the fitted values for the =cars= data]: \small Used for checking the constant variance assumption. Watch out for any fanning out (or in) of the dots; hopefully they fall in a constant band.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: std-resids-fitted-cars
 [[file:ps/slr/std-resids-fitted-cars.ps]]
 
@@ -11662,7 +11662,7 @@ plot(cars.lm, which = 1)
 
 #+NAME: fig-resids-fitted-cars
 #+CAPTION[Plot of the residuals versus the fitted values for the =cars= data]: \small Used for checking the independence assumption. Watch out for any patterns or structure; hopefully the points are randomly scattered on the plot.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: resids-fitted-cars
 [[file:ps/slr/resids-fitted-cars.ps]]
 
@@ -11869,7 +11869,7 @@ plot(cars.lm, which = 4)
 
 #+NAME: fig-Cooks-distance-cars
 #+CAPTION[Cook's distances for the =cars= data]: \small Used for checking for influential and/our outlying observations. Values with large Cook's distance merit further investigation.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Cooks-distance-cars
 [[file:ps/slr/Cooks-distance-cars.ps]]
 
@@ -11909,7 +11909,7 @@ par(mfrow = c(1,1))
 
 #+NAME: fig-Diagnostic-plots-cars
 #+CAPTION[Diagnostic plots for the =cars= data]: \small Diagnostic plots for the =cars= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Diagnostic-plots-cars
 [[file:ps/slr/Diagnostic-plots-cars.ps]]
 
@@ -12046,7 +12046,7 @@ splom(trees)
 
 #+NAME: fig-splom-trees
 #+CAPTION[Scatterplot matrix of =trees= data]: \small A scatterplot matrix of the =trees= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: splom-trees
 [[file:ps/mlr/splom-trees.ps]]
 
@@ -12077,7 +12077,7 @@ fit <- lm(Volume ~ Girth + Height, data = trees)
 
 #+NAME: fig-3D-scatterplot-trees
 #+CAPTION[3D scatterplot with regression plane for the =trees= data]: \small A 3D scatterplot with regression plane for the =trees= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: 3D-scatterplot-trees
 [[file:ps/mlr/3D-scatterplot-trees.ps]]
 
@@ -12534,7 +12534,7 @@ qplot(Girth, Volume, data = trees)
 
 #+NAME: fig-Scatterplot-Volume-Girth-trees
 #+CAPTION[Scatterplot of =Volume= versus =Girth= for the =trees= data]: \small Scatterplot of =Volume= versus =Girth= for the =trees= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Scatterplot-Volume-Girth-trees
 [[file:ps/mlr/Scatterplot-Volume-Girth-trees.ps]]
 
@@ -12582,7 +12582,7 @@ a + stat_smooth(method = lm, formula = y ~ poly(x, 2)) + geom_point()
 
 #+NAME: fig-Fitting-the-Quadratic
 #+CAPTION[Quadratic model for the =trees= data]: \small A quadratic model for the =trees= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Fitting-the-Quadratic
 [[file:ps/mlr/Fitting-the-Quadratic.ps]]
 
@@ -12793,7 +12793,7 @@ lines(Fit ~ Girth, data = treesTall[["no"]])
 
 #+NAME: fig-dummy-variable-trees
 #+CAPTION[A dummy variable model for the =trees= data]: \small A dummy variable model for the =trees= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: dummy-variable-trees
 [[file:ps/mlr/dummy-variable-trees.ps]]
 
@@ -13102,7 +13102,7 @@ curve(dnorm(x, 3, 0.2), add = TRUE) # overlay true normal density
 
 #+NAME: fig-Bootstrap-se-mean
 #+CAPTION[Bootstrapping the standard error of the mean, simulated data]: \small The original data were 25 observations generated from a \(\mathsf{norm}(\mathtt{mean}=3,\,\mathtt{sd}=1)\) distribution. We next resampled to get 1000 resamples, each of size 25, and calculated the sample mean for each resample. A histogram of the 1000 values of \(\overline{x}\) is shown above. Also shown (with a solid line) is the true sampling distribution of \(\overline{X}\), which is a \(\mathsf{norm}(\mathtt{mean}=3,\,\mathtt{sd}=0.2)\) distribution. Note that the histogram is centered at the sample mean of the original data, while the true sampling distribution is centered at the true value of \(\mu=3\). The shape and spread of the histogram is similar to the shape and spread of the true sampling distribution.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Bootstrap-se-mean
 [[file:ps/resamp/Bootstrap-se-mean.ps]]
 
@@ -13152,7 +13152,7 @@ hist(medstar, breaks = 40, prob = TRUE)
 
 #+NAME: fig-Bootstrapping-se-median
 #+CAPTION[Bootstrapping the standard error of the median for the =rivers= data]: \small Bootstrapping the standard error of the median for the =rivers= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Bootstrapping-se-median
 [[file:ps/resamp/Bootstrapping-se-median.ps]]
 

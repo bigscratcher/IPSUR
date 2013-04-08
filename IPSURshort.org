@@ -1032,7 +1032,7 @@ par(mfrow = c(1,1)) # back to normal
 
 #+NAME: fig-stripcharts
 #+CAPTION[Strip charts of =precip=, =rivers=, and =discoveries=]: \small Three stripcharts of three data sets.  The first graph uses the =overplot= method, the second the =jitter= method, and the third the =stack= method.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: stripcharts
 [[file:ps/datadesc/stripcharts.ps]]
 
@@ -1087,7 +1087,7 @@ par(mfrow = c(1,1))
 
 #+NAME: fig-histograms
 #+CAPTION: \small (Relative) frequency histograms of the =precip= data
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: histograms
 [[file:ps/datadesc/histograms.ps]]
 
@@ -1119,7 +1119,7 @@ par(mfrow = c(1,1))
 
 #+NAME: fig-histograms-bins
 #+CAPTION: \small More histograms of the =precip= data
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: histograms-bins
 [[file:ps/datadesc/histograms-bins.ps]]
 
@@ -1217,7 +1217,7 @@ par(mfrow = c(1,1))
 
 #+NAME: fig-indpl-lakehuron
 #+CAPTION: \small Index plots of the =LakeHuron= data
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: indpl-lakehuron
 [[file:ps/datadesc/indpl-lakehuron.ps]]
 
@@ -1401,7 +1401,7 @@ par(mfrow = c(1,1)) # back to normal
 
 #+NAME: fig-bar-gr-stateregion
 #+CAPTION[Bar graphs of the =state.region= data]: \small The left graph is a frequency barplot made with =table= and the right is a relative frequency barplot made with =prop.table=.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: bar-gr-stateregion
 [[file:ps/datadesc/fig-bar-gr-stateregion.ps]]
 
@@ -1439,7 +1439,7 @@ pareto.chart(table(state.division), ylab="Frequency")
 
 #+NAME: fig-Pareto-chart
 #+CAPTION: \small Pareto chart of the =state.division= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: Pareto-chart
 [[file:ps/datadesc/fig-bar-gr-stateregion.ps]]
 
@@ -1469,7 +1469,7 @@ dotchart(as.vector(x), labels = names(x))
 
 #+NAME: fig-dot-charts
 #+CAPTION: \small Dot chart of the \texttt{state.region} data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: dot-charts
 [[file:ps/datadesc/dot-charts.ps]]
 
@@ -2520,7 +2520,7 @@ print(xyplot(Petal.Width ~ Petal.Length, data = iris, group = Species))
 
 #+NAME: fig-xyplot-group
 #+CAPTION[Scatterplot of Petal width versus length in the =iris= data.]: \small Scatterplot of Petal width versus length in the =iris= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: xyplot-group
 [[file:ps/datadesc/xyplot-group.ps]]
 
@@ -2597,7 +2597,7 @@ print(bwplot(~weight | feed, data = chickwts))
 
 #+NAME: fig-bwplot
 #+CAPTION: \small Boxplots of =weight= by =feed= type in the =chickwts= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: bwplot
 [[file:ps/datadesc/bwplot.ps]]
 
@@ -2614,7 +2614,7 @@ print(histogram(~age | education, data = infert))
 
 #+NAME: fig-histograms-lattice
 #+CAPTION[Histograms of =age= by =education= level]: \small Histograms of =age= by =education= level from the =infert= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: histograms-lattice
 [[file:ps/datadesc/histograms-lattice.ps]]
 
@@ -2632,7 +2632,7 @@ print(xyplot(Petal.Length ~ Petal.Width | Species, data = iris))
 
 #+NAME: fig-xyplot
 #+CAPTION[An =xyplot= of =Petal.Length= versus =Petal.Width= by =Species=]: \small An =xyplot= of =Petal.Length= versus =Petal.Width= by =Species= in the =iris= data.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: xyplot
 [[file:ps/datadesc/xyplot.ps]]
 
@@ -2649,7 +2649,7 @@ print(coplot(conc ~ uptake | Type * Treatment, data = CO2))
 
 #+NAME: fig-coplot
 #+CAPTION: \small A =coplot= of =conc= versus =uptake= by =Type= and =Treatment=.
-#+ATTR_LaTeX: :options "width=0.90\\textwidth" :placement "[ht]"
+#+ATTR_LaTeX: :width 0.5\textwidth :placement [ht!]
 #+RESULTS: coplot
 [[file:ps/datadesc/coplot.ps]]
 
