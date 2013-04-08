@@ -1,38 +1,46 @@
-outputR = R
-outputtex = .outputlatex
-outputhtml = .outputhtml
+#    IPSUR: Introduction to Probability and Statistics Using R
+#    Copyright (C) 2013 G. Jay Kerns
+#
+#    This file is part of IPSUR.
+#
+#    IPSUR is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    IPSUR is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with IPSUR.  If not, see <http://www.gnu.org/licenses/>.
+
+texdir = tex
 orgfile = IPSUR
-backup = .backup
+backdir = backup
 
 all:
-	-mkdir $(outputtex)
-	-mkdir $(outputhtml)
-	emacs -batch -eval "(progn (load \"~/git/org-mode/lisp/org.el\") (load \"~/git/config/dotemacs.el\") (R) (org-publish \"ipsurlatex\") (org-publish \"ipsurhtml\"))"
-	-cd ~/git/IPSUR/.outputlatex; latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
-	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(outputtex)/$(orgfile).pdf $(outputtex)/$(orgfile).ps
+	-mkdir $(texdir)
+	emacs -batch -eval "(progn (load \"~/gitm/IPSUR/IPSUR-init.el\") (R) (org-publish \"ipsurlatex\"))"
+	-cd $(texdir); latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
+	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(texdir)/$(orgfile).pdf $(texdir)/$(orgfile).ps
 	-rm -r ~/.org-timestamps
 
 latex:
-	-mkdir $(outputtex)
-	emacs -batch -eval "(progn (load \"~/git/org-mode/lisp/org.el\") (load \"~/git/config/dotemacs.el\") (R) (org-publish \"ipsurlatex\"))"
-	-cd ~/git/IPSUR/.outputlatex; latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
-	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(outputtex)/$(orgfile).pdf $(outputtex)/$(orgfile).ps
+	-mkdir $(texdir)
+	emacs -batch -eval "(progn (load \"~/gitm/IPSUR/IPSUR-init.el\") (R) (org-publish \"ipsurlatex\"))"
+	-cd $(texdir); latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
+	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(texdir)/$(orgfile).pdf $(texdir)/$(orgfile).ps
 	-rm -r ~/.org-timestamps
-
-html:
-	-mkdir $(outputhtml)
-	emacs -batch -eval "(progn (load \"~/git/org-mode/lisp/org.el\") (load \"~/git/config/dotemacs.el\") (R) (org-publish \"ipsurhtml\"))"
-	-rm -r ~/.org-timestamps
-
-R:
-	-mkdir $(outputR)
-	emacs -batch -eval "(progn (load \"~/git/org-mode/lisp/org.el\") (load \"~/git/config/dotemacs.el\") (R) (org-babel-tangle-file \"IPSUR.org\"))"
-
-clean:
-	-rm -r $(outputtex)
-	-rm -r $(outputhtml)
 
 backup:
-	-mkdir $(backup)
-	cp $(outputtex)/$(orgfile).pdf $(backup)/$(orgfile).pdf 
-	cp $(outputhtml)/$(orgfile).html $(backup)/$(orgfile).html
+	-mkdir $(backdir)
+	cp $(texdir)/$(orgfile).pdf $(backdir)/$(orgfile).pdf 
+
+clean:
+	-rm -r $(texdir)
+
+distclean:
+	-rm -r $(texdir)
+	-rm -r $(backdir)
