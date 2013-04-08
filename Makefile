@@ -22,14 +22,14 @@ backdir = backup
 
 all:
 	-mkdir $(texdir)
-	emacs -batch -eval "(progn (load \"~/gitm/IPSUR/IPSUR-init.el\") (R) (org-publish \"ipsurlatex\"))"
+	emacs -batch -eval "(progn (load \"~/gitm/IPSUR/init-ipsur.el\") (R) (org-publish \"ipsurlatex\"))"
 	-cd $(texdir); latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
 	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(texdir)/$(orgfile).pdf $(texdir)/$(orgfile).ps
 	-rm -r ~/.org-timestamps
 
 latex:
 	-mkdir $(texdir)
-	emacs -batch -eval "(progn (load \"~/gitm/IPSUR/IPSUR-init.el\") (R) (org-publish \"ipsurlatex\"))"
+	emacs -batch -eval "(progn (load \"~/gitm/IPSUR/init-ipsur.el\") (R) (org-publish \"ipsurlatex\"))"
 	-cd $(texdir); latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
 	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(texdir)/$(orgfile).pdf $(texdir)/$(orgfile).ps
 	-rm -r ~/.org-timestamps
