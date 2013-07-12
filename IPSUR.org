@@ -4574,7 +4574,7 @@ probability of observing =red=, then =green=, then =red=?
 prob::prob(N, isin(N, c("red","green","red"), ordered = TRUE))
 #+END_SRC
 
-Note that the exact value is \(7/20\) (do it with the Multiplication
+Note that the exact value is \(7/40\) (do it with the Multiplication
 Rule). What is the probability of observing =red=, =green=, and =red=,
 in no particular order?
 
