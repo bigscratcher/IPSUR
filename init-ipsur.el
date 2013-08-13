@@ -16,7 +16,6 @@
 ;;    You should have received a copy of the GNU General Public License
 ;;    along with IPSUR.  If not, see <http://www.gnu.org/licenses/>.
 
-
 (defvar org-dist "~/git/org-mode")
 (add-to-list 'load-path (concat org-dist "/lisp"))
 (add-to-list 'load-path (concat org-dist "/contrib/lisp"))
@@ -40,7 +39,7 @@
 (setq ox-latex-classes nil)
 (setq ox-latex-tables-booktabs nil)
 (setq ox-latex-title-command nil)
-(setq org-latex-hyperref-format "\\ref{%s}")
+(setq org-export-latex-hyperref-format "\\ref{%s}")
 (setq org-latex-toc-command "\\tableofcontents\n\n")
 (setq ox-latex-classes nil)
 (add-to-list 'org-latex-classes
