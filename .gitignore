@@ -1,8 +1,14 @@
 *~
+<<<<<<< HEAD
 .outputhtml/
 *#
 .Rhistory
 *.orgx
+=======
+*#
+.Rhistory
+pdf/
+>>>>>>> gnu/master
 ps/
 tex/
 R/IPSUR.RData
