@@ -17,9 +17,13 @@
 #    along with IPSUR.  If not, see <http://www.gnu.org/licenses/>.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 basedir = git
 >>>>>>> gnu/master
+=======
+basedir = git
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 psdir   = ps
 pdfdir  = pdf
 htmldir = html
@@ -32,35 +36,47 @@ all:
 	-mkdir $(texdir)
 	-mkdir $(psdir)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	emacs -Q -batch -eval "(progn (load \"~/git/IPSUR/init-ipsur.el\") (R) (org-publish \"ipsurlatex\"))"
 =======
 	emacs -Q -batch -eval "(progn (load \"~/$(basedir)/IPSUR/init-ipsur.el\") (R) (org-publish \"ipsurlatex\"))"
 >>>>>>> gnu/master
+=======
+	emacs -Q -batch -eval "(progn (load \"~/$(basedir)/IPSUR/init-ipsur.el\") (R) (org-publish \"ipsurlatex\"))"
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 	-cd $(texdir); latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
 	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(texdir)/$(orgfile).pdf $(texdir)/$(orgfile).ps
 	-rm -r ~/.org-timestamps
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 latex:
+=======
+tex:
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 	-mkdir $(texdir)
-	emacs -Q -batch -eval "(progn (load \"~/git/IPSUR/init-ipsur.el\") (R) (org-publish \"ipsurlatex\"))"
-	-cd $(texdir); latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
-	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(texdir)/$(orgfile).pdf $(texdir)/$(orgfile).ps
+	emacs -Q -batch -eval "(progn (load \"~/$(basedir)/IPSUR/init-ipsur.el\") (R) (org-publish \"ipsurlatex\"))"
 	-rm -r ~/.org-timestamps
 
+<<<<<<< HEAD
 =======
 tex:
 	-mkdir $(texdir)
 	emacs -Q -batch -eval "(progn (load \"~/$(basedir)/IPSUR/init-ipsur.el\") (R) (org-publish \"ipsurlatex\"))"
 	-rm -r ~/.org-timestamps
 
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 pdf:
 	-rm $(pdfdir)
 	cp -R $(texdir) $(pdfdir)
 	-cd $(pdfdir); latex $(orgfile).tex; bibtex $(orgfile); makeindex $(orgfile); latex $(orgfile).tex; latex $(orgfile).tex; dvips $(orgfile)
 	gs -dSAFER -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dPDFSETTINGS=/printer -dCompatibilityLevel=1.3 -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -sOutputFile=$(pdfdir)/$(orgfile).pdf $(pdfdir)/$(orgfile).ps
 
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 figures:
 	-mkdir $(psdir)
 	emacs -Q --batch --eval "(progn (load \"~/git/IPSUR/init-ipsur.el\") (R) (find-file \"~/git/IPSUR/IPSUR.org\") (org-babel-execute-buffer) (kill-buffer))"
@@ -76,9 +92,13 @@ backup:
 clean:
 	-rm -r $(texdir)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	-rm -r $(pdfdir)
 >>>>>>> gnu/master
+=======
+	-rm -r $(pdfdir)
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 	-rm -r ~/.org-timestamps
 
 distclean:

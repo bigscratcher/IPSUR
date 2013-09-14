@@ -35,9 +35,12 @@
 #+LATEX: \input{include/frontmatter}
 #+LATEX: \input{include/preface-second}
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+LATEX: \input{include/preface-first}
 =======
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+CREATOR: Emacs 24.3.1 (Org mode 8.0.7)
 
 * An Introduction to Probability and Statistics                     :introps:
@@ -1088,6 +1091,7 @@ were continuous, even though strictly speaking they are not
 continuous. See the examples.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_exampletoo
 
 *Annual Precipitation in US Cities.* The vector =precip= @@latex:\index{Data
@@ -1101,6 +1105,13 @@ The vector =precip= @@latex:\index{Data sets!precip@\texttt{precip}}@@
 contains average amount of rainfall (in inches) for each of 70 cities
 in the United States and Puerto Rico. Let us take a look at the data:
 >>>>>>> gnu/master
+=======
+#+ATTR_LATEX: :options [\textbf{Annual Precipitation in US Cities}]
+#+BEGIN_exampletoo
+The vector =precip= @@latex:\index{Data sets!precip@\texttt{precip}}@@
+contains average amount of rainfall (in inches) for each of 70 cities
+in the United States and Puerto Rico. Let us take a look at the data:
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp  
 str(precip)
@@ -1125,6 +1136,7 @@ are quantitative continuous data.
 #+END_exampletoo
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_exampletoo
 
 *Lengths of Major North American Rivers.* The U.S. Geological Survey
@@ -1136,13 +1148,20 @@ look at the data with the =str= @@latex:\index{str@\texttt{str}}@@ function.
 =======
 #+ATTR_LATEX: :options [\textbf{Lengths of Major North American Rivers}]
 #+BEGIN_exampletoo
+=======
+#+ATTR_LATEX: :options [\textbf{Lengths of Major North American Rivers}]
+#+BEGIN_exampletoo
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 The U.S. Geological Survey recorded the lengths (in miles) of several
 rivers in North America. They are stored in the vector =rivers=
 @@latex:\index{Data sets!rivers@\texttt{rivers}}@@ in the =datasets=
 package \cite{datasets} (which ships with base \(\mathsf{R}\)). See
 =?rivers=. Let us take a look at the data with the =str=
 @@latex:\index{str@\texttt{str}}@@ function.
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp  
 str(rivers)
@@ -1161,6 +1180,7 @@ these to be continuous for some of our statistical procedures.
 #+END_exampletoo
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #+BEGIN_exampletoo
 
@@ -1172,11 +1192,18 @@ look at the data:
 =======
 #+ATTR_LATEX: :options [\textbf{Yearly Numbers of Important Discoveries}]
 #+BEGIN_exampletoo
+=======
+#+ATTR_LATEX: :options [\textbf{Yearly Numbers of Important Discoveries}]
+#+BEGIN_exampletoo
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 The vector =discoveries= @@latex:\index{Data
 sets!discoveries@\texttt{discoveries}}@@ contains numbers of "great"
 inventions/discoveries in each year from 1860 to 1959, as reported by
 the 1975 World Almanac. Let us take a look at the data:
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp  
 str(discoveries)
@@ -1279,6 +1306,7 @@ frequency). The term histogram was coined by Karl Pearson in 1891, see
 \cite{Miller}.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #+BEGIN_exampletoo
 <<exa-annual>> *Annual Precipitation in US Cities.* We are going to take another look at the =precip= @@latex:\index{Data sets!precip@\texttt{precip}}@@ data that we investigated earlier. The strip chart in Figure
@@ -1287,12 +1315,19 @@ let us now look to see what a histogram says.
 =======
 #+ATTR_LATEX: :options [\textbf{Annual Precipitation in US Cities}]
 #+BEGIN_exampletoo
+=======
+#+ATTR_LATEX: :options [\textbf{Annual Precipitation in US Cities}]
+#+BEGIN_exampletoo
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 <<exa-annual>> We are going to take another look at the =precip=
 @@latex:\index{Data sets!precip@\texttt{precip}}@@ data that we
 investigated earlier. The strip chart in Figure [[fig-stripcharts]]
 suggested a loosely balanced distribution; let us now look to see what
 a histogram says.
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 There are many ways to plot histograms in \(\mathsf{R}\), and one of
 the easiest is with the =hist= @@latex:\index{hist@\texttt{hist}}@@
@@ -1384,6 +1419,7 @@ sometimes necessary to round the data values, especially for larger
 data sets.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_exampletoo
 <<exa-ukdriverdeaths-first>> *Driver Deaths in the United
 Kingdom*. =UKDriverDeaths= @@latex:\index{Data
@@ -1392,6 +1428,11 @@ Kingdom*. =UKDriverDeaths= @@latex:\index{Data
 #+BEGIN_exampletoo
 <<exa-ukdriverdeaths-first>> =UKDriverDeaths= @@latex:\index{Data
 >>>>>>> gnu/master
+=======
+#+ATTR_LATEX: :options [\textbf{Driver Deaths in the United Kingdom}]
+#+BEGIN_exampletoo
+<<exa-ukdriverdeaths-first>> =UKDriverDeaths= @@latex:\index{Data
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 sets!UKDriverDeaths@\texttt{UKDriverDeaths}}@@ is a time series that
 contains the total car drivers killed or seriously injured in Great
 Britain monthly from Jan 1969 to Dec 1984. See
@@ -1558,9 +1599,12 @@ Stage II cancer).
 
 #+BEGIN_exampletoo
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 The =state.abb= @@latex:\index{Data sets!state.abb@\texttt{state.abb}}@@ vector
 gives the two letter postal abbreviations for all 50 states.
 
@@ -1578,6 +1622,7 @@ names and those data would also be ID.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_exampletoo
 
 *U.S. State Facts and Features.* The U.S. Department of Commerce of
@@ -1589,13 +1634,20 @@ be it Northeast, South, North Central, or West. See =?state.region=.
 =======
 #+ATTR_LATEX: :options [\textbf{U.S. State Facts and Features}]
 #+BEGIN_exampletoo
+=======
+#+ATTR_LATEX: :options [\textbf{U.S. State Facts and Features}]
+#+BEGIN_exampletoo
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 The U.S. Department of Commerce of the U.S. Census Bureau releases all
 sorts of information in the /Statistical Abstract of the United
 States/, and the =state.region= @@latex:\index{Data
 sets!state.region@\texttt{state.region}}@@ data lists each of the 50
 states and the region to which it belongs, be it Northeast, South,
 North Central, or West. See =?state.region=.
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp  
 str(state.region)
@@ -1690,13 +1742,16 @@ are ordered alphabetically (by default), which may sometimes obscure
 patterns in the display.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#+ATTR_LATEX: :options [\textbf{U.S. State Facts and Features}]
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+BEGIN_exampletoo
-
-*U.S. State Facts and Features.* The =state.region= data lists each of
-the 50 states and the region to which it belongs, be it Northeast,
-South, North Central, or West. See =?state.region=. It is already
-stored internally as a factor. We make a bar graph with the
-=barplot= @@latex:\index{barplot@\texttt{barplot}}@@ function:
+The =state.region= data lists each of the 50 states and the region to
+which it belongs, be it Northeast, South, North Central, or West. See
+=?state.region=. It is already stored internally as a factor. We make
+a bar graph with the =barplot=
+@@latex:\index{barplot@\texttt{barplot}}@@ function:
 
 #+BEGIN_SRC R :exports code :eval never
 barplot(table(state.region), cex.names = 0.50)
@@ -1725,7 +1780,15 @@ Central, and finally Northeast. Over 30% of the states are in the
 South.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Notice the =cex.names= @@latex:\index{cex.names@\texttt{cex.names}}@@ argument that we used, above. It shrinks the names on the \(x\) axis by 50% which makes them easier to read. See =?par= @@latex:\index{par@\texttt{par}}@@ for a detailed list of additional plot parameters.
+=======
+Notice the =cex.names= @@latex:\index{cex.names@\texttt{cex.names}}@@
+argument that we used, above. It shrinks the names on the \(x\) axis
+by 50% which makes them easier to read. See =?par=
+@@latex:\index{par@\texttt{par}}@@ for a detailed list of additional
+plot parameters.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+NAME: bar-gr-stateregion
 #+BEGIN_SRC R :exports results :results graphics silent :file ps/datadesc-bar-gr-stateregion.ps
@@ -1768,18 +1831,22 @@ structure (if any) in how fast the bars decrease -- this is much more
 difficult when the bars are jumbled.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#+ATTR_LATEX: :options [\textbf{U.S. State Facts and Features}]
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+BEGIN_exampletoo
-
-*U.S. State Facts and Features.* The =state.division=
-@@latex:\index{Data sets!state.division@\texttt{state.division}}@@
-data record the division (New England, Middle Atlantic, South
-Atlantic, East South Central, West South Central, East North Central,
-West North Central, Mountain, and Pacific) of the fifty states. We can
-make a pareto diagram with either the =RcmdrPlugin.IPSUR=
-@@latex:\index{R packages@\textsf{R}
+The =state.division= @@latex:\index{Data
+sets!state.division@\texttt{state.division}}@@ data record the
+division (New England, Middle Atlantic, South Atlantic, East South
+Central, West South Central, East North Central, West North Central,
+Mountain, and Pacific) of the fifty states. We can make a pareto
+diagram with either the =RcmdrPlugin.IPSUR= @@latex:\index{R
+packages@\textsf{R}
 packages!RcmdrPlugin.IPSUR@\texttt{RcmdrPlugin.IPSUR}}@@ package
 \cite{RcmdrPlugin.IPSUR} or with the =pareto.chart=
 @@latex:\index{pareto.chart@\texttt{pareto.chart}}@@ function from the
+<<<<<<< HEAD
 =qcc= @@latex:\index{R packages@\textsf{R} packages!qcc@\texttt{qcc}}@@
 package \cite{qcc}. See Figure [[fig-Pareto-chart]]. The code follows.
 =======
@@ -1799,6 +1866,11 @@ packages!RcmdrPlugin.IPSUR@\texttt{RcmdrPlugin.IPSUR}}@@ package
 packages!qcc@\texttt{qcc}}@@ package \cite{qcc}. See Figure
 [[fig-Pareto-chart]]. The code follows.
 >>>>>>> gnu/master
+=======
+=qcc= @@latex:\index{R packages@\textsf{R}
+packages!qcc@\texttt{qcc}}@@ package \cite{qcc}. See Figure
+[[fig-Pareto-chart]]. The code follows.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+NAME: Pareto-chart
 #+BEGIN_SRC R :exports both :results graphics silent :file ps/datadesc-Pareto-chart.ps
@@ -2450,9 +2522,12 @@ default.
 
 #+BEGIN_exampletoo
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 We said earlier that the =discoveries= data looked positively skewed;
 let's see what the statistics say:
 #+END_exampletoo
@@ -2733,6 +2808,7 @@ The quickest way to visually identify outliers is with a boxplot,
 described above. Another way is with the =boxplot.stats= function.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_exampletoo
 
 The =rivers= data. We will look for potential outliers in the =rivers=
@@ -2742,6 +2818,11 @@ data.
 #+BEGIN_exampletoo
 We will look for potential outliers in the =rivers= data.
 >>>>>>> gnu/master
+=======
+#+ATTR_LATEX: :options [\textbf{Lengths of Major North American Rivers}]
+#+BEGIN_exampletoo
+We will look for potential outliers in the =rivers= data.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp  
 boxplot.stats(rivers)$out
@@ -4426,6 +4507,7 @@ For any events \(A\) and \(B\),
    #+END_proof
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 1. *The General Addition Rule.* <<eq-general-addition-rule-1>>
    \begin{equation}
 =======
@@ -4433,6 +4515,11 @@ For any events \(A\) and \(B\),
    \begin{equation}
    \label{eq-general-addition-rule-1}
 >>>>>>> gnu/master
+=======
+1. *The General Addition Rule.*
+   \begin{equation}
+   \label{eq-general-addition-rule-1}
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
    \mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B).
    \end{equation}
    More generally, for events \(A_{1}\), \(A_{2}\), \(A_{3}\),..., \(A_{n}\),
@@ -4442,12 +4529,17 @@ For any events \(A\) and \(B\),
 1. *The Theorem of Total Probability.* Let \(B_{1}\), \(B_{2}\), ...,
    \(B_{n}\) be mutually exclusive and exhaustive. Then
 <<<<<<< HEAD
+<<<<<<< HEAD
    <<eq-theorem-total-probability>>
    \begin{equation}
 =======
    \begin{equation}
    \label{eq-theorem-total-probability}
 >>>>>>> gnu/master
+=======
+   \begin{equation}
+   \label{eq-theorem-total-probability}
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
    \mathbb{P}(A)=\mathbb{P}(A\cap B_{1})+\mathbb{P}(A\cap B_{2})+\cdots+\mathbb{P}(A\cap B_{n}).
    \end{equation}
 
@@ -4638,6 +4730,7 @@ prob::prob(S, suit == "Heart")
 
 We also find =prob::prob(B) = 0.23= (listed here approximately, but
 <<<<<<< HEAD
+<<<<<<< HEAD
 12/52 actually) and =prob::prob(S) = 1=. Internally, the =prob=
 function operates by summing the =probs= column of its argument. It
 will find subsets on-the-fly if desired.
@@ -4646,6 +4739,11 @@ will find subsets on-the-fly if desired.
 the =probs= column of its argument. It will find subsets on-the-fly if
 desired.
 >>>>>>> gnu/master
+=======
+12/52 actually). Internally, the =prob= function operates by summing
+the =probs= column of its argument. It will find subsets on-the-fly if
+desired.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 We have as yet glossed over the details. More specifically, =prob= has
 three arguments: =x=, which is a probability space (or a subset of
@@ -4675,6 +4773,7 @@ number of events in \(S\)). Hence, to be a master of probability one
 must be skilled at counting outcomes in events of all kinds.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_prop
 The Multiplication Principle. Suppose that an experiment is composed
 of two successive steps. Further suppose that the first step may be
@@ -4684,12 +4783,19 @@ performed in \(n_{1}n_{2}\) distinct ways.
 =======
 #+ATTR_LATEX: :options [\textbf{The Multiplication Principle}]
 #+BEGIN_prop
+=======
+#+ATTR_LATEX: :options [\textbf{The Multiplication Principle}]
+#+BEGIN_prop
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 Suppose that an experiment is composed of two successive
 steps. Further suppose that the first step may be performed in
 \(n_{1}\) distinct ways while the second step may be performed in
 \(n_{2}\) distinct ways. Then the experiment may be performed in
 \(n_{1}n_{2}\) distinct ways.
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 More generally, if the experiment is composed of \(k\) successive
 steps which may be performed in \(n_{1}\), \(n_{2}\), ..., \(n_{k}\)
@@ -4793,6 +4899,7 @@ members is
 
 The quantity \(n!/[k!(n-k)!]\) is called a /binomial coefficient/ and
 <<<<<<< HEAD
+<<<<<<< HEAD
 plays a special role in mathematics; it is denoted <<eq-binomial-coefficient>> 
 \begin{equation}
 =======
@@ -4800,6 +4907,11 @@ plays a special role in mathematics; it is denoted
 \begin{equation}
 \label{eq-binomial-coefficient}
 >>>>>>> gnu/master
+=======
+plays a special role in mathematics; it is denoted  
+\begin{equation}
+\label{eq-binomial-coefficient}
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 {n \choose k}=\frac{n!}{k!(n-k)!}
 \end{equation}
 and is read "\(n\) choose \(k\)".
@@ -4965,15 +5077,21 @@ that works best for him/herself.
 in a room. Each person announces the date of his/her birthday in
 turn. The question is: what is the probability of at least one match?
 <<<<<<< HEAD
+<<<<<<< HEAD
 If we let the event \(A\) represent \[ \{ \mbox{there is at least one
 match}, \} \] then would like to know \(\mathbb{P}(A)\), but as we
 will see, it is more convenient to calculate \(\mathbb{P}(A^{c})\).
 =======
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 If we let the event \(A\) represent \[ A = \{ \mbox{there is at least
 one match}\}, \] then we are looking for \(\mathbb{P}(A)\), but as we
 soon will see, it will be more convenient for us to calculate
 \(\mathbb{P}(A^{c})\).
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 For starters we will ignore leap years and assume that there are only
 365 days in a year. Second, we will assume that births are equally
@@ -5250,13 +5368,18 @@ For any events \(A\), \(B\), and \(C\) with \(\mathbb{P}(A)>0\),
    \mathbb{P}(C|A) - \mathbb{P} [ (B \cap C|A) ].\)
 4. *The Multiplication Rule.* For any two events \(A\) and \(B\),
 <<<<<<< HEAD
+<<<<<<< HEAD
    <<eq-multiplication-rule-short>>
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
    \begin{equation}
+   \label{eq-multiplication-rule-short}
    \mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B|A).
    \end{equation}
    And more generally, for events \(A_{1}\), \(A_{2}\), \(A_{3}\),...,
-   \(A_{n}\), <<eq-multiplication-rule-long>> 
+   \(A_{n}\),
    \begin{equation}
+<<<<<<< HEAD
 =======
    \begin{equation}
    \label{eq-multiplication-rule-short}
@@ -5267,6 +5390,9 @@ For any events \(A\), \(B\), and \(C\) with \(\mathbb{P}(A)>0\),
    \begin{equation}
    \label{eq-multiplication-rule-long}
 >>>>>>> gnu/master
+=======
+   \label{eq-multiplication-rule-long}
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
    \mathbb{P}(A_{1}\cap A_{2}\cap\cdots\cap A_{n})=\mathbb{P}(A_{1})\mathbb{P}(A_{2}|A_{1})\cdots\mathbb{P}(A_{n}|A_{1}\cap A_{2}\cap\cdots\cap A_{n-1}).
    \end{equation}
 #+END_prop
@@ -5567,17 +5693,23 @@ If the events \(A\) and \(B\) are independent then
 #+BEGIN_proof
 Suppose that \(A\) and \(B\) are independent. We will show the second
 <<<<<<< HEAD
+<<<<<<< HEAD
 one; the others are similar. We need to show that
 \[
 \mathbb{P}(A^{c}\cap B)=\mathbb{P}(A^{c})\mathbb{P}(B).
 \]
 To this end, note that the Multiplication Rule, Equation [[eq-multiplication-rule-short]] implies 
 =======
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 one; the others are similar. We need to show that \[
 \mathbb{P}(A^{c}\cap B)=\mathbb{P}(A^{c})\mathbb{P}(B).  \] To this
 end, note that the Multiplication Rule, Equation
 \eqref{eq-multiplication-rule-short} implies
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{eqnarray*}
 \mathbb{P}(A^{c}\cap B) & = & \mathbb{P}(B)\mathbb{P}(A^{c}|B),\\
  & = & \mathbb{P}(B)[1-\mathbb{P}(A|B)],\\
@@ -5709,11 +5841,16 @@ a vector of possible outcomes.
 Note that =iidspace= will assume =x= has equally likely outcomes if no
 =probs= argument is specified. Also note that the argument =x= is a
 <<<<<<< HEAD
+<<<<<<< HEAD
 /vector/, not a data frame. Something like =iidspace(tosscoin(1),...)=
 =======
 /vector/, not a data frame. Something like 
 : iidspace(tosscoin(1),...)
 >>>>>>> gnu/master
+=======
+/vector/, not a data frame. Something like 
+: iidspace(tosscoin(1),...)
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 would give an error.
 
 ** Bayes' Rule
@@ -5727,11 +5864,15 @@ allows us to update our probabilities when new information becomes
 available.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#+ATTR_LATEX: :options [\textbf{Bayes' Rule}]
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+BEGIN_thm
-*Bayes' Rule*. Let \(B_{1}\), \(B_{2}\), ..., \(B_{n}\) be mutually
-exclusive and exhaustive and let \(A\) be an event with
-\(\mathbb{P}(A)>0\). Then
+Let \(B_{1}\), \(B_{2}\), ..., \(B_{n}\) be mutually exclusive and
+exhaustive and let \(A\) be an event with \(\mathbb{P}(A)>0\). Then
 \begin{equation}
+<<<<<<< HEAD
 <<eq-bayes-rule>> \mathbb{P}(B_{k}|A)=\frac{\mathbb{P}(B_{k})\mathbb{P}(A|B_{k})}{\sum_{i=1}^{n}\mathbb{P}(B_{i})\mathbb{P}(A|B_{i})},\quad k=1,2,\ldots,n.
 =======
 #+ATTR_LATEX: :options [\textbf{Bayes' Rule}]
@@ -5742,12 +5883,17 @@ exhaustive and let \(A\) be an event with \(\mathbb{P}(A)>0\). Then
 \label{eq-bayes-rule}
 \mathbb{P}(B_{k}|A)=\frac{\mathbb{P}(B_{k})\mathbb{P}(A|B_{k})}{\sum_{i=1}^{n}\mathbb{P}(B_{i})\mathbb{P}(A|B_{i})},\quad k=1,2,\ldots,n.
 >>>>>>> gnu/master
+=======
+\label{eq-bayes-rule}
+\mathbb{P}(B_{k}|A)=\frac{\mathbb{P}(B_{k})\mathbb{P}(A|B_{k})}{\sum_{i=1}^{n}\mathbb{P}(B_{i})\mathbb{P}(A|B_{i})},\quad k=1,2,\ldots,n.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \end{equation}
 #+END_thm
 
 #+BEGIN_proof
 The proof follows from looking at \(\mathbb{P}(B_{k}\cap A)\) in two
 different ways. For simplicity, suppose that \(P(B_{k})>0\) for all
+<<<<<<< HEAD
 <<<<<<< HEAD
 \(k\). Then
 \[
@@ -5766,12 +5912,21 @@ Now remembering that \(\{ B_{k} \}\) is a partition, the Theorem of Total Probab
 A)=\mathbb{P}(B_{k})\mathbb{P}(A|B_{k}).  \] Since \(\mathbb{P}(A)>0\)
 we may divide through to obtain \[
 \mathbb{P}(B_{k}|A)=\frac{\mathbb{P}(B_{k})\mathbb{P}(A|B_{k})}{\mathbb{P}(A)}.
+=======
+\(k\). Then \[ \mathbb{P}(A)\mathbb{P}(B_{k}|A)=\mathbb{P}(B_{k}\cap
+A)=\mathbb{P}(B_{k})\mathbb{P}(A|B_{k}).  \] Since \(\mathbb{P}(A)>0\)
+we may divide through to obtain \[
+\mathbb{P}(B_{k}|A)=\frac{\mathbb{P}(B_{k})\mathbb{P}(A|B_{k})}{\mathbb{P}(A)}.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \] Now remembering that \(\{ B_{k} \}\) is a partition, the Theorem of
 Total Probability (Equation \eqref{eq-theorem-total-probability} )
 gives the denominator of the last expression to be \[
 \mathbb{P}(A)=\sum_{k=1}^{n}\mathbb{P}(B_{k}\cap
 A)=\sum_{k=1}^{n}\mathbb{P}(B_{k})\mathbb{P}(A|B_{k}).  \]
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_proof
 
 What does it mean? Usually in applications we are given (or know) /a
@@ -5878,6 +6033,7 @@ notion that if a file is misplaced, then either Moe or Larry or Curly
 must have filed it; there is no one else around to do the
 misfiling. Further, these possibilities are mutually exclusive. We may
 <<<<<<< HEAD
+<<<<<<< HEAD
 use the Theorem of Total Probability [[eq-theorem-total-probability]] to write
 \[ 
 \mathbb{P}(A)=\mathbb{P}(A\cap M)+\mathbb{P}(A\cap L)+\mathbb{P}(A\cap C).
@@ -5894,6 +6050,8 @@ This last quantity is called the posterior probability that Moe
 misfiled the document, since it incorporates the observed data that a
 randomly selected file was misplaced (which is governed by the misfile
 =======
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 use the Theorem of Total Probability
 \eqref{eq-theorem-total-probability} to write \[
 \mathbb{P}(A)=\mathbb{P}(A\cap M)+\mathbb{P}(A\cap L)+\mathbb{P}(A\cap
@@ -5903,7 +6061,10 @@ yields \[ \mathbb{P}(M|A)=\frac{0.0018}{0.0049}\approx0.37.  \] This
 last quantity is called the posterior probability that Moe misfiled
 the document, since it incorporates the observed data that a randomly
 selected file was misplaced (which is governed by the misfile
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 rate). We can use the same argument to calculate
 
 #+CAPTION: [Misfiling assistants: posterior]{}
@@ -6579,16 +6740,22 @@ follow.
 *** With the \(\mathsf{R}\) Commander:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Follow the sequence =Probability= \(\triangleright\) =Discrete
 Distributions= \(\triangleright\) =Discrete Uniform distribution=
 \(\triangleright\) =Simulate Discrete uniform variates...=.
 =======
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 Follow the sequence 
 1. =Probability= \(\triangleright\) 
 2. =Discrete Distributions= \(\triangleright\) 
 3. =Discrete Uniform distribution= \(\triangleright\) 
 4. =Simulate Discrete uniform variates...=.
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 Suppose we would like to roll a fair die 3000 times. In the =Number of
 samples= field we enter =1=. Next, we describe what interval of
@@ -7286,19 +7453,25 @@ processors for inspection to determine whether or not they are
 defective. Let \(X\) denote the number of defectives in the sample.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Find the probability of exactly 3 defectives in the sample, that is, find \(\mathbb{P}(X=3)\).  /Solution:/ We know that \(X\sim\mathsf{hyper}(\mathtt{m}=17,\,\mathtt{n}=233,\,\mathtt{k}=5)\). So the required probability is just
 \[
 f_{X}(3)=\frac{{17 \choose 3}{233 \choose 2}}{{250 \choose 5}}.
 \]
 To calculate it in \(\mathsf{R}\) we just type 
 =======
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 Find the probability of exactly 3 defectives in the sample, that is,
 find \(\mathbb{P}(X=3)\).  /Solution:/ We know that
 \(X\sim\mathsf{hyper}(\mathtt{m}=17,\,\mathtt{n}=233,\,\mathtt{k}=5)\). So
 the required probability is just \[ f_{X}(3)=\frac{{17 \choose 3}{233
 \choose 2}}{{250 \choose 5}}.  \] To calculate it in \(\mathsf{R}\) we
 just type
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp  
 dhyper(3, m = 17, n = 233, k = 5)
@@ -7308,12 +7481,15 @@ dhyper(3, m = 17, n = 233, k = 5)
 : [1] 0.002351153
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 To find it with the \(\mathsf{R}\) Commander we go =Probability=
 \(\triangleright\) =Discrete Distributions= \(\triangleright\)
 =Hypergeometric distribution= \(\triangleright\) =Hypergeometric
 probabilities...=. We fill in the parameters \(m=17\), \(n=233\), and
 \(k=5\). Click =OK=, and the following table is shown in the window.
 =======
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 To find it with the \(\mathsf{R}\) Commander we go 
 1. =Probability= \(\triangleright\) 
 2. =Discrete Distributions= \(\triangleright\) 
@@ -7322,7 +7498,10 @@ To find it with the \(\mathsf{R}\) Commander we go
 
 We fill in the parameters \(m = 17\), \(n = 233\), and \(k =
 5\). Click =OK=, and the following table is shown in the window.
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp  
 A <- data.frame(Pr=dhyper(0:4, m = 17, n = 233, k = 5))
@@ -7522,10 +7701,14 @@ respectively.
 
 Again it is clear that \(f(x)\geq0\) and we check that \(\sum f(x)=1\)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (see Equation [[eq-geom-series]] in Appendix [[#sec-Sequences-and-Series]]):
 =======
 (see Equation \eqref{eq-geom-series} in Appendix [[#sec-Sequences-and-Series]]):
 >>>>>>> gnu/master
+=======
+(see Equation \eqref{eq-geom-series} in Appendix [[#sec-Sequences-and-Series]]):
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{alignat*}{1}
 \sum_{x=0}^{\infty}p(1-p)^{x}= & p\sum_{x=0}^{\infty}q^{x}=p\,\frac{1}{1-q}=1.
 \end{alignat*}
@@ -8282,10 +8465,14 @@ The associated \(\mathsf{R}\) function is
 \(X\sim\mathsf{unif}(\mathtt{min}=a,\,\mathtt{max}=b)\). Due to the
 particularly simple form of this PDF we can also write down explicitly
 <<<<<<< HEAD
+<<<<<<< HEAD
 a formula for the CDF \(F_{X}\): @@latex:\begin{equation} <<eq-unif-cdf>> F_{X}(t) = \begin{cases} 0, & t < 0,\\ \frac{t-a}{b-a}, & a\leq t < b,\\ 1, & t \geq b. \end{cases} \end{equation}@@
 =======
 a formula for the CDF \(F_{X}\): @@latex:\begin{equation} \label{eq-unif-cdf} F_{X}(t) = \begin{cases} 0, & t < 0,\\ \frac{t-a}{b-a}, & a\leq t < b,\\ 1, & t \geq b. \end{cases} \end{equation}@@
 >>>>>>> gnu/master
+=======
+a formula for the CDF \(F_{X}\): @@latex:\begin{equation} \label{eq-unif-cdf} F_{X}(t) = \begin{cases} 0, & t < 0,\\ \frac{t-a}{b-a}, & a\leq t < b,\\ 1, & t \geq b. \end{cases} \end{equation}@@
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 The continuous uniform distribution is the continuous analogue of the
 discrete uniform distribution; it is used to model experiments whose
@@ -8585,20 +8772,29 @@ would be a good time to review Appendix [[#sec-Differential-and-Integral]].
 \(g^{-1}\). Then the PDF of \(U=g(X)\) is given by
 \begin{equation}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<eq-univ-trans-pdf-long>> f_{U}(u)=f_{X}\left[g^{-1}(u)\right]\ \left|\frac{\mathrm{d}}{\mathrm{d} u}g^{-1}(u)\right|.
 =======
 \label{eq-univ-trans-pdf-long}
 f_{U}(u)=f_{X}\left[g^{-1}(u)\right]\ \left|\frac{\mathrm{d}}{\mathrm{d} u}g^{-1}(u)\right|.
 >>>>>>> gnu/master
+=======
+\label{eq-univ-trans-pdf-long}
+f_{U}(u)=f_{X}\left[g^{-1}(u)\right]\ \left|\frac{\mathrm{d}}{\mathrm{d} u}g^{-1}(u)\right|.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \end{equation}
 #+END_prop
 
 #+BEGIN_rem
 <<<<<<< HEAD
+<<<<<<< HEAD
 The formula in Equation [[eq-univ-trans-pdf-long]] is nice, but does not
 =======
 The formula in Equation \eqref{eq-univ-trans-pdf-long} is nice, but does not
 >>>>>>> gnu/master
+=======
+The formula in Equation \eqref{eq-univ-trans-pdf-long} is nice, but does not
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 really make any sense. It is better to write in the intuitive form
 \begin{equation}
 \label{eq-univ-trans-pdf-short}
@@ -8709,10 +8905,14 @@ function is /monotone/ (this point will be revisited later). Now since
 \] Now recalling that the CDF of a
 \(\mathsf{unif}(\mathtt{min}=0,\,\mathtt{max}=1)\) random variable
 <<<<<<< HEAD
+<<<<<<< HEAD
 satisfies \(F(u)=u\) (see Equation [[eq-unif-cdf]]), we can say \[
 =======
 satisfies \(F(u)=u\) (see Equation \eqref{eq-unif-cdf}), we can say \[
 >>>>>>> gnu/master
+=======
+satisfies \(F(u)=u\) (see Equation \eqref{eq-unif-cdf}), we can say \[
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 F_{Y}(y)=1-F_{X}(\mathrm{e}^{-y})=1-\mathrm{e}^{-y},\quad \mbox{for
 }y>0.  \] We have consequently found the formula for the CDF of \(Y\);
 to obtain the PDF \(f_{Y}\) we need only differentiate \(F_{Y}\): \[
@@ -9205,11 +9405,16 @@ For the plot we can use the function in the following form:
 #+NAME: gamma-mgf
 #+BEGIN_SRC R :exports both :results graphics :file ps/contdist-gamma-mgf.ps
 <<<<<<< HEAD
+<<<<<<< HEAD
 plot(function(x){mgfgamma(x, shape = 13, rate = 1)}, from=-0.1, to=0.1, ylab = "gamma mgf")
 =======
 plot(function(x){mgfgamma(x, shape = 13, rate = 1)}, 
      from=-0.1, to=0.1, ylab = "gamma mgf")
 >>>>>>> gnu/master
+=======
+plot(function(x){mgfgamma(x, shape = 13, rate = 1)}, 
+     from=-0.1, to=0.1, ylab = "gamma mgf")
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_SRC
 
 #+NAME: fig-gamma-mgf
@@ -9371,11 +9576,16 @@ In the context of this chapter, the PMFs \(f_{X}\) and \(f_{Y}\) are
 called the /marginal PMFs/ of \(X\) and \(Y\), respectively. If we are
 given only the joint PMF then we may recover each of the marginal PMFs
 <<<<<<< HEAD
+<<<<<<< HEAD
 by using the Theorem of Total Probability (see Equation [[eq-theorem-total-probability]]): observe
 =======
 by using the Theorem of Total Probability (see Equation
 \eqref{eq-theorem-total-probability}): observe
 >>>>>>> gnu/master
+=======
+by using the Theorem of Total Probability (see Equation
+\eqref{eq-theorem-total-probability}): observe
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{eqnarray}
 f_{X}(x) & = & \mathbb{P}(X=x),\\
  & = & \sum_{y\in S_{Y}}\mathbb{P}(X=x,\, Y=y),\\
@@ -9401,10 +9611,14 @@ Y\leq y),\quad \mbox{for }(x,y)\in\mathbb{R}^{2}.  \] The bivariate
 joint CDF is not quite as tractable as the univariate CDFs, but in
 principle we could calculate it by adding up quantities of the form in
 <<<<<<< HEAD
+<<<<<<< HEAD
 Equation [[eq-joint-pmf]]. The joint CDF is typically not used in practice due to
 =======
 Equation \eqref{eq-joint-pmf}. The joint CDF is typically not used in practice due to
 >>>>>>> gnu/master
+=======
+Equation \eqref{eq-joint-pmf}. The joint CDF is typically not used in practice due to
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 its inconvenient form; one can usually get by with the joint PMF
 alone.
 
@@ -9539,10 +9753,14 @@ The joint support of \((U,V)\) is concentrated along the main
 diagonal; note that the nonzero entries do not form a rectangle. Also
 notice that if we form row and column totals we are doing exactly the
 <<<<<<< HEAD
+<<<<<<< HEAD
 same thing as Equation [[eq-marginal-pmf]], so that the marginal
 =======
 same thing as Equation \eqref{eq-marginal-pmf}, so that the marginal
 >>>>>>> gnu/master
+=======
+same thing as Equation \eqref{eq-marginal-pmf}, so that the marginal
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 distribution of \(U\) is the list of totals in the right "margin" of
 the Table [[tab-max-sum-joint-pmf]], and the marginal distribution of \(V\) is the
 list of totals in the bottom "margin".
@@ -9707,16 +9925,22 @@ colSums(temp)
 :          1          2          3          4          5          6 
 : 0.02777778 0.08333333 0.13888889 0.19444444 0.25000000 0.30555556
 <<<<<<< HEAD
+<<<<<<< HEAD
 :          2          3          4          5          6          7          8          9 
 : 0.02777778 0.05555556 0.08333333 0.11111111 0.13888889 0.16666667 0.13888889 0.11111111 
 :         10         11         12 
 : 0.08333333 0.05555556 0.02777778
 =======
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 :          2          3          4          5          6          7
 : 0.02777778 0.05555556 0.08333333 0.11111111 0.13888889 0.16666667 
 :          8          9         10         11         12
 : 0.13888889 0.11111111 0.08333333 0.05555556 0.02777778
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 You should check that the answers that we have obtained exactly match
 the same (somewhat laborious) calculations that we completed in
@@ -9888,10 +10112,14 @@ was called Bayes' Rule:
 \pi(\theta|x)=\frac{\pi(\theta)\, f(x|\theta)}{\int\pi(u)\, f(x|u)\mathrm{d} u}.
 \end{equation} 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Compare the above expression to Equation [[eq-bayes-rule]].
 =======
 Compare the above expression to Equation \eqref{eq-bayes-rule}.
 >>>>>>> gnu/master
+=======
+Compare the above expression to Equation \eqref{eq-bayes-rule}.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_exampletoo
 
@@ -10143,10 +10371,14 @@ independent with respective population means \(\mu_{1}\) and
 
 #+BEGIN_proof
 <<<<<<< HEAD
+<<<<<<< HEAD
 We use Proposition [[pro-expectation-properties]]: \[ \mathbb{E}
 =======
 We use Proposition [[pro-expectation-properties]] to see \[ \mathbb{E}
 >>>>>>> gnu/master
+=======
+We use Proposition [[pro-expectation-properties]] to see \[ \mathbb{E}
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 Y=\mathbb{E}\left(a_{1}X_{1}+a_{2}X_{2}\right)=a_{1}\mathbb{E}
 X_{1}+a_{2}\mathbb{E} X_{2}=a_{1}\mu_{1}+a_{2}\mu_{2}.  \] For the
 standard deviation, we will find the variance and take the square root
@@ -10396,12 +10628,17 @@ or we can rewrite more shortly as
 f_{U,V}(u,v)=f_{X,Y}(x,y)\left|\frac{\partial(x,y)}{\partial(u,v)}\right|.
 \end{equation}
 <<<<<<< HEAD
+<<<<<<< HEAD
 Take a moment and compare Equation [[eq-biv-trans-pdf-short]] to Equation
 [[eq-univ-trans-pdf-short]]. Do you see the connection?
 =======
 Take a moment and compare Equation \eqref{eq-biv-trans-pdf-short} to Equation
 \eqref{eq-univ-trans-pdf-short}. Do you see the connection?
 >>>>>>> gnu/master
+=======
+Take a moment and compare Equation \eqref{eq-biv-trans-pdf-short} to Equation
+\eqref{eq-univ-trans-pdf-short}. Do you see the connection?
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_rem
 It is sometimes easier to /postpone/ solving for the inverse
@@ -10426,10 +10663,14 @@ shorter. Of course, it is not always true that
 but for the well-behaved examples that we will see in this book it
 works just fine... do you see the connection between Equations
 <<<<<<< HEAD
+<<<<<<< HEAD
 [[eq-biv-jacob-recip]] and [[eq-univ-jacob-recip]]?
 =======
 \eqref{eq-biv-jacob-recip} and \eqref{eq-univ-jacob-recip}?
 >>>>>>> gnu/master
+=======
+\eqref{eq-biv-jacob-recip} and \eqref{eq-univ-jacob-recip}?
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_rem
 
 
@@ -10464,10 +10705,14 @@ f_{U,V}(u,v)=\frac{1}{2\pi}\exp\left\{ -\frac{1}{2}\left[\left(-3u+2v\right)^{2}
 
 #+BEGIN_rem
 <<<<<<< HEAD
+<<<<<<< HEAD
 It may not be obvious, but Equation [[eq-biv-norm-hidden]] is the PDF of a
 =======
 It may not be obvious, but Equation \eqref{eq-biv-norm-hidden} is the PDF of a
 >>>>>>> gnu/master
+=======
+It may not be obvious, but Equation \eqref{eq-biv-norm-hidden} is the PDF of a
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \(\mathsf{mvnorm}\) distribution. For a more general result see
 Theorem [[thm-mvnorm-dist-matrix-prod]].
 #+END_rem
@@ -10599,6 +10844,7 @@ the link between exchangeable random variables and independent random
 variables. Here it is in one of its simplest forms.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_thm
 *De Finetti's Theorem.* Let \(X_{1}\), \(X_{2}\), ... be a sequence of
 =======
@@ -10606,6 +10852,11 @@ variables. Here it is in one of its simplest forms.
 #+BEGIN_thm
 Let \(X_{1}\), \(X_{2}\), ... be a sequence of
 >>>>>>> gnu/master
+=======
+#+ATTR_LATEX: :options [\textbf{De Finetti's Theorem}]
+#+BEGIN_thm
+Let \(X_{1}\), \(X_{2}\), ... be a sequence of
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \(\mathsf{binom}(\mathtt{size}=1,\,\mathtt{prob}=p)\) random variables
 such that \((X_{1},\ldots,X_{k})\) are exchangeable for every
 \(k\). Then there exists a random variable \(\Theta\) with support
@@ -10637,10 +10888,14 @@ that look like
 \end{equation}
 where we sum over all possible coins. The right-hand side of Equation
 <<<<<<< HEAD
+<<<<<<< HEAD
 [[eq-definetti-binary]] is a sophisticated way to denote this process.
 =======
 \eqref{eq-definetti-binary} is a sophisticated way to denote this process.
 >>>>>>> gnu/master
+=======
+\eqref{eq-definetti-binary} is a sophisticated way to denote this process.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 Of course, the integral's value does not change if we jumble the
 \(x_{i}\)'s, so \((X_{1},\ldots,X_{k})\) are clearly exchangeable. The
@@ -10652,12 +10907,17 @@ The connection to subjective probability: our prior information about
 the sequence \(X_{1}=x_{1},\ldots,\, X_{k}=x_{k}\) (conditional on
 \(\theta\)) corresponds to \(\theta^{\sum x_{i}}(1-\theta)^{k-\sum
 <<<<<<< HEAD
+<<<<<<< HEAD
 x_{i}}\). Compare Equation [[eq-definetti-binary]] to Section [[#sec-Bayes-Rule]]
 and Section [[#sec-Conditional-Distributions]].
 =======
 x_{i}}\). Compare Equation \eqref{eq-definetti-binary} to Section
 [[#sec-Bayes-Rule]] and Section [[#sec-Conditional-Distributions]].
 >>>>>>> gnu/master
+=======
+x_{i}}\). Compare Equation \eqref{eq-definetti-binary} to Section
+[[#sec-Bayes-Rule]] and Section [[#sec-Conditional-Distributions]].
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 The multivariate normal distribution immediately generalizes from the
 bivariate case. If the matrix \(\Sigma\) is nonsingular then the joint
@@ -10728,11 +10988,16 @@ Several comments are in order. First, the joint support set
 \end{equation}
 is called a /multinomial coefficient/ which generalizes the notion of
 <<<<<<< HEAD
+<<<<<<< HEAD
 a binomial coefficient we saw in Equation [[eq-binomial-coefficient]].
 =======
 a binomial coefficient we saw in Equation
 \eqref{eq-binomial-coefficient}.
 >>>>>>> gnu/master
+=======
+a binomial coefficient we saw in Equation
+\eqref{eq-binomial-coefficient}.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 The form and notation we have just described matches the
 \(\mathsf{R}\) usage but is not standard among other texts. Most other
@@ -10865,10 +11130,14 @@ print(cloud(probs ~ X1 + X2, data = S, type = c("p","h"), lwd = 2,
 \(Y\sim\mathsf{chisq}(\mathtt{df}=p_{2})\) are independent. Find the
 distribution of \(X+Y\) (you may want to refer to Equation
 <<<<<<< HEAD
+<<<<<<< HEAD
 [[eq-mgf-chisq]]).
 =======
 \eqref{eq-mgf-chisq}).
 >>>>>>> gnu/master
+=======
+\eqref{eq-mgf-chisq}).
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_xca
 
 #+BEGIN_xca
@@ -11172,9 +11441,12 @@ function.
 #+END_exampletoo
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+BEGIN_SRC R :exports both :results output pp 
 qt(0.01, df = 23, lower.tail = FALSE)
 #+END_SRC
@@ -11223,6 +11495,7 @@ can be said in this case? The surprising answer is contained in the
 following theorem.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_thm
 <<thm-central-limit-thrm>> *The Central Limit Theorem.* Let \(X_{1}\),
 \(X_{2}\), ..., \(X_{n}\) be a \(SRS(n)\) from a population
@@ -11231,11 +11504,18 @@ distribution with mean \(\mu\) and finite standard deviation
 =======
 #+ATTR_LATEX: :options [\textbf{The Central Limit Theorem}]
 #+BEGIN_thm
+=======
+#+ATTR_LATEX: :options [\textbf{The Central Limit Theorem}]
+#+BEGIN_thm
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 <<thm-central-limit-thrm>> Let \(X_{1}\), \(X_{2}\), ..., \(X_{n}\) be
 a \(SRS(n)\) from a population distribution with mean \(\mu\) and
 finite standard deviation \(\sigma\). Then the sampling distribution
 of
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{equation}
 Z=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}
 \end{equation}
@@ -11369,10 +11649,14 @@ are given by Proposition [[pro-mean-sd-lin-comb-two]].
 #+BEGIN_rem
 Even if the distribution of one or both of the samples is not normal,
 <<<<<<< HEAD
+<<<<<<< HEAD
 the quantity in Equation [[eq-diff-indep-sample-means]] will be
 =======
 the quantity in Equation \eqref{eq-diff-indep-sample-means} will be
 >>>>>>> gnu/master
+=======
+the quantity in Equation \eqref{eq-diff-indep-sample-means} will be
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 approximately normal provided both sample sizes are large.
 #+END_rem
 
@@ -11830,6 +12114,7 @@ value \(\hat{p}=\overline{x}\) is located at a minimum[fn:fn-sdt]
 instead of a maximum! We should be thorough and check that \(L'>0\)
 when \(p<\overline{x}\) and \(L'<0\) when \(p>\overline{x}\). Then by
 <<<<<<< HEAD
+<<<<<<< HEAD
 the First Derivative Test (Theorem [[thm-First-Derivative-Test]]) we could be certain that
 \(\hat{p}=\overline{x}\) is indeed a maximum likelihood estimator, and
 not a minimum likelihood estimator.
@@ -11838,6 +12123,11 @@ the First Derivative Test (Theorem [[thm-First-Derivative-Test]]) we could
 be certain that \(\hat{p}=\overline{x}\) is indeed a maximum
 likelihood estimator, and not a minimum likelihood estimator.
 >>>>>>> gnu/master
+=======
+the First Derivative Test (Theorem [[thm-First-Derivative-Test]]) we could
+be certain that \(\hat{p}=\overline{x}\) is indeed a maximum
+likelihood estimator, and not a minimum likelihood estimator.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_rem
 
 The result is shown in Figure [[fig-species-mle]].
@@ -12158,6 +12448,7 @@ But now consider the following string of equivalent inequalities:
 \]
 \[
 <<<<<<< HEAD
+<<<<<<< HEAD
 -\overline{X}-z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)\leq-\mu\leq-\overline{X}+z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right),
 \]
 \[
@@ -12168,6 +12459,12 @@ But now consider the following string of equivalent inequalities:
 \[
 \overline{X} - z_{\alpha/2} \left( \frac{\sigma}{\sqrt{n}} \right) \leq \mu \leq \overline{X} + z_{\alpha/2} \left( \frac{\sigma}{\sqrt{n}} \right).
 >>>>>>> gnu/master
+=======
+-\overline{X} - z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)\leq - \mu \leq - \overline{X} + z_{\alpha/2} \left( \frac{\sigma}{\sqrt{n}} \right),
+\]
+\[
+\overline{X} - z_{\alpha/2} \left( \frac{\sigma}{\sqrt{n}} \right) \leq \mu \leq \overline{X} + z_{\alpha/2} \left( \frac{\sigma}{\sqrt{n}} \right).
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \]
 That is, 
 \begin{equation}
@@ -12226,10 +12523,14 @@ ci.examp()
 
 #+NAME: fig-ci-examp
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+CAPTION[Simulated confidence intervals]: \small The graph was generated by the =ci.examp= function from the =TeachingDemos= package. Fifty (50) samples of size twenty five (25) were generated from a \( \mathsf{norm}(\mathtt{mean}=100,\,\mathtt{sd}=10) \) distribution, and each sample was used to find a 95% confidence interval for the population mean using Equation \ref{eq-z-interval}. The 50 confidence intervals are represented above by horizontal lines, and the respective sample means are denoted by vertical slashes. Confidence intervals that "cover" the true mean value of 100 are plotted in black; those that fail to cover are plotted in a lighter color. In the plot we see that only one (1) of the simulated intervals out of the 50 failed to cover \(\mu=100\), which is a success rate of 98%. If the number of generated samples were to increase from 50 to 500 to 50000, ..., then we would expect our success rate to approach the exact value of 95%.
 =======
 #+CAPTION[Simulated confidence intervals]: \small The graph was generated by the =ci.examp= function from the =TeachingDemos= package. Fifty (50) samples of size twenty five (25) were generated from a \( \mathsf{norm}(\mathtt{mean}=100,\,\mathtt{sd}=10) \) distribution, and each sample was used to find a 95% confidence interval for the population mean using Equation \eqref{eq-z-interval}. The 50 confidence intervals are represented above by horizontal lines, and the respective sample means are denoted by vertical slashes. Confidence intervals that "cover" the true mean value of 100 are plotted in black; those that fail to cover are plotted in a lighter color. In the plot we see that only one (1) of the simulated intervals out of the 50 failed to cover \(\mu=100\), which is a success rate of 98%. If the number of generated samples were to increase from 50 to 500 to 50000, ..., then we would expect our success rate to approach the exact value of 95%.
 >>>>>>> gnu/master
+=======
+#+CAPTION[Simulated confidence intervals]: \small The graph was generated by the =ci.examp= function from the =TeachingDemos= package. Fifty (50) samples of size twenty five (25) were generated from a \( \mathsf{norm}(\mathtt{mean}=100,\,\mathtt{sd}=10) \) distribution, and each sample was used to find a 95% confidence interval for the population mean using Equation \eqref{eq-z-interval}. The 50 confidence intervals are represented above by horizontal lines, and the respective sample means are denoted by vertical slashes. Confidence intervals that "cover" the true mean value of 100 are plotted in black; those that fail to cover are plotted in a lighter color. In the plot we see that only one (1) of the simulated intervals out of the 50 failed to cover \(\mu=100\), which is a success rate of 98%. If the number of generated samples were to increase from 50 to 500 to 50000, ..., then we would expect our success rate to approach the exact value of 95%.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+ATTR_LaTeX: :width 0.9\textwidth :placement [ht!] :options angle=-90
 #+RESULTS: ci-examp
 [[file:ps/hypoth-ci-examp.ps]]
@@ -12368,6 +12669,7 @@ where \(S\) is the sample standard deviation.
      \overline{X}\pm t_{\alpha/2}(\mathtt{df}=n-1)\frac{S}{\sqrt{n}}.
      \end{equation}
 <<<<<<< HEAD
+<<<<<<< HEAD
    - if the underlying population is not normal, but approximately
      normal, then we may use the \(t\) interval, Equation
      [[eq-one-samp-t-int]]. The interval will have approximately
@@ -12376,6 +12678,11 @@ where \(S\) is the sample standard deviation.
      normal, then we may use the \(t\) interval, Equation
      \eqref{eq-one-samp-t-int}. The interval will have approximately
 >>>>>>> gnu/master
+=======
+   - If the underlying population is not normal, but approximately
+     normal, then we may use the \(t\) interval, Equation
+     \eqref{eq-one-samp-t-int}. The interval will have approximately
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
      \(100(1-\alpha)\%\) confidence of covering \(\mu\). However, if
      the population is highly skewed or the data have outliers, then
      we should ask a professional statistician for advice.
@@ -12493,10 +12800,14 @@ Unfortunately, most of the time the values of \(\sigma_{X}\) and
   (see Section [[#sec-Central-Limit-Theorem]]) and substitute \(S_{X}^{2}\) and
   \(S_{Y}^{2}\) for \(\sigma_{X}^{2}\) and \(\sigma_{Y}^{2}\) in the
 <<<<<<< HEAD
+<<<<<<< HEAD
   interval [[eq-two-samp-mean-CI]]. The resulting confidence interval will
 =======
   interval \eqref{eq-two-samp-mean-CI}. The resulting confidence interval will
 >>>>>>> gnu/master
+=======
+  interval \eqref{eq-two-samp-mean-CI}. The resulting confidence interval will
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
   have approximately \(100(1-\alpha)\%\) confidence.
 - If one or more of the sample sizes is small then we are in trouble,
   unless -the underlying populations are both normal and
@@ -12592,10 +12903,14 @@ confidence interval for \(p\) would be given by
 \overline{X}\pm z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}.
 \end{equation}
 <<<<<<< HEAD
+<<<<<<< HEAD
 OOPS...! Equation [[eq-ci-p-no-good]] is of no use to us because the
 =======
 OOPS...! Equation \eqref{eq-ci-p-no-good} is of no use to us because the
 >>>>>>> gnu/master
+=======
+OOPS...! Equation \eqref{eq-ci-p-no-good} is of no use to us because the
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \underbar{unknown} parameter \(p\) is in the formula! (If we knew what
 \(p\) was to plug in the formula then we would not need a confidence
 interval in the first place.) There are two solutions to this problem.
@@ -12772,10 +13087,14 @@ n & =z_{\alpha/2}^{2}\frac{\hat{p}(1-\hat{p})}{E^{2}}.
 \end{align}
 OOPS! Recall that \(\hat{p}=Y/n\), which would put the variable \(n\)
 <<<<<<< HEAD
+<<<<<<< HEAD
 on both sides of Equation [[eq-samp-size-prop-ME]]. Again, there are two
 =======
 on both sides of Equation \eqref{eq-samp-size-prop-ME}. Again, there are two
 >>>>>>> gnu/master
+=======
+on both sides of Equation \eqref{eq-samp-size-prop-ME}. Again, there are two
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 solutions to the problem.
 
 1. If we have a good idea of what \(p\) is, say \(p^{\ast}\) then we
@@ -14101,10 +14420,14 @@ n \beta_{0} + \beta_{1} \sum_{i=1}^{n} x_{i} = \sum_{i = 1}^{n}y_{i}.
 \end{equation}
 Moving on, we next take the partial derivative of \( \ln L \)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (Equation [[eq-regML-lnL]]) with respect to \( \beta_{1} \) to get
 =======
 (Equation \eqref{eq-regML-lnL}) with respect to \( \beta_{1} \) to get
 >>>>>>> gnu/master
+=======
+(Equation \eqref{eq-regML-lnL}) with respect to \( \beta_{1} \) to get
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{alignat}{1} \frac{\partial}{\partial\beta_{1}}\ln L=\ &
 0-\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}2(y_{i}-\beta_{0}-\beta_{1}x_{i})(-x_{i}),\\ =
 &
@@ -14116,10 +14439,14 @@ is, when
 \beta_{0} \sum_{i = 1}^{n}x_{i} + \beta_{1} \sum_{i = 1}^{n}x_{i}^{2} = \sum_{i = 1}^{n}x_{i}y_{i}.
 \end{equation}
 <<<<<<< HEAD
+<<<<<<< HEAD
 Solving the system of equations [[eq-regML-a]] and [[eq-regML-b]]
 =======
 Solving the system of equations \eqref{eq-regML-a} and \eqref{eq-regML-b}
 >>>>>>> gnu/master
+=======
+Solving the system of equations \eqref{eq-regML-a} and \eqref{eq-regML-b}
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{eqnarray}
 n\beta_{0} + \beta_{1}\sum_{i = 1}^{n}x_{i} & = & \sum_{i = 1}^{n}y_{i}\\
 \beta_{0}\sum_{i = 1}^{n}x_{i}+\beta_{1}\sum_{i = 1}^{n}x_{i}^{2} & = & \sum_{i = 1}^{n}x_{i}y_{i}
@@ -14149,10 +14476,14 @@ b_{1}x \).
 
 #+BEGIN_rem
 <<<<<<< HEAD
+<<<<<<< HEAD
 The formula for \( b_{1} \) in Equation [[eq-regline-slope-formula]] gets
 =======
 The formula for \( b_{1} \) in Equation \eqref{eq-regline-slope-formula} gets
 >>>>>>> gnu/master
+=======
+The formula for \( b_{1} \) in Equation \eqref{eq-regline-slope-formula} gets
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 the job done but does not really make any sense. There are many
 equivalent formulas for \( b_{1} \) that are more intuitive, or at the
 least are easier to remember. One of the author's favorites is
@@ -14165,12 +14496,17 @@ coefficient and the sample standard deviations of the \(Y\) and \(x\)
 data, respectively. See Exercise
 [[xca-show-alternate-slope-formula]]. Also, notice the similarity between
 <<<<<<< HEAD
+<<<<<<< HEAD
 Equation [[eq-sample-correlation-formula]] and Equation
 [[eq-population-slope-slr]].
 =======
 Equation \eqref{eq-sample-correlation-formula} and Equation
 \eqref{eq-population-slope-slr}.
 >>>>>>> gnu/master
+=======
+Equation \eqref{eq-sample-correlation-formula} and Equation
+\eqref{eq-population-slope-slr}.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_rem
 
 **** How to do it with \(\mathsf{R}\)
@@ -14216,12 +14552,18 @@ to =abline= are the coefficients of =cars.lm=; see Figure
 #+NAME: carline
 #+BEGIN_SRC R :exports both :results graphics :file ps/slr-carline.ps
 <<<<<<< HEAD
+<<<<<<< HEAD
 ggplot(cars, aes(x = speed, y = dist)) + geom_point(shape = 19) + geom_smooth(method = lm, se = FALSE)
 =======
 ggplot(cars, aes(x = speed, y = dist)) + 
   geom_point(shape = 19) + 
   geom_smooth(method = lm, se = FALSE)
 >>>>>>> gnu/master
+=======
+ggplot(cars, aes(x = speed, y = dist)) + 
+  geom_point(shape = 19) + 
+  geom_smooth(method = lm, se = FALSE)
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_SRC
 
 #+NAME: fig-carline
@@ -14438,10 +14780,14 @@ to get started we will determine the sampling distributions of the
 parameter estimates, \(b_{1}\) and \(b_{0}\).
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 To that end, we can see from Equation [[eq-regline-slope-formula]] (and it
 =======
 To that end, we can see from Equation \eqref{eq-regline-slope-formula} (and it
 >>>>>>> gnu/master
+=======
+To that end, we can see from Equation \eqref{eq-regline-slope-formula} (and it
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 is made clear in Chapter [[#cha-multiple-linear-regression]]) that \(b_{1}\) is
 just a linear combination of normally distributed random variables, so
 \(b_{1}\) is normally distributed too. Further, it can be shown that
@@ -14608,6 +14954,7 @@ Of course, \(\sigma\) is unknown so we estimate it with \(S\) and a \(
 \end{equation}
 We notice that the prediction interval in Equation
 <<<<<<< HEAD
+<<<<<<< HEAD
 [[eq-SLR-pred-int-formula]] is wider than the confidence interval in
 Equation [[eq-SLR-conf-int-formula]], as we expected at the beginning of
 the section.
@@ -14616,6 +14963,11 @@ the section.
 in Equation \eqref{eq-SLR-conf-int-formula}, as we expected at the
 beginning of the section.
 >>>>>>> gnu/master
+=======
+\eqref{eq-SLR-pred-int-formula} is wider than the confidence interval
+in Equation \eqref{eq-SLR-conf-int-formula}, as we expected at the
+beginning of the section.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 **** How to do it with \(\mathsf{R}\)
 
@@ -14709,6 +15061,7 @@ observation would be inherently less certain than a bound for an
 average (mean) value; therefore, we expect the CIs for the mean to be
 tighter than the PIs for a new observation. A close look at the
 <<<<<<< HEAD
+<<<<<<< HEAD
 standard deviations in Equations [[eq-SLR-conf-int-formula]] and
 [[eq-SLR-pred-int-formula]] confirms our guess, but we would like to see a
 picture to drive the point home.
@@ -14717,6 +15070,11 @@ standard deviations in Equations \eqref{eq-SLR-conf-int-formula} and
 \eqref{eq-SLR-pred-int-formula} confirms our guess, but we would like
 to see a picture to drive the point home.
 >>>>>>> gnu/master
+=======
+standard deviations in Equations \eqref{eq-SLR-conf-int-formula} and
+\eqref{eq-SLR-pred-int-formula} confirms our guess, but we would like
+to see a picture to drive the point home.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 We may plot the confidence and prediction intervals with one fell
 swoop using the =ci.plot= function from the =HH= package
@@ -14731,12 +15089,17 @@ Notice that the bands curve outward from the regression line as the
 \(x\) values move away from the center. This is expected once we
 notice the \((x_{0}-\overline{x})^{2}\) term in the standard deviation
 <<<<<<< HEAD
+<<<<<<< HEAD
 formulas in Equations [[eq-SLR-conf-int-formula]] and
 [[eq-SLR-pred-int-formula]].
 =======
 formulas in Equations \eqref{eq-SLR-conf-int-formula} and
 \eqref{eq-SLR-pred-int-formula}.
 >>>>>>> gnu/master
+=======
+formulas in Equations \eqref{eq-SLR-conf-int-formula} and
+\eqref{eq-SLR-pred-int-formula}.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+NAME: carscipi
 #+BEGIN_SRC R :exports both :results graphics :file ps/slr-carscipi.ps
@@ -14984,10 +15347,14 @@ All this being said, we have not yet gained much from the overall
 0\)... we use the Student's \(t\) statistic. What is worse is that (in
 the simple linear regression model) it can be proved that the \(F\) in
 <<<<<<< HEAD
+<<<<<<< HEAD
 Equation [[eq-slr-overall-F-statistic]] is exactly the Student's
 =======
 Equation \eqref{eq-slr-overall-F-statistic} is exactly the Student's
 >>>>>>> gnu/master
+=======
+Equation \eqref{eq-slr-overall-F-statistic} is exactly the Student's
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \(t\) statistic for \(\beta_{1}\) squared,
 
 \begin{equation}
@@ -15380,10 +15747,14 @@ and their sum is
 A rule of thumb is to consider leverage values to be large if they are
 more than double their average size (which is \(2/n\) according to
 <<<<<<< HEAD
+<<<<<<< HEAD
 Equation [[eq-slr-average-leverage]]). So leverages larger than \(4/n\)
 =======
 Equation \eqref{eq-slr-average-leverage}). So leverages larger than \(4/n\)
 >>>>>>> gnu/master
+=======
+Equation \eqref{eq-slr-average-leverage}). So leverages larger than \(4/n\)
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 are suspect. Another rule of thumb is to say that values bigger than
 0.5 indicate high leverage, while values between 0.3 and 0.5 indicate
 moderate leverage.
@@ -15414,12 +15785,17 @@ have a \(\mathsf{t}(\mathtt{df}=n-3)\) distribution and we compare observed valu
 
 The folklore in regression classes is that a test based on the
 <<<<<<< HEAD
+<<<<<<< HEAD
 statistic in Equation [[eq-slr-studentized-deleted-resids]] can be too
 liberal. A rule of thumb is if we suspect an observation to be an
 =======
 statistic in Equation \eqref{eq-slr-studentized-deleted-resids} can be
 too liberal. A rule of thumb is if we suspect an observation to be an
 >>>>>>> gnu/master
+=======
+statistic in Equation \eqref{eq-slr-studentized-deleted-resids} can be
+too liberal. A rule of thumb is if we suspect an observation to be an
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 outlier /before/ seeing the data then we say it is significantly
 outlying if its two-tailed \(p\)-value is less than \(\alpha\), but if
 we suspect an observation to be an outlier /after/ seeing the data
@@ -15596,10 +15972,14 @@ of thumb is to classify observations falling higher than the
 [fn:fn-cook] Cook's distances are actually defined by a different
 formula than the one shown. The formula in Equation
 <<<<<<< HEAD
+<<<<<<< HEAD
 \ref{eq-slr-cooks-distance} is algebraically equivalent to the
 =======
 \eqref{eq-slr-cooks-distance} is algebraically equivalent to the
 >>>>>>> gnu/master
+=======
+\eqref{eq-slr-cooks-distance} is algebraically equivalent to the
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 defining formula and is, in the author's opinion, more transparent.
 
 **** How to do it with \(\mathsf{R}\)
@@ -15714,10 +16094,14 @@ side of the plot, near the horizontal axis.
 
 #+BEGIN_xca
 <<<<<<< HEAD
+<<<<<<< HEAD
 Prove the ANOVA equality, Equation [[eq-anovaeq]]. /Hint/:
 =======
 Prove the ANOVA equality, Equation \eqref{eq-anovaeq}. /Hint/:
 >>>>>>> gnu/master
+=======
+Prove the ANOVA equality, Equation \eqref{eq-anovaeq}. /Hint/:
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 show that
 \[
 \sum_{i=1}^{n}(Y_{i}-\hat{Y_{i}})(\hat{Y_{i}}-\overline{Y})=0.
@@ -15737,10 +16121,14 @@ n\beta_{0}+\beta_{1}\sum_{i=1}^{n}x_{i} & = & \sum_{i=1}^{n}y_{i}\\
 #+BEGIN_xca
 <<xca-show-alternate-slope-formula>> Show that the formula given in
 <<<<<<< HEAD
+<<<<<<< HEAD
 Equation [[eq-sample-correlation-formula]] is equivalent to \[
 =======
 Equation \eqref{eq-sample-correlation-formula} is equivalent to \[
 >>>>>>> gnu/master
+=======
+Equation \eqref{eq-sample-correlation-formula} is equivalent to \[
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \hat{\beta}_{1} =
 \frac{\sum_{i=1}^{n}x_{i}y_{i}-\left.\left(\sum_{i=1}^{n}x_{i}\right)\left(\sum_{i=1}^{n}y_{i}\right)\right/
 n}{\sum_{i=1}^{n}x_{i}^{2}-\left.\left(\sum_{i=1}^{n}x_{i}\right)^{2}\right/
@@ -15953,11 +16341,16 @@ the result is shown in Figure [[fig-3D-scatterplot-trees]].
 #+NAME: 3D-scatterplot-trees
 #+BEGIN_SRC R :exports both :results graphics :file ps/mlr-3D-scatterplot-trees.ps
 <<<<<<< HEAD
+<<<<<<< HEAD
 s3d <- with(trees, scatterplot3d(Girth, Height, Volume, pch = 16, highlight.3d = TRUE, angle = 60))
 =======
 s3d <- with(trees, scatterplot3d(Girth, Height, Volume, pch = 16, 
                                  highlight.3d = TRUE, angle = 60))
 >>>>>>> gnu/master
+=======
+s3d <- with(trees, scatterplot3d(Girth, Height, Volume, pch = 16, 
+                                 highlight.3d = TRUE, angle = 60))
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 fit <- lm(Volume ~ Girth + Height, data = trees)
 #+END_SRC
 
@@ -16030,10 +16423,14 @@ consult an advanced text such as Rao \cite{Rao1999}.
 
 #+BEGIN_rem
 <<<<<<< HEAD
+<<<<<<< HEAD
 The formula in Equation [[eq-b-formula-matrix]] is convenient for
 =======
 The formula in Equation \eqref{eq-b-formula-matrix} is convenient for
 >>>>>>> gnu/master
+=======
+The formula in Equation \eqref{eq-b-formula-matrix} is convenient for
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 mathematical study but is inconvenient for numerical
 computation. Researchers have devised much more efficient algorithms
 for the actual calculation of the parameter estimates, and we do not
@@ -16109,10 +16506,14 @@ They are expressed more compactly by the matrix equation
 \hat{\mathbf{Y}}=\mathbf{X}\mathbf{b}.
 \end{equation}
 <<<<<<< HEAD
+<<<<<<< HEAD
 From Equation [[eq-b-formula-matrix]] we know that
 =======
 From Equation \eqref{eq-b-formula-matrix} we know that
 >>>>>>> gnu/master
+=======
+From Equation \eqref{eq-b-formula-matrix} we know that
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \(\mathbf{b}=\left(\mathbf{X}^{\mathrm{T}}\mathbf{X}\right)^{-1}\mathbf{X}^{\mathrm{T}}\mathbf{Y}\),
 so we can rewrite
 \begin{eqnarray}
@@ -16128,10 +16529,14 @@ later courses. Some facts about \(\mathbf{H}\) are
   \(\mathrm{n}\times\mathrm{n}\).
 - The diagonal entries \(h_{ii}\) satisfy \(0\leq h_{ii}\leq1\)
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compare to Equation [[eq-slr-leverage-between]]).
 =======
   (compare to Equation \eqref{eq-slr-leverage-between}).
 >>>>>>> gnu/master
+=======
+  (compare to Equation \eqref{eq-slr-leverage-between}).
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 - The trace is \(\mathrm{tr}(\mathbf{H})=p\).
 - \(\mathbf{H}\) is /idempotent/ (also known as a /projection matrix/)
   which means that \(\mathbf{H}^{2}=\mathbf{H}\). The same is true of
@@ -16338,10 +16743,14 @@ the first equality following because the matrix
 \(\left(\mathbf{X}^{\mathrm{T}}\mathbf{X}\right)^{-1}\) is symmetric.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 There is a lot that we can glean from Equation [[eq-distn-b-mlr]]. First,
 =======
 There is a lot that we can glean from Equation \eqref{eq-distn-b-mlr}. First,
 >>>>>>> gnu/master
+=======
+There is a lot that we can glean from Equation \eqref{eq-distn-b-mlr}. First,
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 it follows that the estimator \(\mathbf{b}\) is unbiased (see Section
 [[#sec-Point-Estimation-1]]). Second, the variances of \(b_{0}\), \(b_{1}\),
 ..., \(b_{n}\) are exactly the diagonal elements of
@@ -16399,6 +16808,7 @@ confidence and prediction intervals to gauge their accuracy, and lucky
 for us the formulas look similar to the ones we saw in SLR.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 In Equation [[eq-mlr-single-yhat-matrix]] we wrote \(
 \hat{Y}(\mathbf{x}_{0})=\mathbf{x}_{0}^{\mathrm{T}}\mathbf{b} \), and
 in Equation [[eq-distn-b-mlr]] we saw that
@@ -16407,6 +16817,11 @@ In Equation \eqref{eq-mlr-single-yhat-matrix} we wrote \(
 \hat{Y}(\mathbf{x}_{0})=\mathbf{x}_{0}^{\mathrm{T}}\mathbf{b} \), and
 in Equation \eqref{eq-distn-b-mlr} we saw that
 >>>>>>> gnu/master
+=======
+In Equation \eqref{eq-mlr-single-yhat-matrix} we wrote \(
+\hat{Y}(\mathbf{x}_{0})=\mathbf{x}_{0}^{\mathrm{T}}\mathbf{b} \), and
+in Equation \eqref{eq-distn-b-mlr} we saw that
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{equation}
 \mathbf{b}\sim\mathsf{mvnorm}\left(\mathtt{mean} = \upbeta,\,\mathtt{sigma}=\sigma^{2}\left(\mathbf{X}^{\mathrm{T}}\mathbf{X}\right)^{-1}\right).
 \end{equation}
@@ -16524,13 +16939,19 @@ and
 SSR= & \mathbf{Y}^{\mathrm{T}}\left(\mathbf{H}-\frac{1}{n}\mathbf{J}\right)\mathbf{Y}.
 \end{alignat}
 <<<<<<< HEAD
+<<<<<<< HEAD
 (The matrix \(\mathbf{J}\) is defined in Appendix [[#sec-Linear-Algebra]].) Immediately from Equations [[eq-mlr-sse-matrix]], [[eq-mlr-ssto-matrix]], and [[eq-mlr-ssr-matrix]] we get the /Anova Equality/
 =======
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 (The matrix \(\mathbf{J}\) is defined in Appendix
 [[#sec-Linear-Algebra]].) Immediately from Equations
 \eqref{eq-mlr-sse-matrix}, \eqref{eq-mlr-ssto-matrix}, and
 \eqref{eq-mlr-ssr-matrix} we get the /Anova Equality/
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{equation} 
 SSTO=SSE+SSR.
 \end{equation}
@@ -16862,11 +17283,16 @@ in the model.
 #+END_rem
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 We do estimation/prediction the same way that we did in Section [[#sub-mlr-point-est-regsurface]], except we do not need a =Height= column
 =======
 We do estimation/prediction the same way that we did in Section
 [[#sub-mlr-point-est-regsurface]], except we do not need a =Height= column
 >>>>>>> gnu/master
+=======
+We do estimation/prediction the same way that we did in Section
+[[#sub-mlr-point-est-regsurface]], except we do not need a =Height= column
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 in the dataframe =new= since the variable is not included in the
 quadratic model.
 
@@ -17363,10 +17789,14 @@ How can we fit this model? The model is not linear in the parameters
 any more, so our linear regression methods will not work... or will
 they? In the =trees= example we may take the logarithm of both sides
 <<<<<<< HEAD
+<<<<<<< HEAD
 of Equation [[eq-trees-nonlin-reg]] to get
 =======
 of Equation \eqref{eq-trees-nonlin-reg} to get
 >>>>>>> gnu/master
+=======
+of Equation \eqref{eq-trees-nonlin-reg} to get
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{equation}
 \mu^{\ast}(x_{1},x_{2})=\ln\left[\mu(x_{1},x_{2})\right]=\ln\beta_{0}+\beta_{1}\ln x_{1}+\beta_{2}\ln x_{2},
 \end{equation}
@@ -17564,6 +17994,7 @@ AIC=-2\ln L+2(p+1)
 
 #+BEGIN_xca
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<xca-anova-equality>> Use Equations [[eq-mlr-sse-matrix]],
 [[eq-mlr-ssto-matrix]], and [[eq-mlr-ssr-matrix]] to prove the Anova Equality:
 \[ SSTO=SSE+SSR.\]
@@ -17572,6 +18003,11 @@ AIC=-2\ln L+2(p+1)
 \eqref{eq-mlr-ssto-matrix}, and \eqref{eq-mlr-ssr-matrix} to prove the
 Anova Equality: \[ SSTO = SSE + SSR.\]
 >>>>>>> gnu/master
+=======
+<<xca-anova-equality>> Use Equations \eqref{eq-mlr-sse-matrix},
+\eqref{eq-mlr-ssto-matrix}, and \eqref{eq-mlr-ssr-matrix} to prove the
+Anova Equality: \[ SSTO = SSE + SSR.\]
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_xca
 
 * Resampling Methods                                                 :resamp:
@@ -17840,6 +18276,7 @@ the information contained in the original sample.
 #+END_rem
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_exampletoo
 <<exa-Bootstrap-se-median>> *Standard error of the median.* We look at
 one where we do not know the answer ahead of time. This example uses
@@ -17853,6 +18290,10 @@ modifications to the last example are trivial.
 =======
 #+ATTR_LATEX: :options [\textbf{Standard error of the median}]
 #+BEGIN_exampletoo
+=======
+#+ATTR_LATEX: :options [\textbf{Standard error of the median}]
+#+BEGIN_exampletoo
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 <<exa-Bootstrap-se-median>> We look at one where we do not know the
 answer ahead of time. This example uses the =rivers=
 @@latex:\index{Data sets!rivers@\texttt{rivers}}@@ data set. Recall
@@ -17862,7 +18303,10 @@ estimate of center would be the sample median. Unfortunately, its
 sampling distribution falls out of our reach. We use the bootstrap to
 help us with this problem, and the modifications to the last example
 are trivial.
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp 
 resamps <- replicate(1000, sample(rivers, 141, TRUE), simplify = FALSE)
@@ -17906,6 +18350,7 @@ mean(medstar) - median(rivers)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_exampletoo
 
 *The boot package in R*. It turns out that there are many bootstrap
@@ -17915,11 +18360,18 @@ is even a function called =boot=
 =======
 #+ATTR_LATEX: :options [\textbf{The boot package in R}]
 #+BEGIN_exampletoo
+=======
+#+ATTR_LATEX: :options [\textbf{The boot package in R}]
+#+BEGIN_exampletoo
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 It turns out that there are many bootstrap procedures and commands
 already built into base \(\mathsf{R}\), in the =boot=
 package. Further, inside the =boot= package \cite{boot:1} there is
 even a function called =boot=
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 @@latex:\index{boot@\texttt{boot}}@@. The basic syntax is of the form:
 
 :  boot(data, statistic, R)
@@ -18037,6 +18489,7 @@ a variable, for example, =data.boot=. We then plug =data.boot= into
 the function =boot.ci=.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #+BEGIN_exampletoo
 <<exa-percentile-interval-median-first>> *Percentile interval for the
@@ -18049,6 +18502,13 @@ generate the resamples and calculate the percentile interval by hand.
 approach where we generate the resamples and calculate the percentile
 interval by hand.
 >>>>>>> gnu/master
+=======
+#+ATTR_LATEX: :options [\textbf{Percentile interval for the expected value of the median}]
+#+BEGIN_exampletoo
+<<exa-percentile-interval-median-first>> We will try the naive
+approach where we generate the resamples and calculate the percentile
+interval by hand.
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 
 #+BEGIN_SRC R :exports both :results output pp 
 btsamps <- replicate(2000, sample(stack.loss, 21, TRUE), simplify = FALSE)
@@ -18067,6 +18527,7 @@ quantile(thetast, c(0.025, 0.975))
 #+END_exampletoo
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #+BEGIN_exampletoo
 
@@ -18075,6 +18536,10 @@ quantile(thetast, c(0.025, 0.975))
 #+ATTR_LATEX: :options [\textbf{Confidence interval for expected value of the median, second try}]
 #+BEGIN_exampletoo
 >>>>>>> gnu/master
+=======
+#+ATTR_LATEX: :options [\textbf{Confidence interval for expected value of the median, second try}]
+#+BEGIN_exampletoo
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 Now we will do it the right way with the =boot= function.
 
 #+BEGIN_SRC R :exports both :results output pp 
@@ -18513,6 +18978,7 @@ loaded via a namespace (and not attached):
 :PROPERTIES:
 :tangle: R/appendix.R
 <<<<<<< HEAD
+<<<<<<< HEAD
 :CUSTOM_ID: cha-GNU-Free-Documentation
 :END:
 
@@ -18523,6 +18989,12 @@ loaded via a namespace (and not attached):
 #+BEGIN_latex
 \label{cha-GNU-Free-Documentation}
 >>>>>>> gnu/master
+=======
+:END:
+
+#+BEGIN_latex
+\label{cha-GNU-Free-Documentation}
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{center}
 \textbf{\large Version 1.3, 3 November 2008}\bigskip{}
 
@@ -19654,6 +20126,7 @@ functions and \(c\) is a constant.
 | \((f\pm g)'=f'\pm g'\)       | \((fg)'=f'g+fg'\)                       | \(\left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^{2}}\) |
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_thm
 Chain Rule: If \(f\) and \(g\) are both differentiable and \(F=f\circ
 g\) is the composite function defined by \(F(x)=f[g(x)]\), then \(F\)
@@ -19665,14 +20138,24 @@ If \(f\) and \(g\) are both differentiable and \(F=f\circ g\) is the
 composite function defined by \(F(x)=f[g(x)]\), then \(F\) is
 differentiable and \(F'(x) = f'[ g(x) ] \cdot g'(x)\).
 >>>>>>> gnu/master
+=======
+#+ATTR_LATEX: :options [\textbf{Chain Rule}]
+#+BEGIN_thm
+If \(f\) and \(g\) are both differentiable and \(F=f\circ g\) is the
+composite function defined by \(F(x)=f[g(x)]\), then \(F\) is
+differentiable and \(F'(x) = f'[ g(x) ] \cdot g'(x)\).
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_thm
 
 **** Useful Derivatives
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+CAPTION: [Some derivatives]{Some derivatives.}
 #+NAME: tab-Useful-Derivatives
 | \(\frac{\mathrm{d}}{\mathrm{d} x}\mathrm{e}^{x}=\mathrm{e}^{x}\) | \(\frac{\mathrm{d}}{\mathrm{d} x}\ln x=x^{-1}\)     | \(\frac{\mathrm{d}}{\mathrm{d} x}\sin x=\cos x\)             |
@@ -19686,16 +20169,22 @@ which \(f'(x^{\ast})=0\) or for which \(f'(x^{\ast})\) does not exist.
 #+END_defn
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#+ATTR_LATEX: :options [\textbf{First Derivative Test}]
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+BEGIN_thm
-<<thm-First-Derivative-Test>> First Derivative Test. If \(f\) is
-differentiable and if \(x^{\ast}\) is a critical number of \(f\) and
-if \(f'(x)\geq0\) for \(x\leq x^{\ast}\) and \(f'(x)\leq0\) for
-\(x\geq x^{\ast}\), then \(x^{\ast}\) is a local maximum of \(f\). If
-\(f'(x)\leq0\) for \(x\leq x^{\ast}\) and \(f'(x)\geq0\) for \(x\geq
-x^{\ast}\) , then \(x^{\ast}\) is a local minimum of \(f\).
+<<thm-First-Derivative-Test>> If \(f\) is differentiable and if
+\(x^{\ast}\) is a critical number of \(f\) and if \(f'(x)\geq0\) for
+\(x\leq x^{\ast}\) and \(f'(x)\leq0\) for \(x\geq x^{\ast}\), then
+\(x^{\ast}\) is a local maximum of \(f\). If \(f'(x)\leq0\) for
+\(x\leq x^{\ast}\) and \(f'(x)\geq0\) for \(x\geq x^{\ast}\) , then
+\(x^{\ast}\) is a local minimum of \(f\).
 #+END_thm
 
+#+ATTR_LATEX: :options [\textbf{Second Derivative Test}]
 #+BEGIN_thm
+<<<<<<< HEAD
 Second Derivative Test. If \(f\) is twice differentiable and if
 \(x^{\ast}\) is a critical number of \(f\), then \(x^{\ast}\) is a
 local maximum of \(f\) if \(f''(x^{\ast})<0\) and \(x^{\ast}\) is a
@@ -19713,11 +20202,16 @@ local minimum of \(f\) if \(f''(x^{\ast})>0\).
 
 #+ATTR_LATEX: :options [\textbf{Second Derivative Test}]
 #+BEGIN_thm
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 If \(f\) is twice differentiable and if \(x^{\ast}\) is a critical
 number of \(f\), then \(x^{\ast}\) is a local maximum of \(f\) if
 \(f''(x^{\ast})<0\) and \(x^{\ast}\) is a local minimum of \(f\) if
 \(f''(x^{\ast})>0\).
+<<<<<<< HEAD
 >>>>>>> gnu/master
+=======
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+END_thm
 
 *** Integration
@@ -19745,6 +20239,7 @@ provided the limit exists, and in that case, we say that \(f\) is
 #+END_defn
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #+BEGIN_thm
 The Fundamental Theorem of Calculus. Suppose \(f\) is continuous on
 \([a,b]\). Then
@@ -19753,6 +20248,11 @@ The Fundamental Theorem of Calculus. Suppose \(f\) is continuous on
 #+BEGIN_thm
 Suppose \(f\) is continuous on \([a,b]\). Then
 >>>>>>> gnu/master
+=======
+#+ATTR_LATEX: :options [\textbf{The Fundamental Theorem of Calculus}]
+#+BEGIN_thm
+Suppose \(f\) is continuous on \([a,b]\). Then
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 1. the function \(g\) defined by \(g(x)=\int_{a}^{x}f(t)\:\mathrm{d}
    t\), \(a\leq x\leq b\), is continuous on \([a,b]\) and
    differentiable on \((a,b)\) with \(g'(x)=f(x)\).
@@ -19763,9 +20263,13 @@ Suppose \(f\) is continuous on \([a,b]\). Then
 
 **** Change of Variables
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> gnu/master
+=======
+
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 #+BEGIN_thm
 If \(g\) is a differentiable function whose range is the interval
 \([a,b]\) and if both \(f\) and \(g'\) are continuous on the range of
@@ -19778,6 +20282,7 @@ If \(g\) is a differentiable function whose range is the interval
 **** Useful Integrals
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #+CAPTION: [Some integrals (constants of integration omitted)]{Some integrals (constants of integration omitted).}
 #+NAME: tab-Useful-Integrals
@@ -19787,6 +20292,11 @@ If \(g\) is a differentiable function whose range is the interval
 #+NAME: tab-Useful-Integrals
 | \(\int x^{n}\,\mathrm{d} x=x^{n+1}/(n+1),\ n \neq - 1\) | \(\int\mathrm{e}^{x}\,\mathrm{d} x=\mathrm{e}^{x}\) | \(\int x^{-1}\,\mathrm{d} x=\ln \mathrm{abs}(x) \) |
 >>>>>>> gnu/master
+=======
+#+CAPTION: [Some integrals (constants of integration omitted)]{Some integrals (constants of integration omitted).}
+#+NAME: tab-Useful-Integrals
+| \(\int x^{n}\,\mathrm{d} x=x^{n+1}/(n+1),\ n \neq - 1\) | \(\int\mathrm{e}^{x}\,\mathrm{d} x=\mathrm{e}^{x}\) | \(\int x^{-1}\,\mathrm{d} x=\ln \mathrm{abs}(x) \) |
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 | \(\int\tan x\:\mathrm{d} x=\ln \mathrm{abs}(\sec x)\) | \(\int a^{x}\,\mathrm{d} x=a^{x}/\ln a\)            | \(\int(x^{2}+1)^{-1}\,\mathrm{d} x=\tan^{-1}x\) |
 
 **** Integration by Parts
@@ -19794,6 +20304,7 @@ If \(g\) is a differentiable function whose range is the interval
 \begin{equation}
 \int u\:\mathrm{d} v=uv-\int v\:\mathrm{d} u
 \end{equation}
+<<<<<<< HEAD
 <<<<<<< HEAD
 #+BEGIN_thm
 L'H\^ opital's Rule. Suppose \(f\) and \(g\) are differentiable and
@@ -19806,6 +20317,13 @@ limit
 Suppose \(f\) and \(g\) are differentiable and \(g'(x)\neq0\) near
 \(a\), except possibly at \(a\). Suppose that the limit
 >>>>>>> gnu/master
+=======
+
+#+ATTR_LATEX: :options [\textbf{L'H\^ opital's Rule}]
+#+BEGIN_thm
+Suppose \(f\) and \(g\) are differentiable and \(g'(x)\neq0\) near
+\(a\), except possibly at \(a\). Suppose that the limit
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \begin{equation}
 \lim_{x\to a}\frac{f(x)}{g(x)}
 \end{equation}
@@ -20761,10 +21279,14 @@ Detective Pyork E. Pig
 \bibliographystyle{plainurl}
 \nocite{*}
 <<<<<<< HEAD
+<<<<<<< HEAD
 \bibliography{include/IPSUR,include/Rpackages-2.14.1}
 =======
 \bibliography{include/IPSUR,include/Rpackages}
 >>>>>>> gnu/master
+=======
+\bibliography{include/IPSUR,include/Rpackages}
+>>>>>>> 26b97e4d6c4204f6833e700c9ac842420b97763c
 \vfill{}
 \cleardoublepage
 \phantomsection
