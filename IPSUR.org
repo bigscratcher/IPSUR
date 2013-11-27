@@ -1655,8 +1655,8 @@ par(mfrow = c(1,1)) # back to normal
 #+END_SRC
 
 #+NAME: fig-bar-gr-stateregion
-#+CAPTION[Bar graphs of the =state.region= data]: \small The left graph is a frequency barplot made with =table= and the right is a relative frequency barplot made with =prop.table=.
-#+ATTR_LaTeX: :width 0.9\textwidth :placement [ht!] :options angle=-90
+#+CAPTION[Bar graphs of the =state.region= data]: \small The top graph is a frequency barplot made with =table= and the bottom is a relative frequency barplot made with =prop.table=.
+#+ATTR_LaTeX: :width 1.0\textwidth :placement [ht!] :options angle=-90
 #+RESULTS: bar-gr-stateregion
 [[file:ps/datadesc-bar-gr-stateregion.ps]]
 
@@ -1698,7 +1698,7 @@ pareto.chart(table(state.division), ylab="Frequency", cex.lab = cexlab)
 #+CAPTION: \small Pareto chart of the =state.division= data.
 #+ATTR_LaTeX: :width 0.9\textwidth :placement [ht!] :options angle=-90
 #+RESULTS: Pareto-chart
-[[file:ps/datadesc-bar-gr-stateregion.ps]]
+[[file:ps/datadesc-Pareto-chart.ps]]
 
 #+END_exampletoo
 
@@ -5347,7 +5347,8 @@ Toss a coin twice. The sample space is \(S= \{ HH,\ HT,\ TH,\ TT \}
 \(\mathbb{P}(2^{\mathrm{nd}}\mbox{ toss is }H)=2/4\), and
 \(\mathbb{P}(\mbox{both }H)=1/4\). Then
 
-\begin{align*} \mathbb{P}(2^{\mathrm{nd}}\mbox{ toss is }H\ |\ 1^{\mathrm{st}}\mbox{ toss is }H) & =\frac{\mathbb{P}(\mbox{both }H)}{\mathbb{P}(1^{\mathrm{st}}\mbox{ toss is }H)},\\
+\begin{align*} 
+\mathbb{P}(2^{\mathrm{nd}}\mbox{ toss is }H\ \vert \ 1^{\mathrm{st}}\mbox{ toss is }H) & =\frac{\mathbb{P}(\mbox{both }H)}{\mathbb{P}(1^{\mathrm{st}}\mbox{ toss is }H)}, \\
  & =\frac{1/4}{2/4},\\
  & =\mathbb{P}(2^{\mathrm{nd}}\mbox{ toss is }H).
 \end{align*}
@@ -11030,17 +11031,19 @@ the quantity in Equation \eqref{eq-diff-indep-sample-means} will be
 approximately normal provided both sample sizes are large.
 #+END_rem
 
-#+BEGIN_rem
-For the special case of \(\mu_{X}=\mu_{Y}\) we have shown that 
+*Remark:* For the special case of \(\mu_{X}=\mu_{Y}\) we have shown
+ that
 \begin{equation}
-\frac{\overline{X}-\overline{Y}}{\sqrt{\sigma_{X}^{2}/n_{1}+\sigma_{Y}^{2}/n_{2}}}
-\end{equation} has a
-\(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) sampling
-distribution, or in other words, \(\overline{X}-\overline{Y}\) has a
-\(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=\sqrt{\sigma_{X}^{2}/n_{1}+\sigma_{Y}^{2}/n_{2}})\)
-sampling distribution. This will be important when it comes time to do
-hypothesis tests; see Section [[#sec-Conf-Interv-for-Diff-Means]].
-#+END_rem
+\frac{\overline{X} - \overline{Y}}{\sqrt{ \sigma_{X}^{2}/ n_{1} + \sigma_{Y}^{2}/n_{2}}}
+\end{equation}
+
+has a \(\mathsf{norm}(\mathtt{mean}=0,\,\mathtt{sd}=1)\) sampling
+distribution, or in other words, \(\overline{X} - \overline{Y}\) has a
+\(\mathsf{norm}(\mathtt{mean} = 0,\,\mathtt{sd} = \sqrt{\sigma_{X}^{2}
+/ n_{1} + \sigma_{Y}^{2} / n_{2}})\) sampling distribution. This will
+be important when it comes time to do hypothesis tests; see Section
+[[#sec-Conf-Interv-for-Diff-Means]].
+
 
 *** Difference of Independent Sample Proportions
 
@@ -12678,10 +12681,10 @@ anything, in principle).
 [fn:fn-typetwo] There is no mathematical difference between the
 errors, however. The bottom line is that we choose one type of error
 to control with an iron fist, and we try to minimize the probability
-of making the other type. That being said, null hypotheses are often
-by design to correspond to the "simpler" model, so it is often easier
-to analyze (and thereby control) the probabilities associated with
-Type I Errors.
+of the other type. That being said, null hypotheses are often by
+design to correspond to the "simpler" model, so it is often easier to
+analyze (and thereby control) the probabilities associated with Type I
+Errors.
 
 We are ready for tests of hypotheses for one proportion.  We know from
 Section BLANK that when \(H_{0}:\,p = p_{0}\) is true and \(n\) is
@@ -12693,7 +12696,6 @@ approximately, and the approximation gets better as the sample size gets bigger.
 \begin{equation}
 Z = \frac{\hat{p} - p_{0}}{sqrt{p_{0}(1 - p_{0})/n}}  \sim \mathsf{norm}(\mathtt{mean} = 0, \mathtt{sd} = 1).
 \end{equation}
-
 
 #+NAME: tab-ztest-one-sample-prop
 #+CAPTION: Hypothesis tests, population proportion, large sample
@@ -12709,7 +12711,6 @@ Z = \frac{\hat{p} - p_{0}}{sqrt{p_{0}(1 - p_{0})/n}}  \sim \mathsf{norm}(\mathtt
   - need at least 15 successes and at least 15 failures
 
 #+BEGIN_exampletoo
-
 Find
 1. The null and alternative hypotheses.
 2. Check your assumptions.
@@ -12721,7 +12722,7 @@ Find
 
 
 #+BEGIN_exampletoo
-<<exa-prop-test-pvalue-A>> Suppose \(p = \mbox{the proportion of
+<<exa-prop-test-pvalue-A>> Suppose \(p = \mathrm{the\ proportion\ of\
 students}\) who are admitted to the graduate school of the University
 of California at Berkeley, and suppose that a public relations officer
 boasts that UCB has historically had a 40% acceptance rate for its
@@ -12885,10 +12886,27 @@ will reject \(H_{0}\) at the \(\alpha\)-level of significance if the
 
 #+BEGIN_rem
 If we have two populations with proportions \(p_{1}\) and \(p_{2}\)
-then we can test the null hypothesis \(H_{0}:\,p_{1} = p_{2}\).
+then we can test the null hypothesis \(H_{0}:\,p_{1} = p_{2}\). In
+that which follows,
+- we observe independent simple random samples of size \(n_{1}\) and
+  \(n_{2}\) from Bernoulli populations with respective probabilities
+  of success \(p_{1}\) and \(p_{2}\),
+- we write \(y_{1}\) and \(y_{2}\) for the respective numbers of
+  successes from each of the two groups,
+- we estimate \(p_{1}\) and \(p_{2}\) with \(\hat{p}_{1} = y_{1}/n_{1}
+  \) and \(\hat{p}_{2} = y_{2}/n_{2}\), while we estimate the pooled
+  probability \(\hat{p}\) with \((y_{1} + y_{2})/(n_{1} + n_{2}\), and
+- finally, \[z = \frac{\hat{p}_{1} - \hat{p}_{2}}{\sqrt{\hat{p}(1 - \hat{p})\left( \frac{1}{n_{1}} + \frac{1}{n_{2}} \right)}}. \]
 #+END_rem
 
-Table Here.
+
+#+NAME: tab-ztest-two-sample-prop
+#+CAPTION: Hypothesis tests, difference in population proportions, large sample
+| \(H_{0}\)         | \(H_{a}\)                | Rejection Region                  |
+|-------------------+--------------------------+-----------------------------------|
+| \(p_{1} = p_{2}\) | \(p_{1} - p_{2} > 0\)    | \(z > z_{\alpha}\)                |
+| \(p_{1} = p_{2}\) | \(p_{1} - p_{2} < 0\)    | \(z < -z_{\alpha}\)               |
+| \(p_{1} = p_{2}\) | \(p_{1} - p_{2} \neq 0\) | \( \vert z \vert > z_{\alpha/2}\) |
 
 
 Example.
@@ -12922,10 +12940,12 @@ sample estimates:
 Do the following to make the plot.
 
 
-Use Yates' continuity correction when the expected frequency of
-successes is less than 10. You can use it all of the time, but you
-will have a decrease in power. For large samples the correction does
-not matter.
+*Remark*: In the above we set =correct = FALSE= to tell the computer
+that we did not want to use Yates' continuity correction (reference
+BLANK).  It is customary to use Yates when the expected frequency of
+successes is less than 10. (reference BLANK) You can use it all of the
+time, but you will have a decrease in power. For large samples the
+correction does not matter.
 
 **** With the \(\mathsf{R}\) Commander
 
@@ -12998,13 +13018,14 @@ In this example we
 
 
 #+BEGIN_rem
-Another name for a \(p\)-value is /tail-end probability/. We reject
-\(H_{0}\) when the \(p\)-value is small.  The quantity
-\(\sigma/\sqrt{n}\), when \(\sigma\) is known, is called the /standard
-error of the sample mean/. In general, if we have an estimator
-\(\hat{\theta}\) then \(\sigma_{\hat{\theta}}\) is called the
-/standard error/ of \(\hat{\theta}\). We usually need to estimate
-\(\sigma_{\hat{\theta}}\) with \(\hat{\sigma_{\hat{\theta}}}\).
+- Another name for a \(p\)-value is /tail-end probability/. We reject
+  \(H_{0}\) when the \(p\)-value is small.
+- The quantity \(\sigma/\sqrt{n}\), when \(\sigma\) is known, is
+  called the /standard error of the sample mean/. In general, if we
+  have an estimator \(\hat{\theta}\) then \(\sigma_{\hat{\theta}}\) is
+  called the /standard error/ of \(\hat{\theta}\). We usually need to
+  estimate \(\sigma_{\hat{\theta}}\) with
+  \(\hat{\sigma_{\hat{\theta}}}\).
 #+END_rem
 
 **** How to do it with \(\mathsf{R}\)
@@ -13144,9 +13165,8 @@ can plug them in to our statistic:
 \begin{equation} 
 Z = \frac{\overline{X} - \overline{Y}}{\sqrt{\sigma_{X}^{2}/n + \sigma_{Y}^{2}/m}};
 \end{equation}
-the result will have a
-\(\mathsf{norm}(\mathtt{mean} = 0,\,\mathtt{sd} = 1)\) distribution when
-\(H_{0}:\,\mu_{X} = \mu_{Y}\) is true.
+the result will have a \(\mathsf{norm}(\mathtt{mean} = 0,\,\mathtt{sd}
+= 1)\) distribution when \(H_{0}:\,\mu_{X} = \mu_{Y}\) is true.
 #+END_rem
 
 #+BEGIN_rem
@@ -13161,7 +13181,7 @@ Z = \frac{\overline{X} - \overline{Y}}{\sqrt{S_{X}^{2}/n + S_{Y}^{2}/m}}.
 #+END_rem
 
 #+BEGIN_rem
-It is usually important to construct side-by-side boxplots and other
+It is often helpful to construct side-by-side boxplots and other
 visual displays in concert with the hypothesis test. This gives a
 visual comparison of the samples and helps to identify departures from
 the test's assumptions -- such as outliers.
@@ -13264,17 +13284,20 @@ The test statistic we will use is Wilk's \(W\), which looks like this:
 \begin{equation}
 W = \frac{\left(\sum_{i = 1}^{n} a_{i}x_{(i)} \right)^{2}}{\sum_{i = 1}^{n}(x_{i} - \overline{x})^{2}},
 \end{equation}
-where the \(x_{(i)}\)'s are the order statistics (see Section BLANK) and the constants \(a_{i}\) form the components of a vector \(\mathbf{a}_{1\times\mathrm{n}}\) defined by
+where the \(x_{(i)}\)'s are the order statistics (see Section BLANK)
+and the constants \(a_{i}\) form the components of a vector
+\(\mathbf{a}_{1\times\mathrm{n}}\) defined by
 \begin{equation}
 \mathbf{a}=\frac{\mathbf{m}^{\mathrm{T}}\mathbf{V}^{-1}}{\sqrt{\mathbf{m}^{\mathrm{T}}\mathbf{V}^{-1}\mathbf{V}^{-1}\mathbf{m}}},
 \end{equation}
-where \(\mathbf{m}_{\mathrm{n}\times1}\) and
-\(\mathbf{V}_{\mathrm{n}\times\mathrm{n}}\) are the mean and
-covariance matrix, respectively, of the order statistics from an
-\(\mathsf{mvnorm}\left(\mathtt{mean} = \mathbf{0},\,\mathtt{sigma} =
+where \(\mathbf{m}_{\mathrm{n}\times1}\) and \(\mathbf{V}_{\mathrm{n}
+\times \mathrm{n}} \) are the mean and covariance matrix,
+respectively, of the order statistics from an \(\mathsf{mvnorm}
+\left(\mathtt{mean} = \mathbf{0},\,\mathtt{sigma} =
 \mathbf{I}\right)\) distribution.  This test statistic \(W\) was
 published in 1965 by (you guessed it): Shapiro and
-Wilk\cite{Wilk1965}.  In contrast to most other test statistics we know, we reject \(H_{0}\) if \(W\) is too /small/.
+Wilk\cite{Wilk1965}.  In contrast to most other test statistics we
+know, we reject \(H_{0}\) if \(W\) is too /small/.
 
 **** How to do it with \(\mathsf{R}\)
 
@@ -13720,12 +13743,11 @@ n \beta_{0} + \beta_{1} \sum_{i=1}^{n} x_{i} = \sum_{i = 1}^{n}y_{i}.
 \end{equation}
 Moving on, we next take the partial derivative of \( \ln L \)
 (Equation \eqref{eq-regML-lnL}) with respect to \( \beta_{1} \) to get
-\begin{alignat}{1} \frac{\partial}{\partial\beta_{1}}\ln L=\ &
-0-\frac{1}{2\sigma^{2}}\sum_{i=1}^{n}2(y_{i}-\beta_{0}-\beta_{1}x_{i})(-x_{i}),\\ =
-&
-\frac{1}{\sigma^{2}}\sum_{i=1}^{n}\left(x_{i}y_{i}-\beta_{0}x_{i}-\beta_{1}x_{i}^{2}\right),
-\end{alignat} and this equals zero when the last sum equals zero, that
-is, when
+
+\begin{alignat}{1}
+\frac{\partial}{\partial \beta_{1}} \ln L = \ & 0 - \frac{1}{2\sigma^{2}} \sum_{i=1}^{n} 2 (y_{i} - \beta_{0} - \beta_{1} x_{i})(-x_{i}),\\ = & \frac{1}{\sigma^{2}}\sum_{i = 1}^{n}\left(x_{i} y_{i} - \beta_{0}x_{i} - \beta_{1}x_{i}^{2}\right),
+\end{alignat}
+and this equals zero when the last sum equals zero, that is, when
 \begin{equation}
 \label{eq-regML-b}
 \beta_{0} \sum_{i = 1}^{n}x_{i} + \beta_{1} \sum_{i = 1}^{n}x_{i}^{2} = \sum_{i = 1}^{n}x_{i}y_{i}.
@@ -15615,12 +15637,14 @@ We see from the output that for the =trees= data our parameter
 estimates are \[ \mathbf{b}=\begin{bmatrix}-58.0 & 4.7 &
 0.3\end{bmatrix}, \] and consequently our estimate of the mean
 response is \(\hat{\mu}\) given by
-\begin{alignat}{1} \hat{\mu}(x_{1},x_{2})= & \
-b_{0}+b_{1}x_{1}+b_{2}x_{2},\\ \approx & -58.0+4.7x_{1}+0.3x_{2}.
-\end{alignat} We could see the entire model matrix \(\mathbf{X}\) with
-the =model.matrix=
-@@latex:\index{model.matrix@\texttt{model.matrix}}@@ function, but in
-the interest of brevity we only show the first few rows.
+\begin{alignat}{1} 
+\hat{\mu}(x_{1},x_{2}) = & \ b_{0} + b_{1} x_{1} + b_{2}x_{2},\\ \approx & -58.0 + 4.7 x_{1} + 0.3 x_{2}.
+\end{alignat} 
+
+We could see the entire model matrix \(\mathbf{X}\) with the
+=model.matrix= @@latex:\index{model.matrix@\texttt{model.matrix}}@@
+function, but in the interest of brevity we only show the first few
+rows.
 
 #+BEGIN_SRC R :exports both :results output pp 
 head(model.matrix(trees.lm))
@@ -17066,9 +17090,8 @@ topic will receive more attention in a later edition.
 *** Akaike's Information Criterion
 
 \[
-AIC=-2\ln L+2(p+1)
+AIC = -2\ln L + 2(p + 1)
 \]
-
 
 #+LaTeX: \newpage{}
 
@@ -19050,7 +19073,7 @@ pertinent information about these operations.
    \end{equation}
 1. The Distributive Property: 
    \begin{equation}
-   A\cup(B\cap C)=(A\cup B)\cap(A\cup B),\quad A\cap(B\cup C)=(A\cap B)\cup(A\cap B)
+   A\cup(B\cap C)=(A\cup B)\cap(A\cup C),\quad A\cap(B\cup C)=(A\cap B)\cup(A\cap C)
    \end{equation}
 1. DeMorgan's Laws
    \begin{equation}
